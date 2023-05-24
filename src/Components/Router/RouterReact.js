@@ -10,6 +10,7 @@ import Cars from '../Cars/FetchApiHookCars'
 import Owners from '../Owners/FetchApiHookOwners'
 import Workshops from '../Workshops/FetchApiHookWorkshops'
 import AddCar from '../Cars/AddCar'
+import RegistrationOwner from '../LoginForm/RegistrationOwner'
 
 const RouterReact = () => (
 <Router>
@@ -28,10 +29,10 @@ const RouterReact = () => (
         <Route path="/test/owners" element={<Owners />} />
         <Route path="/test/owners/add" element={<Owners />} />
         
-
         <Route path="/test/workshops" element={<Workshops />} />
         <Route path="/test/workshops/add" element={<Workshops />} />
         
+        <Route path="/register/owner" element={<RegistrationOwner />} />
 
     </Routes>
 </Router>

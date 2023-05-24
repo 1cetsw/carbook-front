@@ -37,7 +37,7 @@ class StartPage extends Component {
                         <img class="img-fluid rounded-circle mb-4" src={carbookLogo} alt="..." />
                         <h1 class="text-white fs-3 fw-bolder">All your vehicles in one place</h1>
                         <p class="text-white-50 mb-0">Do you also not remember when you changed the oil,<br />
-                            timing belt or air filter in your car? Soon you won't have to, we'll do it for you.</p>
+                            timing belt or air filter in your car? <br />Soon you won't have to, we'll do it for you.</p>
                     </div>
                 </header>
                 <footer class="py-5 bg-dark">
