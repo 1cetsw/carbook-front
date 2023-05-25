@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom'
+import {BrowserRouter as  useLocation} from 'react-router-dom'
 
 const Search = () => {
     console.log(useLocation());

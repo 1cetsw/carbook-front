@@ -1,67 +1,52 @@
-import React, {useState,setState} from 'react';
-import '../../Css/LoginStyle.css'
-function RegistrationForm() {
-    
-    const [firstName, setFirstName] = useState(null);
-    const [lastName, setLastName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [password,setPassword] = useState(null);
-    const [confirmPassword,setConfirmPassword] = useState(null);
+import React, { useState } from 'react';
+import axios from 'axios';
 
-    const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        if(id === "firstName"){
-            setFirstName(value);
-        }
-        if(id === "lastName"){
-            setLastName(value);
-        }
-        if(id === "email"){
-            setEmail(value);
-        }
-        if(id === "password"){
-            setPassword(value);
-        }
-        if(id === "confirmPassword"){
-            setConfirmPassword(value);
-        }
+const RegistrationOwner = () => {
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+ 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    }
+    // Tworzenie obiektu z danymi formularza
+    const data = {
+      name: name,
+      surname: surname,
+      email: email,
+      password: password
+    };
 
-    const handleSubmit  = () => {
-        console.log(firstName,lastName,email,password,confirmPassword);
-    }
+    // Wysyłanie danych na serwer
+    axios.post('https://carbook-production.up.railway.app/api/add-owner', data)
+      .then(response => {
+        console.log('Odpowiedź z serwera:', response.data);
+      })
+      .catch(error => {
+        console.error('Błąd:', error);
+      });
+  };
 
-    return(
-        <div className="form">
-            <div className="form-body">
-                <div className="username">
-                    <label className="form__label" for="firstName">First Name </label>
-                    <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
-                </div>
-                <div className="lastname">
-                    <label className="form__label" for="lastName">Last Name </label>
-                    <input  type="text" name="" id="lastName" value={lastName}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
-                </div>
-                <div className="email">
-                    <label className="form__label" for="email">Email </label>
-                    <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
-                </div>
-                <div className="password">
-                    <label className="form__label" for="password">Password </label>
-                    <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
-                </div>
-                <div className="confirm-password">
-                    <label className="form__label" for="confirmPassword">Confirm Password </label>
-                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
-                </div>
-            </div>
-            <div class="footer">
-                <button onClick={()=>handleSubmit()} type="submit" class="btn">Register</button>
-            </div>
-        </div>
-       
-    )       
-}
+  return (
+    <form class="form" onSubmit={handleSubmit}>
+        <h2 class="form-title">ADD OWNER</h2>
+      
+      <input type="text"  class="form-input" placeholder="Name" id="name" value={name} onChange={e => setName(e.target.value)} />
+      <br />
+      
+      <input type="text" class="form-input" placeholder="SurName" id="surname" value={surname} onChange={e => setSurname(e.target.value)} />
+      <br />
+      
+      <input type="text" class="form-input" placeholder="Email" id="email" value={email} onChange={e => setEmail(e.target.value)} />
+      <br />
+      
+      <input type="text" class="form-input" placeholder="Password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
+      <br />
+      
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
 
-export default RegistrationForm
+export default RegistrationOwner;

@@ -9,7 +9,7 @@ import Test from '../Test/Test'
 import Cars from '../Cars/FetchApiHookCars'
 import Owners from '../Owners/FetchApiHookOwners'
 import Workshops from '../Workshops/FetchApiHookWorkshops'
-import AddCar from '../Cars/AddCar'
+import RegistrationCar from '../LoginForm/RegistrationCar'
 import RegistrationOwner from '../LoginForm/RegistrationOwner'
 
 const RouterReact = () => (
@@ -23,16 +23,16 @@ const RouterReact = () => (
 
         <Route path="/test" element={<Test />} />
 
-        <Route path="/test/cars/add" element={<AddCar />} />
-        <Route path="/test/cars" element={<Cars />} />
+        <Route path="/api/add-car" element={<RegistrationCar />} />
+        <Route path="/cars" element={<Cars />} />
 
-        <Route path="/test/owners" element={<Owners />} />
-        <Route path="/test/owners/add" element={<Owners />} />
+        <Route path="/owners" element={<Owners />} />
+        <Route path="/api/add-owner" element={<RegistrationOwner />} />
         
-        <Route path="/test/workshops" element={<Workshops />} />
-        <Route path="/test/workshops/add" element={<Workshops />} />
+        <Route path="/api/workshops" element={<Workshops />} />
+        <Route path="/workshops" element={<Workshops />} />
         
-        <Route path="/register/owner" element={<RegistrationOwner />} />
+        
 
     </Routes>
 </Router>

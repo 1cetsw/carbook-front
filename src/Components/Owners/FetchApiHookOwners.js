@@ -21,8 +21,10 @@ function Owners() {
                 <>
                     <h1>Owners</h1>
                     <table border={1}>
+                    <tbody>
                         <tr>
-                           
+                       
+                        <th>id</th>
                             <th>Name</th>
                             <th>Surname</th>
                             <th>Email</th>
@@ -30,12 +32,14 @@ function Owners() {
                         </tr>
                         {Owners.map(owner => (
                             <tr>
+                                <td key={owner.id}>{owner.id}</td>
                                 <td>{owner.name}</td>
                                 <td>{owner.surname}</td>
                                 <td>{owner.email}</td>
                                
                             </tr>
                         ))}
+                        </tbody>
                     </table>
                 </>
             )}
