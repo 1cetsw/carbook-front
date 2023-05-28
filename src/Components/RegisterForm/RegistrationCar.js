@@ -29,16 +29,16 @@ const RegistrationCar = () => {
   };
 
   return (
-    <form class="form" onSubmit={handleSubmit}>
-        <h2 class="form-title">ADD OWNER</h2>
+    <form className="form" onSubmit={handleSubmit}>
+        <h2 className="form-title">ADD CAR</h2>
       
-      <input type="text"  class="form-input" placeholder="Brand" id="brand" value={brand} onChange={e => setBrand(e.target.value)} />
+      <input type="text"  className="form-input" placeholder="Brand" id="brand" value={brand} onChange={e => setBrand(e.target.value)} />
       <br />
       
-      <input type="text" class="form-input" placeholder="Model" id="model" value={model} onChange={e => setModel(e.target.value)} />
+      <input type="text" className="form-input" placeholder="Model" id="model" value={model} onChange={e => setModel(e.target.value)} />
       <br />
       
-      <input type="text" class="form-input" placeholder="Production Date" id="prductionDate" value={productionDate} onChange={e => setProductionDate(e.target.value)} />
+      <input type="text" className="form-input" placeholder="Production Date" id="prductionDate" value={productionDate} onChange={e => setProductionDate(e.target.value)} />
       <br />
       
      

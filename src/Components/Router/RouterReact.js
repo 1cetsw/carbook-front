@@ -6,11 +6,13 @@ import About from '../Pages/About'
 import StartPage from '../Pages/StartPage'
 import Contact from '../Pages/Contact'
 import Test from '../Test/Test'
-import Cars from '../Cars/FetchApiHookCars'
-import Owners from '../Owners/FetchApiHookOwners'
-import Workshops from '../Workshops/FetchApiHookWorkshops'
-import RegistrationCar from '../LoginForm/RegistrationCar'
-import RegistrationOwner from '../LoginForm/RegistrationOwner'
+import Cars from '../FetchApi/Cars/FetchApiHookCars'
+import Owners from '../FetchApi/Owners/FetchApiHookOwners'
+import Workshops from '../FetchApi/Workshops/FetchApiHookWorkshops'
+import RegistrationCar from '../RegisterForm/RegistrationCar'
+import RegistrationOwner from '../RegisterForm/RegistrationOwner'
+import RegistrationWorkshop from '../RegisterForm/RegistrationWorkshop'
+
 
 const RouterReact = () => (
 <Router>
@@ -29,7 +31,8 @@ const RouterReact = () => (
         <Route path="/owners" element={<Owners />} />
         <Route path="/api/add-owner" element={<RegistrationOwner />} />
         
-        <Route path="/api/workshops" element={<Workshops />} />
+        
+        <Route path="/api/add-workshop" element={<RegistrationWorkshop />} />
         <Route path="/workshops" element={<Workshops />} />
         
         

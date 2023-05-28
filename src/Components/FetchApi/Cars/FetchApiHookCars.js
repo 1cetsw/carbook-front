@@ -14,20 +14,20 @@ function Cars() {
     }, [])
 
     return (
-        <div className="App">
+        <div >
             {loading ? (
                 <div>Loading...</div>
             ) : (
                 <>
                     <h1>Cars</h1>
                     <table border={1}>
-                        <tr>
+                       
                            
                             <th>Brand</th>
                             <th>Model</th>
                             <th>ProductionDate</th>
 
-                        </tr>
+                        
                         {Cars.map(car => (
                             <tr>
                                 <td>{car.brand}</td>
@@ -40,6 +40,10 @@ function Cars() {
             )}
         </div>
     )
-}
+
+
+  
+  }
+
 
 export default Cars
