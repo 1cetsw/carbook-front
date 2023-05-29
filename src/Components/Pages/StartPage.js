@@ -1,6 +1,6 @@
 import carbookLogo from '../../Assets/Images/carbook.png';
 import background from '../../Assets/Images/background_new.jpg'
-// import popper from 'popper';
+
 import React, { Component } from 'react';
 
 class StartPage extends Component {
@@ -51,14 +51,7 @@ class StartPage extends Component {
                 <footer className="py-5 bg-dark">
                     <div className="container"><p className="m-0 text-center text-white">Copyright &copy; Carbook Website Team 2023</p></div>
                 </footer>
-
-
-
-
-
             </div>
-
-
         )
     }
 }
