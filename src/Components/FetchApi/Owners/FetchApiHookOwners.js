@@ -5,7 +5,7 @@ function Owners() {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setLoading(true)
-        fetch("https://carbook-production.up.railway.app/owners")
+        fetch(global.config.HostApi+'/owners')
             .then(response => response.json())
             .then(json => setOwners(json))
             .finally(() => {

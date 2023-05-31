@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 const RegistrationWorkshop = () => {
   const [workshopName, setWorkshopName] = useState('');
   const [workshopOwner, setWorkshopOwner] = useState('');
@@ -27,7 +28,7 @@ const RegistrationWorkshop = () => {
 
 
     // Wysyłanie danych na serwer
-    axios.post('https://carbook-production.up.railway.app/api/add-workshop', data)
+    axios.post(global.config.HostApi+'/api/add-workshop', data)
       .then(response => {
         console.log('Odpowiedź z serwera:', response.data);
       })

@@ -21,7 +21,7 @@ const RegistrationOwner = () => {
     };
 
     // Wysyłanie danych na serwer
-    axios.post('https://carbook-production.up.railway.app/api/add-owner', data)
+    axios.post(global.config.HostApi+'/api/add-owner', data)
       .then(response => {
         console.log('Odpowiedź z serwera:', response.data);
       })

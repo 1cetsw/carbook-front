@@ -18,8 +18,9 @@ const RegistrationCar = () => {
   
     };
 
+   
     // Wysyłanie danych na serwer
-    axios.post('https://carbook-production.up.railway.app/api/add-car', data)
+    axios.post(global.config.HostApi+'/api/add-car', data)
       .then(response => {
         console.log('Odpowiedź z serwera:', response.data);
       })
@@ -27,6 +28,7 @@ const RegistrationCar = () => {
         console.error('Błąd:', error);
       });
   };
+
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -38,7 +40,7 @@ const RegistrationCar = () => {
       <input type="text" className="form-input" placeholder="Model" id="model" value={model} onChange={e => setModel(e.target.value)} />
       <br />
       
-      <input type="text" className="form-input" placeholder="Production Date" id="prductionDate" value={productionDate} onChange={e => setProductionDate(e.target.value)} />
+      <input type="text" className="form-input" placeholder="Production Date" id="productionDate" value={productionDate} onChange={e => setProductionDate(e.target.value)} />
       <br />
       
      

@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+
+
 
 function Workshops() {
+    
     const [Workshops, setWorkshops] = useState([])
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setLoading(true)
-        fetch("https://carbook-production.up.railway.app/workshops")
+        fetch(global.config.HostApi+'/workshops')
             .then(response => response.json())
             .then(json => setWorkshops(json))
             .finally(() => {
