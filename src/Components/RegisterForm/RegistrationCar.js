@@ -40,7 +40,7 @@ const RegistrationCar = () => {
       <input type="text" className="form-input" placeholder="Model" id="model" value={model} onChange={e => setModel(e.target.value)} />
       <br />
       
-      <input type="text" className="form-input" placeholder="Production Date" id="productionDate" value={productionDate} onChange={e => setProductionDate(e.target.value)} />
+      <input type="date" className="form-input" placeholder="Production Date" id="productionDate" value={productionDate} onChange={e => setProductionDate(e.target.value)} />
       <br />
       
      
