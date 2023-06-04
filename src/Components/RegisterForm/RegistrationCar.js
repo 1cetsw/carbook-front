@@ -21,13 +21,13 @@ const RegistrationCar = () => {
    
     // Wysyłanie danych na serwer
     axios.post(global.config.HostApi+'/api/add-car', data)
-      .then(response => {
-        console.log('Odpowiedź z serwera:', response.data);
-      })
+      .then(response => window.location = global.config.HostFront + response.data)
       .catch(error => {
         console.error('Błąd:', error);
       });
   };
+
+
 
 
   return (
