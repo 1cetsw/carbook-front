@@ -10,31 +10,6 @@ class StartPage extends Component {
 
             <div>
 
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-
-                    <div className="container">
-                        <div style={{ width: 40, height: 40 }}>
-                            <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
-                        </div>
-                        <a className="navbar-brand" href='/test'>CarBook</a>
-
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                            className="navbar-toggler-icon"></span></button>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                                <li className="nav-item"><a className="nav-link" href="/api/add-owner">Register Solo Client</a></li>
-                                <li className="nav-item"><a className="nav-link" href="/api/add-workshop">Register Company Client</a></li>
-                                <li className="nav-item"><a className="nav-link" href="/about/">About</a></li>
-                                <li className="nav-item"><a className="nav-link" href="/contact/">Contact</a></li>
-                                <li className="nav-item"><a className="nav-link" href="/search">Search</a></li>
-                                <li className="nav-item"><a className="nav-link active" aria-current="page" href="/">Home</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
                 <header className="py-5 bg-image-full" style={{
                     backgroundImage: `url(${background})`,
                     backgroundRepeat: "no-repeat",

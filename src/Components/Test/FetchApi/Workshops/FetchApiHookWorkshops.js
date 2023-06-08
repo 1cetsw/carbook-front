@@ -8,7 +8,7 @@ function Workshops() {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setLoading(true)
-        fetch(global.config.HostApi+'/workshops')
+        fetch(global.config.HostApi+'/api/carbook/workshops')
             .then(response => response.json())
             .then(json => setWorkshops(json))
             .finally(() => {

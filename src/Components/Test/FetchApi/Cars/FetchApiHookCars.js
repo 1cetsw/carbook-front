@@ -5,7 +5,7 @@ function Cars() {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setLoading(true)
-        fetch(global.config.HostApi+'/cars')
+        fetch(global.config.HostApi+'/api/carbook/cars')
             .then(response => response.json())
             .then(json => setCars(json))
             .finally(() => {

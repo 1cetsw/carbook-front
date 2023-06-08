@@ -1,5 +1,5 @@
-
 import background from '../../Assets/Images/background_new.jpg'
+
 const NotFound = () => (
     
     <div>
@@ -19,8 +19,7 @@ const NotFound = () => (
             </div>
         </div>
 
-
-    </div>
+        </div>
 )
 
 export default NotFound

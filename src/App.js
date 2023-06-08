@@ -1,18 +1,22 @@
 
+import "./Css/App.css";
 
+import RouterReact from "./Services/RouterReact";
+import NavBar from "./Components/NavBar";
 
+function  App()  {
+ 
 
-import RouterReact from './Components/Router/RouterReact'
-function App() {
   return (
+  
     <div className="App">
-       
-      
-      <RouterReact/>
+
+
+     <NavBar />
+     <RouterReact />
      
-      
     </div>
   );
-}
+};
 
 export default App;
