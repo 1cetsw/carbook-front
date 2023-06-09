@@ -8,7 +8,7 @@ import Profile from "../Components/Profile/Profile";
 import BoardModerator from "../Components/Profile/BoardWorkshop";
 import BoardAdmin from "../Components/Profile/BoardAdmin";
 import BoardUser from "../Components/Profile/BoardUser";
-
+import Test from "../Components/Test/Test";
 import Cars from '../Components/Test/FetchApi/Cars/FetchApiHookCars';
 import Owners from '../Components/Test/FetchApi/Owners/FetchApiHookOwners';
 import Workshops from '../Components/Test/FetchApi/Workshops/FetchApiHookWorkshops';
@@ -19,7 +19,7 @@ import About from "../Components/Pages/About";
 import NotFound from '../Components/Pages/NotFound';
 
 const RouterReact = () => (
-
+  
   <Routes>
     <Route path={"/"} element={<Home />} />
 
@@ -27,11 +27,11 @@ const RouterReact = () => (
     <Route path="/register" element={<Register />} />
     <Route path="/profile" element={<Profile />} />
     <Route path="/user" element={<BoardUser />} />
-    <Route path="/mod" element={<BoardModerator />} />
+    <Route path="/workshop" element={<BoardModerator />} />
     <Route path="/admin" element={<BoardAdmin />} />
     <Route path="/about" element={<About />} />
     <Route path="/notfound" element={<NotFound />} />
-    
+    <Route path="/test" element={<Test />} />
     
     <Route path="/add-car" element={<RegistrationCar />} />
     <Route path="/cars" element={<Cars />} />
@@ -45,7 +45,8 @@ const RouterReact = () => (
 
 
   </Routes>
-
+  
+  
 )
 
 export default RouterReact

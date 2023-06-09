@@ -5,7 +5,7 @@ import "../Css/App.css";
 import carbookLogo from '../Assets/Images/carbook.png';
 
 import AuthService from "../Services/Auth.service";
-// import AuthVerify from "./common/AuthVerify";
+// import AuthVerify from "../Common/AuthVerify";
 import EventBus from "../Common/EventBus";
 
 
@@ -44,18 +44,17 @@ function  NavBar()  {
     <div className="App">
        
       <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <Link to={"/"} className="navbar-brand">
       <div style={{ width: 40, height: 40 }}>
                             <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
                         </div>
-                       
-        <Link to={"/"} className="navbar-brand">
-          CARBOOK
+         
         </Link>
         <div className="navbar-nav mr-auto">
           
           {showWorkshopBoard && (
             <li className="nav-item">
-              <Link to={"/mod"} className="nav-link">
+              <Link to={"/workshop"} className="nav-link">
                 Workshop Board
               </Link>
             </li>
@@ -110,8 +109,8 @@ function  NavBar()  {
 
       
 
-      {/* <AuthVerify logOut={logOut}/> */}
-    
+      {/* <AuthVerify logOut={logOut}/>
+     */}
     
     </div></div>
   );

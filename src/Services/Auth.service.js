@@ -10,13 +10,7 @@ const register = (username, email, password) => {
     password,
   });
 };
-const registerCar = (carbrand, carmodel, VIN )=> {
-  return axios.post(API_URL + "add-car", {
-    carbrand, 
-    carmodel, 
-    VIN 
-  });
-};
+
 
 const login = (username, password) => {
   return axios
@@ -49,7 +43,7 @@ const AuthService = {
   login,
   logout,
   getCurrentUser,
-  registerCar
+ 
 }
 
 export default AuthService;
