@@ -1,28 +1,21 @@
 {
-  "name": "carbook",
-  "version": "1.0.0",
+  "name": "carbook-front",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-   
-    "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
-    "lodash.template": "^4.5.0",
-    "mixin-deep": "^2.0.1",
-    "node-sass": "^4.12.0",
-    "popper.js": "^1.15.0",
-    "react-scripts": "^3.2.0",
-    "set-value": "^3.0.1",
-    "chart.js": "^3.9.1",
-    "classnames": "^2.3.2",
-    "core-js": "^3.29.0",
-    "prop-types": "^15.8.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "jquery": "^3.7.0",
     "react": "^18.2.0",
-    "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.5",
-    "react-router-dom": "^6.8.2",
-    "redux": "4.2.1",
-    "simplebar-react": "^2.4.3"
+    "react-router-dom": "^6.13.0",
+    "react-scripts": "5.0.1",
+    "react-validation": "^3.0.7",
+    "validator": "^13.9.0",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,7 +24,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -44,9 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "react-redux": "^7.0.3",
-    "redux": "^4.0.1"
   }
 }
