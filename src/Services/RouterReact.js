@@ -17,6 +17,7 @@ import RegistrationOwner from '../Components/Test/RegisterForm/RegistrationOwner
 import RegistrationWorkshop from '../Components/Test/RegisterForm/RegistrationWorkshop';
 import About from "../Components/Pages/About";
 import NotFound from '../Components/Pages/NotFound';
+import Dashboard from '../Components/Profile/Dashboard';
 
 const RouterReact = () => (
   
@@ -32,6 +33,7 @@ const RouterReact = () => (
     <Route path="/about" element={<About />} />
     <Route path="/notfound" element={<NotFound />} />
     <Route path="/test" element={<Test />} />
+    <Route path="/dashboard" element={<Dashboard />} />
     
     <Route path="/add-car" element={<RegistrationCar />} />
     <Route path="/cars" element={<Cars />} />
