@@ -40,12 +40,12 @@ function  NavBar()  {
   };
 
   return (
-  <div className="container"> 
+  <div className="container-fluid px-0"> 
     <div className="App">
        
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <nav className="navbar navbar-expand navbar-dark bg-dark px-4">
       <Link to={"/"} className="navbar-brand">
-      <div style={{ width: 40, height: 40 }}>
+      <div style={{ width: 50, height: 50 }}>
                             <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
                         </div>
          
@@ -62,7 +62,7 @@ function  NavBar()  {
 
           {showAdminBoard && (
             <li className="nav-item">
-              <Link to={"/admin"} className="nav-link">
+              <Link to={"/adminboard"} className="nav-link">
                 Admin Board
               </Link>
             </li>
@@ -91,14 +91,14 @@ function  NavBar()  {
             </li>
           </div>
         ) : (
-          <div className="navbar-nav ml-auto">
+          <div className="navbar-nav ml-auto float-sm-start">
             <li className="nav-item">
               <Link to={"/login"} className="nav-link">
                 Login
               </Link>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item float-sm-start">
               <Link to={"/register"} className="nav-link">
                 Sign Up
               </Link>
