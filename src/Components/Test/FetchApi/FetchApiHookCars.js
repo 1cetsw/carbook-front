@@ -5,7 +5,7 @@ const FetchApiHookCars = () => {
 
   useEffect(() => {
     // Fetch data from the server
-    fetch(global.config.HostFront + '/api/carbook/cars')
+    fetch(global.config.HostFront+'/api/carbook/cars')
       .then(response => response.json())
       .then(data => {
         setCars(data);
@@ -20,7 +20,7 @@ const FetchApiHookCars = () => {
         {cars.map(car => (
           <div className="col-md-4" key={car.id}>
             <div className="card mb-4">
-
+               
               <div className="card-body">
                 <h5 className="card-title">{`${car.brand} ${car.model}`}</h5>
                 <p className="card-text">{car.vin}</p>

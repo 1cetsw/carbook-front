@@ -9,8 +9,8 @@ const Test = () => (
 <a href="/add-car" class="button button2">ADD CAR</a>
 <a href="/cars" class="button button2">SHOW CARS</a>
 <br/>
-<a href="/add-owner" class="button button2">ADD OWNER</a>
-<a href="/owners" class="button button2">SHOW OWNERS</a>
+<a href="/register" class="button button2">ADD USER</a>
+<a href="/users" class="button button2">SHOW USERS</a>
 <br/>
 <a href="/add-workshop" class="button button2">ADD WORKSHOP</a>
 <a href="/workshops" class="button button2">SHOW WORKSHOP</a>
