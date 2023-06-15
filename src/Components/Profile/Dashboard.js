@@ -1,16 +1,13 @@
-import React from 'react'
+import React from 'react';
+import CarTiles from './CarTiles';
+const Dashboard=()=>{
+ return (
+    <div>
+      
+      <CarTiles />
+    </div>
+  );
 
+ }
 
-
-
-const Dashboard = () => {
- 
-
-  return (
-  <div> 
-    <h1>Dashboard</h1>
-  </div>
-  )}
-
-
-export default Dashboard
+export default Dashboard;
