@@ -13,7 +13,7 @@ import Cars from '../Components/Test/FetchApi/FetchApiHookCars';
 import Users from '../Components/Test/FetchApi/FetchApiHookUsers';
 import Workshops from '../Components/Test/FetchApi/FetchApiHookWorkshops';
 import RegistrationCar from '../Components/Test/RegisterForm/RegistrationCar';
-
+import NewCarForm from '../Components/Profile/NewCarForm';
 import About from "../Components/Pages/About";
 import NotFound from '../Components/Pages/NotFound';
 import Dashboard from '../Components/Profile/Dashboard';
@@ -33,7 +33,7 @@ const RouterReact = () => (
     <Route path="/notfound" element={<NotFound />} />
    
     <Route path="/dashboard" element={<Dashboard />} />
-    
+    <Route path="/new-car-form" element={<NewCarForm />} />
     <Route path="/add-car" element={<RegistrationCar />} />
     <Route path="/cars" element={<Cars />} />
 

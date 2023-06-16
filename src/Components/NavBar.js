@@ -9,7 +9,7 @@ import AuthService from "../Services/Auth.service";
 import EventBus from "../Common/EventBus";
 
 
-function  NavBar()  {
+function NavBar() {
   const [showWorkshopBoard, setShowWorkshopBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -40,79 +40,86 @@ function  NavBar()  {
   };
 
   return (
-  <div className="container-fluid px-0"> 
-    <div className="App">
-       
-      <nav className="navbar navbar-expand navbar-dark bg-dark px-4">
-      <Link to={"/"} className="navbar-brand">
-      <div style={{ width: 50, height: 50 }}>
-                            <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
-                        </div>
-         
-        </Link>
-        <div className="navbar-nav mr-auto">
+    <div className="container-fluid px-0">
+      <div className="App">
+
+        <nav className="navbar navbar-expand navbar-dark bg-dark px-4">
+          <Link to={"/"} className="navbar-brand">
+            <div style={{ width: 50, height: 50 }}>
+              <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
+            </div>
+
+          </Link>
+          <div className="navbar-nav mr-auto">
+
+            {showWorkshopBoard && (
+              <li className="nav-item">
+                <Link to={"/workshop"} className="nav-link">
+                  Workshop Board
+                </Link>
+              </li>
+            )}
+
+            {showAdminBoard && (
+              <li className="nav-item">
+                <Link to={"/adminboard"} className="nav-link">
+                  Admin Board
+                </Link>
+              </li>
+            )}
+
+            {currentUser && (
+              <li className="nav-item">
+                <Link to={"/user"} className="nav-link">
+                  User
+                </Link>
+              </li>
+            )}
+
+            <li className="nav-item">
+              <Link to={"/dashboard"} className="nav-link">
+                Dashboard
+              </Link>
+            </li>
+          </div>
           
-          {showWorkshopBoard && (
-            <li className="nav-item">
-              <Link to={"/workshop"} className="nav-link">
-                Workshop Board
-              </Link>
-            </li>
+          {currentUser ? (
+            <div className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link to={"/profile"} className="nav-link">
+                  {currentUser.username}
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <a href="/login" className="nav-link" onClick={logOut}>
+                  LogOut
+                </a>
+              </li>
+            </div>
+          ) : (
+            <div className="navbar-nav ml-auto float-sm-start">
+              <li className="nav-item">
+                <Link to={"/login"} className="nav-link">
+                  Login
+                </Link>
+              </li>
+
+              <li className="nav-item float-sm-start">
+                <Link to={"/register"} className="nav-link">
+                  Sign Up
+                </Link>
+              </li>
+            </div>
           )}
+        </nav>
 
-          {showAdminBoard && (
-            <li className="nav-item">
-              <Link to={"/adminboard"} className="nav-link">
-                Admin Board
-              </Link>
-            </li>
-          )}
 
-          {currentUser && (
-            <li className="nav-item">
-              <Link to={"/user"} className="nav-link">
-                User
-              </Link>
-            </li>
-          )}
-        </div>
 
-        {currentUser ? (
-          <div className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to={"/profile"} className="nav-link">
-                {currentUser.username}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a href="/login" className="nav-link" onClick={logOut}>
-                LogOut
-              </a>
-            </li>
-          </div>
-        ) : (
-          <div className="navbar-nav ml-auto float-sm-start">
-            <li className="nav-item">
-              <Link to={"/login"} className="nav-link">
-                Login
-              </Link>
-            </li>
-
-            <li className="nav-item float-sm-start">
-              <Link to={"/register"} className="nav-link">
-                Sign Up
-              </Link>
-            </li>
-          </div>
-        )}
-      </nav>
-
-      
-
-      {/* <AuthVerify logOut={logOut}/>
+        {/* <AuthVerify logOut={logOut}/>
      */}
-    
-    </div></div>
+
+      </div></div>
   );
 };
 

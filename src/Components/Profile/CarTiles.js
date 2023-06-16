@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import CarTile from './CarTile';
+import NewCarTile from './NewCarTile';
+import { Link } from 'react-router-dom';
 
 const FetchApiHookCars = () => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
     // Fetch data from the server
-    fetch(global.config.HostFront + '/api/carbook/cars')
+    fetch(global.config.HostFront + '/api/cars')
       .then(response => response.json())
       .then(data => {
         setCars(data);
@@ -17,17 +20,10 @@ const FetchApiHookCars = () => {
   return (
     <div className="container">
       <div className="row">
-        {cars.map(car => (
-          <div className="col-md-4" key={car.id}>
-            <div className="card mb-4">
-
-              <div className="card-body">
-                <h5 className="card-title">{`${car.brand} ${car.model}`}</h5>
-                <p className="card-text">{car.vin}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+        {cars.map((car) => <CarTile car={car} />)}
+        <Link to={"/new-car-form"}>
+          <NewCarTile />
+        </Link>
       </div>
     </div>
   );
