@@ -6,7 +6,7 @@ const Test = () => (
 <div >
     <h1><a href="/">CARBOOK APP ADMIN TEST PAGE</a></h1>
 
-<a href="/add-car" class="button button2">ADD CAR</a>
+<a href="/new-car-form" class="button button2">ADD CAR</a>
 <a href="/cars" class="button button2">SHOW CARS</a>
 <br/>
 <a href="/register" class="button button2">ADD USER</a>

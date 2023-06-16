@@ -1,5 +1,3 @@
-import React, { Component } from 'react'
-
 const CarTile = (props) => {
     return (
         <div className="col-md-4" key={props.car.id}>

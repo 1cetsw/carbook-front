@@ -1,5 +1,3 @@
-import React, { Component } from 'react'
-
 const NewCarTile = () => {
     return (
         <div className="col-md-4">
