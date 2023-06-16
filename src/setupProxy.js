@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/api",
     createProxyMiddleware({
-      target: "https://carbook-front-production.up.railway.app",
+      target: "https://carbook-api.up.railway.app",
       changeOrigin: true,
     })
   );
