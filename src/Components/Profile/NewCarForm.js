@@ -73,26 +73,6 @@ const NewCarForm = () => {
         </div>
     );
     };
-    //   return (
-    //     <form onSubmit={handleSubmit}>
-    //       <label>
-    //         Name:
-    //         <input type="text" name="brand" value={formData.brand} onChange={handleChange} />
-    //       </label>
-    //       <br />
-    //       <label>
-    //         Email:
-    //         <input type="text" name="model" value={formData.model} onChange={handleChange} />
-    //       </label>
-    //       <br />
-    //       <label>
-    //         VIN:
-    //         <input type="text" name="vin" value={formData.vin} onChange={handleChange} />
-    //       </label>
-    //       <br />
-    //       <button type="submit">Submit</button>
-    //     </form>
-    //   );
-    // };
 
     export default NewCarForm;
+    

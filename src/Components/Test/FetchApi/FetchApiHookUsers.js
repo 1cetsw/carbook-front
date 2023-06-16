@@ -21,7 +21,6 @@ const FetchApiHookUsers = () => {
         {users.map(user => (
           <div className="col-md-4" key={user.id}>
             <div className="card mb-4">
-
               <div className="card-body">
                 <h5 className="card-title">{user.username}</h5>
                 <p className="card-text">{user.email}</p>
