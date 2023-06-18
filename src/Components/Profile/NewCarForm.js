@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import AuthService from "../../Services/Auth.service";
+
 
 const NewCarForm = () => {
+    const currentUser = AuthService.getCurrentUser();
     const [formData, setFormData] = useState({
         brand: '',
         model: '',
         vin: '',
-        userId: '008df606-01dc-4b1b-83b1-2d101d97f0ea'
+        userId: currentUser.id
     });
 
     const handleChange = (e) => {
