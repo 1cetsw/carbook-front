@@ -4,9 +4,9 @@ import CarTiles from './CarTiles';
 const Dashboard = () => {
   return (
     <div>
-
+      
       <CarTiles />
-
+      
     </div>
   );
 
