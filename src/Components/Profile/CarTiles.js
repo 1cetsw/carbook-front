@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import CarTile from './CarTile';
 import NewCarTile from './NewCarTile';
+import AuthService from "../../Services/Auth.service";
 
 
 const FetchApiHookCars = () => {
+  const currentUser = AuthService.getCurrentUser();
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
     // Fetch data from the server
-    fetch(global.config.HostFront + '/api/cars')
+    fetch(global.config.HostFront + '/api/cars/' + currentUser.id)
       .then(response => response.json())
       .then(data => {
         setCars(data);
