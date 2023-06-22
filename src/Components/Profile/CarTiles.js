@@ -10,7 +10,7 @@ const FetchApiHookCars = () => {
 
   useEffect(() => {
     // Fetch data from the server
-    fetch(global.config.HostFront + '/api/cars/' + currentUser.id)
+    fetch(global.config.HostFront + '/api/cars/user/' + currentUser.id)
       .then(response => response.json())
       .then(data => {
         setCars(data);
