@@ -14,6 +14,7 @@ import NewCarForm from '../Components/Profile/NewCarForm';
 import About from "../Components/Pages/About";
 import NotFound from '../Components/Pages/NotFound';
 import Dashboard from '../Components/Profile/Dashboard';
+import CarDetails from "../Components/Profile/CarDetails";
 
 const RouterReact = () => (
   
@@ -32,7 +33,7 @@ const RouterReact = () => (
     <Route path="/cars" element={<Cars />} />
     <Route path="/users" element={<Users />} />
     <Route path="/workshops" element={<Workshops />} />
-
+    <Route path="/car-details" element={<CarDetails />} />
 
   </Routes>
   
