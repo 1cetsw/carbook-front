@@ -4,7 +4,7 @@ import NewCarTile from './NewCarTile';
 import AuthService from "../../Services/Auth.service";
 
 
-const FetchApiHookCars = () => {
+const CarTiles = () => {
   
   const [cars, setCars] = useState([]);
 
@@ -25,7 +25,7 @@ const FetchApiHookCars = () => {
       
       <div className="row">
      
-         {cars.map((car) => <CarTile car={car}  />)}
+         {cars.map((car) => <CarTile car={car} key={car.id} />)}
    
           <NewCarTile />
         
@@ -34,4 +34,4 @@ const FetchApiHookCars = () => {
   );
 };
 
-export default FetchApiHookCars;
+export default CarTiles;

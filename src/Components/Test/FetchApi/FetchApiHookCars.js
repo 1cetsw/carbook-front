@@ -20,7 +20,6 @@ const FetchApiHookCars = () => {
         {cars.map(car => (
           <div className="col-md-4" key={car.id}>
             <div className="card mb-4">
-               
               <div className="card-body">
                 <h5 className="card-title">{`${car.brand} ${car.model}`}</h5>
                 <p className="card-text">{car.vin}</p>
