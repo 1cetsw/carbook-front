@@ -5,10 +5,11 @@ import AuthService from "../../Services/Auth.service";
 
 
 const FetchApiHookCars = () => {
-  const currentUser = AuthService.getCurrentUser();
+  
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
+    const currentUser = AuthService.getCurrentUser();
     // Fetch data from the server
     fetch(global.config.HostFront + '/api/cars/user/' + currentUser.id)
       .then(response => response.json())
@@ -23,8 +24,8 @@ const FetchApiHookCars = () => {
     <div className="container">
       
       <div className="row">
-      
-        {cars.map((car) => <CarTile car={car}  />)}
+     
+         {cars.map((car) => <CarTile car={car}  />)}
    
           <NewCarTile />
         
