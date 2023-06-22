@@ -75,6 +75,13 @@ function NavBar() {
                 </Link>
               </li>
             )}
+            {currentUser && (
+              <li className="nav-item">
+                <Link to={"/dashboard"} className="nav-link">
+                  Dashboard
+                </Link>
+              </li>
+            )}
 
            
           </div>
