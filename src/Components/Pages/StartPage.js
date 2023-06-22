@@ -1,11 +1,10 @@
 import carbookLogo from '../../Assets/Images/carbook.png';
 import background from '../../Assets/Images/background_new.jpg'
 
-import React, { Component } from 'react';
 
-class StartPage extends Component {
+const StartPage = () => {
 
-    render() {
+    
         return (
 
             <div>
@@ -29,6 +28,6 @@ class StartPage extends Component {
             </div>
         )
     }
-}
+
 export default StartPage;
 
