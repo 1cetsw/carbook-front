@@ -2,8 +2,10 @@ import React from "react";
 
 const NewCarTile = () => {
     return (
-        <div className="col-md-4">
-            <div className="card mb-4">
+        <div className="container">
+      
+        <div className="col-md-2">
+            <div className="card mb-2">
                 <div className="card-body">
                     <a href="/new-car-form">
                         <img
@@ -15,7 +17,7 @@ const NewCarTile = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </div> </div>
 
     )
 }

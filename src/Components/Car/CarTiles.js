@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import CarTile from './CarTile';
-import NewCarTile from './NewCarTile';
+import NewCarTile from '../Car/NewCarTile';
 import AuthService from "../../Services/Auth.service";
 
 
 const CarTiles = () => {
-  
+
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
@@ -22,13 +22,13 @@ const CarTiles = () => {
   }, []);
   return (
     <div className="container">
-      
+<NewCarTile />
       <div className="row">
-     
-         {cars.map((car) => <CarTile car={car} key={car.id} />)}
-   
-          <NewCarTile />
         
+        {cars.map((car) => <CarTile car={car} key={car.id} />)}
+
+
+
       </div>
     </div>
   );

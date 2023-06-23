@@ -10,14 +10,17 @@ import BoardUser from "../Components/Profile/BoardUser";
 import Cars from '../Components/Test/FetchApi/FetchApiHookCars';
 import Users from '../Components/Test/FetchApi/FetchApiHookUsers';
 import Workshops from '../Components/Test/FetchApi/FetchApiHookWorkshops';
-import NewCarForm from '../Components/Profile/NewCarForm';
+import NewCarForm from '../Components/Car/NewCarForm';
 import About from "../Components/Pages/About";
 import NotFound from '../Components/Pages/NotFound';
 import Dashboard from '../Components/Profile/Dashboard';
-import CarDetails from "../Components/Profile/CarDetails";
+import CarDetails from "../Components/Car/CarDetails";
+import ShowHistory from "../Components/Car/ShowHistory";
+import LastService from "../Components/Car/LastService";
+
 
 const RouterReact = () => (
-  
+
   <Routes>
     <Route path={"/"} element={<Home />} />
     <Route path="/login" element={<Login />} />
@@ -34,10 +37,11 @@ const RouterReact = () => (
     <Route path="/users" element={<Users />} />
     <Route path="/workshops" element={<Workshops />} />
     <Route path="/car-details" element={<CarDetails />} />
-
+    <Route path="/car-history" element={<ShowHistory />} />
+    <Route path="/last-service" element={<LastService />} />
   </Routes>
-  
-  
+
+
 )
 
 export default RouterReact

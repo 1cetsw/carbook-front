@@ -1,5 +1,5 @@
 import React from 'react';
-import CarTiles from './CarTiles';
+import CarTiles from '../Car/CarTiles';
 
 const Dashboard = () => {
   return (
