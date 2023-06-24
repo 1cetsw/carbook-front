@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from "react";
-import { useLocation } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
-const CarDetails = () => {
+const CarDetails = (props) => {
     const location = useLocation();
     const carId = location.state.carId;
     const [car, setCar] = useState([]);
@@ -46,10 +46,10 @@ const CarDetails = () => {
           <div className="col-md-3" >
               <div className="card mb-3 shadow">
                   <div className="card-body ">
-                      <a href="/addService">
+                      <Link to={"/addService"}  >
                           <img src="https://e7.pngegg.com/pngimages/935/194/png-clipart-car-motor-oil-motor-vehicle-service-automobile-repair-shop-car-car-motorcycle.png" className="card-img-top"
                                alt="cos"/>
-                          <h5>Exploitation service</h5></a>
+                          <h5>Exploitation service</h5></Link>
                   </div>
               </div>
           </div>
