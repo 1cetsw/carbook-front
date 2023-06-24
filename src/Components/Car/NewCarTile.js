@@ -5,7 +5,7 @@ const NewCarTile = () => {
         <div className="container">
       
         <div className="col-md-2">
-            <div className="card mb-2">
+            <div className="card shadow mb-2">
                 <div className="card-body">
                     <a href="/new-car-form">
                         <img

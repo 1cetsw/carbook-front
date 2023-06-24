@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const CarTile = (props) => {
     return (
         <div className="col-md-4" key={props.car.id}>
-            <div className="card mb-4">
+            <div className="card shadow mb-4">
                 <div className="card-body">
                     <Link to="/car-details" state={{carId: props.car.id}}>
                         <img src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png" className="card-img-top"
