@@ -3,7 +3,7 @@ import axios from 'axios';
 import AuthService from "../../Services/Auth.service";
 
 
-const NewRepair = () => {
+const NewOtherFixForm = () => {
     const currentUser = AuthService.getCurrentUser();
     const [formData, setFormData] = useState({
         category: '',
@@ -70,4 +70,4 @@ const NewRepair = () => {
     );
 };
 
-export default NewRepair;
+export default NewOtherFixForm;

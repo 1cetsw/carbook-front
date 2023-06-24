@@ -46,10 +46,21 @@ const CarDetails = () => {
           <div className="col-md-3" >
               <div className="card mb-3 shadow">
                   <div className="card-body ">
-                      <a href="/add-repair">
+                      <a href="/addService">
+                          <img src="https://e7.pngegg.com/pngimages/935/194/png-clipart-car-motor-oil-motor-vehicle-service-automobile-repair-shop-car-car-motorcycle.png" className="card-img-top"
+                               alt="cos"/>
+                          <h5>Exploitation service</h5></a>
+                  </div>
+              </div>
+          </div>
+
+          <div className="col-md-3" >
+              <div className="card mb-3 shadow">
+                  <div className="card-body ">
+                      <a href="/add-single-fix">
                           <img src="https://cdn-icons-png.flaticon.com/512/226/226537.png" className="card-img-top"
                                alt="cos"/>
-                          <h5>Add New Repair</h5></a>
+                          <h5>Add Single Fix</h5></a>
                   </div>
               </div>
           </div>
