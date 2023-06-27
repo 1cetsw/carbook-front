@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import AuthService from "../../Services/Auth.service";
-
+import carOptions  from "../../Common/CarLogosLink";
+import carList from "../../Common/CarList";
 
 const NewCarForm = () => {
     const currentUser = AuthService.getCurrentUser();
-    const [formData, setFormData] = useState({
+    const [carData, setCarData] = useState({
         brand: '',
         model: '',
         vin: '',
@@ -13,12 +14,12 @@ const NewCarForm = () => {
     });
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        setCarData({ ...carData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(global.config.HostFront + '/api/cars', formData)
+        axios.post(global.config.HostFront + '/api/cars', carData)
             .then(response => {
                 // Handle success
                 console.log(response);
@@ -30,58 +31,66 @@ const NewCarForm = () => {
             });
     };
 
+
+
     return (
         <div className="card shadow mb-4">
             <div className="card-header py-3">
-                <h6 className="m-0 font-weight-bold text-primary">Add new</h6>
+                <h6 className="m-0 font-weight-bold text-primary">Add new car</h6>
             </div>
             <div className="card-body">
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
+
+                        <div>
+                                opcja 1 piszemy kazde logo po kolei i dajemy logo jakie chcemy
+                                <div className="card-img-top">
+                                    {carData.brand && (
+                                        <img
+                                            src={carOptions.find((car) => car.brand === carData.brand)?.logo}
+                                            class="card-img-top"
+
+                                            alt="Logo samochodu"
+                                            style={{ width: '200px', height: 'auto' }}
+                                        />
+                                    )}
+                                </div>
+
+                        </div>
+                        <div>
+                                opcja 2 kradniemy ze strony carlogos, link generator zrobilem, minus taki ze logo narzucone z gory
+                            <div className="card-img-top">
+                                {carData.brand && (
+                                    <img
+                                          src={"https://www.carlogos.org/car-logos/"+carData.brand.toLowerCase()+"-logo.png"  }
+                                          class="card-img-top"
+                                          alt="Logo samochodu"
+                                          style={{ width: '200px', height: 'auto' }}
+                                    />
+                                )}
+                                <div className="card-body ">
+
+                                </div>
+                            </div>
+                        </div>
+
+
                         <label for="brand" htmlFor="brand">Brand: </label>
                         <select
                             id="brand"
                             name="brand"
-                            value={formData.brand}
+                            value={carData.brand}
                             onChange={handleChange}
                         >
+                            <option value="">Select Brand</option>
+                            {carList.map((car) => (
+                                <option key={car.brand} value={car.brand}>
+                                    {car.brand}
+                                </option>
+                            ))}
 
-                            <optgroup label="German Cars">
-
-                                <option value="audi">Audi</option>
-                                <option value="bentley">Bentley</option>
-                                <option value="bugatti">Bugatti</option>
-                                <option value="bmw">BMW</option>
-                                <option value="porsche">Porsche</option>
-                                <option value="lamborghini">Lamborghini</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="mini">Mini</option>
-                                <option value="opel">Opel</option>
-                                <option value="porsche">Porsche</option>
-                                <option value="rollsroyce">Rolls-Royce</option>
-                                <option value="seat">Seat</option>
-                                <option value="skoda">Škoda</option>
-                                <option value="vw">Volkswagen</option>
-
-                            </optgroup>
-                            <optgroup label="Swedish Cars">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                            </optgroup>
-                            
-                            <optgroup label="Japan Cars">
-                                <option value="acura">Acura</option>
-                                <option value="daihatsu">Daihatsu</option>
-                                <option value="honda">Honda</option>
-                                <option value="infiniti">Infiniti</option>
-                                <option value="isuzu">Isuzu</option>
-                                <option value="lexus">Lexus</option>
-                                <option value="mazda">Mazda</option>
-                                <option value="mitsubishi">Mitsubishi</option>
-                                <option value="nissan">Nissan</option>
-                                <option value="subaru">Subaru</option>
-                            </optgroup>
                         </select>
+
                     </div>
                     <div className="form-group">
                         <label htmlFor="model">Model</label>
@@ -90,7 +99,7 @@ const NewCarForm = () => {
                             className="form-control"
                             name="model"
                             placeholder="Enter model name"
-                            value={formData.model}
+                            value={carData.model}
                             onChange={handleChange}
                         />
                     </div>
@@ -101,7 +110,7 @@ const NewCarForm = () => {
                             className="form-control"
                             name="vin"
                             placeholder="Enter VIN number"
-                            value={formData.vin}
+                            value={carData.vin}
                             onChange={handleChange}
                         />
                     </div>
@@ -112,7 +121,7 @@ const NewCarForm = () => {
                             className="form-control"
                             name="engine"
                             placeholder="Enter your engine size and code "
-                            value={formData.engine}
+                            value={carData.engine}
                             onChange={handleChange}
                         />
                     </div>
