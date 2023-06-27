@@ -28,7 +28,7 @@ const CarDetails = (props) => {
                     <div className="card-body">
 
                         <img
-                            src={"https://www.carlogos.org/car-logos/"+(car.brand).toLowerCase()+"-logo.png"  }
+                            src={"https://www.carlogos.org/car-logos/"+(car.brand)+"-logo.png"  }
                             className="card-img-top "
                             alt="Logo samochodu"
                             style={{width: '200px', height: 'auto', float:"left"}}
@@ -62,14 +62,14 @@ const CarDetails = (props) => {
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
                         <div className="card-body ">
-                            <Link to={"/addService"} state={{carId: car.id}}>
+                            <Link to={"/addService"} state={{carId: carId}}>
                                 <img
                                     src="https://e7.pngegg.com/pngimages/935/194/png-clipart-car-motor-oil-motor-vehicle-service-automobile-repair-shop-car-car-motorcycle.png"
                                     className="card-img-top"
                                     alt="cos"
                                     style={{ width: '200px', height: 'auto' }}
                                 />
-                                <h5>Exploitation service</h5></Link>
+                                <h5>Add Exploitation Service</h5></Link>
                         </div>
                     </div>
                 </div>
