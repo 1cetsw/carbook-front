@@ -26,14 +26,19 @@ const CarDetails = (props) => {
 
                 <div className="card shadow ">
                     <div className="card-body">
+                        <div>
+                            <div className="card-img-top">
+                                {car.brand && (
+                                    <img
+                                        src={"https://www.carlogos.org/car-logos/" + car.brand.toLowerCase() + "-logo.png"}
+                                        className="card-img-top"
+                                        alt="Logo samochodu"
+                                        style={{width: '200px', height: 'auto'}}
+                                    />
+                                )}
 
-                        <img
-                            src={"https://www.carlogos.org/car-logos/"+(car.brand)+"-logo.png"  }
-                            className="card-img-top "
-                            alt="Logo samochodu"
-                            style={{width: '200px', height: 'auto', float:"left"}}
-                        />
-
+                            </div>
+                        </div>
                     </div>
                     <h5 className="card-title"> carID: {car.id} </h5>
 
@@ -73,6 +78,9 @@ const CarDetails = (props) => {
                         </div>
                     </div>
                 </div>
+
+
+
 
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">

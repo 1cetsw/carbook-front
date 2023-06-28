@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import AuthService from "../../Services/Auth.service";
-import carOptions  from "../../Common/CarLogosLink";
+
 import carList from "../../Common/CarList";
 
 const NewCarForm = () => {
@@ -42,23 +42,9 @@ const NewCarForm = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
 
-                        <div>
-                                opcja 1 piszemy kazde logo po kolei i dajemy logo jakie chcemy
-                                <div className="card-img-top">
-                                    {carData.brand && (
-                                        <img
-                                            src={carOptions.find((car) => car.brand === carData.brand)?.logo}
-                                            class="card-img-top"
 
-                                            alt="Logo samochodu"
-                                            style={{ width: '200px', height: 'auto' }}
-                                        />
-                                    )}
-                                </div>
-
-                        </div>
                         <div>
-                                opcja 2 kradniemy ze strony carlogos, link generator zrobilem, minus taki ze logo narzucone z gory
+
                             <div className="card-img-top">
                                 {carData.brand && (
                                     <img
