@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Link, useLocation} from 'react-router-dom';
 
-const CarDetails = (props) => {
+const CarDetails = () => {
     const location = useLocation();
     const carId = location.state.carId;
     const [car, setCar] = useState([]);
@@ -48,7 +48,6 @@ const CarDetails = (props) => {
                     <h5 className="card-title"> Engine </h5>
                 </div>
 
-
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
                         <div className="card-body ">
@@ -74,7 +73,8 @@ const CarDetails = (props) => {
                                     alt="cos"
                                     style={{ width: '200px', height: 'auto' }}
                                 />
-                                <h5>Add Exploitation Service</h5></Link>
+                                <h5>Add Exploitation Service</h5>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -99,14 +99,15 @@ const CarDetails = (props) => {
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
                         <div className="card-body ">
-                            <a href="/car-history">
+                            <Link to={"/car-history"} state={{carId: carId}}>
                                 <img
                                     src="https://img.uxwing.com/wp-content/themes/uxwing/download/transportation-automotive/car-inspection-icon.svg"
                                     className="card-img-top"
                                     alt="cos"
                                     style={{ width: '200px', height: 'auto' }}
                                 />
-                                <h5>Show Car Repair History</h5></a>
+                                <h5>Show Car Repair History</h5>
+                            </Link>
                         </div>
                     </div>
                 </div>
