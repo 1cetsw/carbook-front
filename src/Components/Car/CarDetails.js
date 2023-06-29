@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Link, useLocation} from 'react-router-dom';
-import {Container, Alert} from 'react-bootstrap';
+import {Alert} from 'react-bootstrap';
 
 const CarDetails = () => {
     const location = useLocation();
