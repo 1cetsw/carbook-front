@@ -86,17 +86,19 @@ const CarDetails = () => {
                 <div className="col-md-4">
                     <div className=" card shadow">
                         {car.brand && (<img
-                                src={"https://www.carlogos.org/car-logos/" + car.brand.toLowerCase() + "-logo.png"}
-                                className="card-img-top"
-                                alt="Logo samochodu"
-                                style={{width: '200px', height: 'auto'}}
-                            />)}
+                            src={"https://www.carlogos.org/car-logos/" + car.brand.toLowerCase() + "-logo.png"}
+                            className="card-img-top"
+                            alt="Logo samochodu"
+                            style={{width: '200px', height: 'auto'}}
+                        />)}
                         <h5 className="card-title"> Brand: {car.brand} </h5>
                         <h5 className="card-title"> Model: {car.model}</h5>
                         <h5 className="card-title"> VIN: {car.vin}</h5>
                         <h5 className="card-title"> Engine </h5>
                     </div>
                 </div>
+
+                {/*Last Service Div*/}
 
                 <div className="col-md-4">
 
@@ -119,8 +121,6 @@ const CarDetails = () => {
                                     <h7
                                         style={{color: lastService.fuelFilterChange ? 'green' : 'red'}}> {lastService.fuelFilterChange ? 'Yes' : 'No'}</h7>
                                 </h6>
-
-
                             </div>
 
                         )}
@@ -129,8 +129,26 @@ const CarDetails = () => {
                         </Alert>
                     </div>
                 </div>
-            </div>
 
+                {/*Exploitation status*/}
+
+                <div className="col-md-4">
+                    <div className="card shadow">
+                        <h5>EXPLOITATION STATE:</h5>
+                        {car.servicesStatuses && (<div>
+                            <h6 className="card-title"> Oil Change: {car.servicesStatuses.lastOilChangeCourse} km/
+                                {formatDate(car.servicesStatuses.lastOilChangeDate)}</h6>
+                            <h6 className="card-title"> Air Filter Change: {car.servicesStatuses.lastAirFilterChangeCourse} km/
+                                {formatDate(car.servicesStatuses.lastAirFilterChangeDate)}</h6>
+                            <h6 className="card-title"> Fuel Filter Change: {car.servicesStatuses.lastFuelFilterChangeCourse} km/
+                                {formatDate(car.servicesStatuses.lastFuelFilterChangeDate)}</h6>
+                            <h6 className="card-title"> Cabin Filter Change: {car.servicesStatuses.lastCabinFilterChangeCourse} km/
+                                {formatDate(car.servicesStatuses.lastCabinFilterChangeDate)}</h6>
+                        </div>)}
+                    </div>
+                </div>
+
+            </div>
             <div className="row">
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
@@ -178,7 +196,8 @@ const CarDetails = () => {
                     </div>
                 </div>
             </div>
-        </div>)
+        </div>
+    )
 }
 
 export default CarDetails;
