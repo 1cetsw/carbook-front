@@ -18,7 +18,7 @@ const NewOtherFix = () => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(global.config.HostFront + '/api/cars/add-other-fix', formData)
+        axios.post(global.config.HostFront + '/api/cars/add-other-repair', formData)
             .then(response => {
                 // Handle success
                 console.log(response);

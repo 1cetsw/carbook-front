@@ -19,7 +19,7 @@ const NewCarForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(global.config.HostFront + '/api/cars', carData)
+        axios.post(global.config.HostFront + '/api/cars/add', carData)
             .then(response => {
                 // Handle success
                 console.log(response);

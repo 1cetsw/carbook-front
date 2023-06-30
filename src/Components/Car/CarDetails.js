@@ -23,7 +23,7 @@ const CarDetails = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(global.config.HostFront + '/api/cars/car-services/' + carId);
+                const response = await fetch(global.config.HostFront + '/api/cars/car-exploitation-repair/' + carId);
                 const data = await response.json();
                 // Sortuj dane według daty w kolejności malejącej
                 const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -94,6 +94,7 @@ const CarDetails = () => {
                         <h5 className="card-title"> Brand: {car.brand} </h5>
                         <h5 className="card-title"> Model: {car.model}</h5>
                         <h5 className="card-title"> VIN: {car.vin}</h5>
+                        <h5 className="card-title"> Course</h5>
                         <h5 className="card-title"> Engine </h5>
                     </div>
                 </div>
@@ -131,7 +132,7 @@ const CarDetails = () => {
                     </div>
                 </div>
 
-                {/*Exploitation status*/}
+                {/*Exploitation state*/}
 
                 <div className="col-md-4">
                     <div className="card shadow">

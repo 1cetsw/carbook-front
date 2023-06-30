@@ -11,7 +11,7 @@ const ShowHistory = () => {
 
     //Pobieranie danych json z serwera
     useEffect(() => {
-        fetch(global.config.HostFront + '/api/cars/car-services/' + carId)
+        fetch(global.config.HostFront + '/api/cars/car-exploitation-repair/' + carId)
             .then(response => response.json())
             .then(data => {
                 setServices(data);
