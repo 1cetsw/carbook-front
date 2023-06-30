@@ -104,7 +104,8 @@ const CarDetails = () => {
 
                     <div className="card shadow">
                         <h5>LAST SERVICE:</h5>
-                        {lastService && (<div>
+                        {lastService && (
+                            <div>
                                 <h6 className="card-title"> Course: {lastService.course} km</h6>
                                 <h6 className="card-title"> Data: {formatDate(lastService.date)}</h6>
                                 <h6 className="card-title"> Oil Change:
@@ -135,16 +136,25 @@ const CarDetails = () => {
                 <div className="col-md-4">
                     <div className="card shadow">
                         <h5>EXPLOITATION STATE:</h5>
-                        {car.servicesStatuses && (<div>
-                            <h6 className="card-title"> Oil Change: {car.servicesStatuses.lastOilChangeCourse} km/
-                                {formatDate(car.servicesStatuses.lastOilChangeDate)}</h6>
-                            <h6 className="card-title"> Air Filter Change: {car.servicesStatuses.lastAirFilterChangeCourse} km/
-                                {formatDate(car.servicesStatuses.lastAirFilterChangeDate)}</h6>
-                            <h6 className="card-title"> Fuel Filter Change: {car.servicesStatuses.lastFuelFilterChangeCourse} km/
-                                {formatDate(car.servicesStatuses.lastFuelFilterChangeDate)}</h6>
-                            <h6 className="card-title"> Cabin Filter Change: {car.servicesStatuses.lastCabinFilterChangeCourse} km/
-                                {formatDate(car.servicesStatuses.lastCabinFilterChangeDate)}</h6>
-                        </div>)}
+                        {car.exploitationState && (
+                            <div>
+                                <h6 className="card-title"> Oil Change: {car.exploitationState.lastOilChangeCourse} km/
+                                    {formatDate(car.exploitationState.lastOilChangeDate)}</h6>
+
+                                <h6 className="card-title"> Air Filter
+                                    Change: {car.exploitationState.lastAirFilterChangeCourse} km/
+                                    {formatDate(car.exploitationState.lastAirFilterChangeDate)}</h6>
+
+                                <h6 className="card-title"> Fuel Filter
+                                    Change: {car.exploitationState.lastFuelFilterChangeCourse} km/
+                                    {formatDate(car.exploitationState.lastFuelFilterChangeDate)}</h6>
+
+                                <h6 className="card-title"> Cabin Filter
+                                    Change: {car.exploitationState.lastCabinFilterChangeCourse} km/
+                                    {formatDate(car.exploitationState.lastCabinFilterChangeDate)}</h6>
+
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -153,7 +163,7 @@ const CarDetails = () => {
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
                         <div className="card-body ">
-                            <Link to={"/addService"} state={{carId: carId}}>
+                            <Link to={"/add-exploitation-service"} state={{carId: carId}}>
                                 <img
                                     src="https://e7.pngegg.com/pngimages/935/194/png-clipart-car-motor-oil-motor-vehicle-service-automobile-repair-shop-car-car-motorcycle.png"
                                     className="card-img-top"
@@ -169,13 +179,13 @@ const CarDetails = () => {
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
                         <div className="card-body ">
-                            <a href="/add-single-fix">
+                            <Link to="/add-other-fix" state={{carId: carId}}>
                                 <img src="https://cdn-icons-png.flaticon.com/512/226/226537.png"
                                      className="card-img-top"
                                      alt="cos"
                                      style={{width: '200px', height: 'auto'}}
                                 />
-                                <h5>Add Single Fix</h5></a>
+                                <h5>Add Other Fix</h5></Link>
                         </div>
                     </div>
                 </div>

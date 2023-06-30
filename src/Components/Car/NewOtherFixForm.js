@@ -1,27 +1,28 @@
 import React, {useState} from 'react';
-import axios from 'axios';
-import AuthService from "../../Services/Auth.service";
+import axios from "axios";
+import {useLocation} from "react-router-dom";
+
+import categoryList from "../../Common/RepairCategory";
 
 
-const NewOtherFixForm = () => {
-    const currentUser = AuthService.getCurrentUser();
-    const [formData, setFormData] = useState({
-        category: '',
-        description: '',
-        userId: currentUser.id
-    });
+const NewOtherFix = () => {
+    const location = useLocation();
+    const carId = location.state.carId;
+    const [date, setDate] = useState('');
+    const [course, setCourse] = useState('');
+    const [category, setCategory] = useState('');
+    const [description, setDescription] = useState('');
 
-    const handleChange = (e) => {
-        setFormData({...formData, [e.target.name]: e.target.value});
+    const formData = {
+        carId, date, course, category, description
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(global.config.HostFront + '/api/cars/repairs/', formData)
+        axios.post(global.config.HostFront + '/api/cars/add-other-fix', formData)
             .then(response => {
                 // Handle success
                 console.log(response);
-                window.location.href = '/car-details';
+                window.location.href = '/dashboard';
             })
             .catch(error => {
                 // Handle error
@@ -29,45 +30,48 @@ const NewOtherFixForm = () => {
             });
     };
 
-    return (
-        <div className="card shadow mb-4">
+    return (<div className="card shadow mb-4">
             <div className="card-header py-3">
-                <h6 className="m-0 font-weight-bold text-primary">Add new repair (nie zrobione dodawanie do bazy danych)</h6>
+                <h6 className="m-0 font-weight-bold text-primary">New Other Fix</h6>
             </div>
+
             <div className="card-body">
                 <form onSubmit={handleSubmit}>
+
                     <div className="form-group">
-                        <label htmlFor="category">Katergoria:  </label>
+                        <label> Date:</label>
+                        <input type="date" value={date} onChange={(e) => setDate(e.target.value)}/>
+                    </div>
+
+                    <div className="form-group">
+                        <label> Course: </label>
+                        <input type="text" value={course} onChange={(e) => setCourse(e.target.value)}/>
+                        km
+                    </div>
+                    <div className="form-group">
+                        <label> Category: </label>
                         <select
-                            id="repair"
-                            name="repair"
-                            value={formData.category}
-                            onChange={handleChange}
+                            value={category} onChange={(e) => setCategory(e.target.value)}
                         >
-                            <option value="">Select...</option>
-                            <option value="amortyzator">amorek</option>
-                            <option value="silnik">silnik</option>
+                            <option value="">Select Category</option>
+                            {categoryList.map((category) => (<option key={category.category} value={category.category}>
+                                    {category.category}
+                                </option>))}
 
                         </select>
+
                     </div>
                     <div className="form-group">
-                        <label htmlFor="description">Opis: </label>
-                        <textarea
-                            className="form-control"
-                            name="description"
+                        <label> Desciption: </label></div>
+                    <textarea rows={7} cols={50} value={description} onChange={(e) => setDescription(e.target.value)}/>
 
-                            placeholder="Tutaj opisz usterke"
-                            value={formData.description}
-                            onChange={handleChange}
-                        />
+                    <div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
 
-
-                    <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
-        </div>
-    );
+        </div>);
 };
 
-export default NewOtherFixForm;
+export default NewOtherFix;

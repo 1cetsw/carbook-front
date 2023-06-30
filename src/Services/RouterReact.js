@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 
 import Login from "../Components/Profile/Login";
 import Register from "../Components/Profile/Register";
@@ -16,34 +16,32 @@ import NotFound from '../Components/Pages/NotFound';
 import Dashboard from '../Components/Profile/Dashboard';
 import CarDetails from "../Components/Car/CarDetails";
 import ShowHistory from "../Components/Car/ShowHistory";
-import LastService from "../Components/Car/LastService";
 import NewOtherFixForm from "../Components/Car/NewOtherFixForm";
 import NewExploitationServiceForm from "../Components/Car/NewExploitationServiceForm";
 
 
 const RouterReact = () => (
 
-  <Routes>
-    <Route path={"/"} element={<Home />} />
-    <Route path="/login" element={<Login />} />
-    <Route path="/register" element={<Register />} />
-    <Route path="/profile" element={<Profile />} />
-    <Route path="/user" element={<BoardUser />} />
-    <Route path="/workshop" element={<BoardModerator />} />
-    <Route path="/adminboard" element={<BoardAdmin />} />
-    <Route path="/about" element={<About />} />
-    <Route path="/notfound" element={<NotFound />} />
-    <Route path="/dashboard" element={<Dashboard />} />
-    <Route path="/new-car-form" element={<NewCarForm />} />
-    <Route path="/cars" element={<Cars />} />
-    <Route path="/users" element={<Users />} />
-    <Route path="/workshops" element={<Workshops />} />
-    <Route path="/car-details" element={<CarDetails />} />
-    <Route path="/car-history" element={<ShowHistory />} />
-    <Route path="/last-service" element={<LastService />} />
-      <Route path="/add-single-fix" element={<NewOtherFixForm />} />
-      <Route path="/addService" element={<NewExploitationServiceForm />} />
-  </Routes>
+    <Routes>
+        <Route path={"/"} element={<Home/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/user" element={<BoardUser/>}/>
+        <Route path="/workshop" element={<BoardModerator/>}/>
+        <Route path="/adminboard" element={<BoardAdmin/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/notfound" element={<NotFound/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/new-car-form" element={<NewCarForm/>}/>
+        <Route path="/cars" element={<Cars/>}/>
+        <Route path="/users" element={<Users/>}/>
+        <Route path="/workshops" element={<Workshops/>}/>
+        <Route path="/car-details" element={<CarDetails/>}/>
+        <Route path="/car-history" element={<ShowHistory/>}/>
+        <Route path="/add-other-fix" element={<NewOtherFixForm/>}/>
+        <Route path="/add-exploitation-service" element={<NewExploitationServiceForm/>}/>
+    </Routes>
 
 
 )

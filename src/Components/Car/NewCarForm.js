@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import AuthService from "../../Services/Auth.service";
 
@@ -14,7 +14,7 @@ const NewCarForm = () => {
     });
 
     const handleChange = (e) => {
-        setCarData({ ...carData, [e.target.name]: e.target.value });
+        setCarData({...carData, [e.target.name]: e.target.value});
     };
 
     const handleSubmit = (e) => {
@@ -32,7 +32,6 @@ const NewCarForm = () => {
     };
 
 
-
     return (
         <div className="card shadow mb-4">
             <div className="card-header py-3">
@@ -48,10 +47,10 @@ const NewCarForm = () => {
                             <div className="card-img-top">
                                 {carData.brand && (
                                     <img
-                                          src={"https://www.carlogos.org/car-logos/"+carData.brand.toLowerCase()+"-logo.png"  }
-                                          class="card-img-top"
-                                          alt="Logo samochodu"
-                                          style={{ width: '200px', height: 'auto' }}
+                                        src={"https://www.carlogos.org/car-logos/" + carData.brand.toLowerCase() + "-logo.png"}
+                                        class="card-img-top"
+                                        alt="Logo samochodu"
+                                        style={{width: '200px', height: 'auto'}}
                                     />
                                 )}
                                 <div className="card-body ">
@@ -114,8 +113,8 @@ const NewCarForm = () => {
 
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
-            </div >
-        </div >
+            </div>
+        </div>
     );
 };
 
