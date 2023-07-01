@@ -18,6 +18,8 @@ import CarDetails from "../Components/Car/CarDetails";
 import ShowHistory from "../Components/Car/ShowHistory";
 import NewOtherFixForm from "../Components/Car/NewOtherFixForm";
 import NewExploitationServiceForm from "../Components/Car/NewExploitationServiceForm";
+import ExploitationHistory from "../Components/Car/ExploitationRepairHistory";
+import OtherRepairHistory from "../Components/Car/OtherRepairHistory";
 
 
 const RouterReact = () => (
@@ -39,6 +41,8 @@ const RouterReact = () => (
         <Route path="/workshops" element={<Workshops/>}/>
         <Route path="/car-details" element={<CarDetails/>}/>
         <Route path="/car-history" element={<ShowHistory/>}/>
+        <Route path="/other-repair-history" element={<OtherRepairHistory/>}/>
+        <Route path="/exploitation-history" element={<ExploitationHistory/>}/>
         <Route path="/add-other-fix" element={<NewOtherFixForm/>}/>
         <Route path="/add-exploitation-service" element={<NewExploitationServiceForm/>}/>
     </Routes>

@@ -81,7 +81,7 @@ const CarDetails = () => {
     };
 
 
-    return (<div className="container">
+    return (<div className="container" >
             <div className="row">
                 <div className="col-md-4">
                     <div className=" card shadow">
@@ -164,7 +164,7 @@ const CarDetails = () => {
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
                         <div className="card-body ">
-                            <Link to={"/add-exploitation-service"} state={{carId: carId}}>
+                            <Link to={"/add-exploitation-service"} state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img
                                     src="https://e7.pngegg.com/pngimages/935/194/png-clipart-car-motor-oil-motor-vehicle-service-automobile-repair-shop-car-car-motorcycle.png"
                                     className="card-img-top"
@@ -180,11 +180,11 @@ const CarDetails = () => {
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
                         <div className="card-body ">
-                            <Link to="/add-other-fix" state={{carId: carId}}>
+                            <Link to="/add-other-fix" state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img src="https://cdn-icons-png.flaticon.com/512/226/226537.png"
                                      className="card-img-top"
                                      alt="cos"
-                                     style={{width: '200px', height: 'auto'}}
+                                     style={{width: '160px', height: 'auto'}}
                                 />
                                 <h5>Add Other Fix</h5></Link>
                         </div>
@@ -194,12 +194,12 @@ const CarDetails = () => {
                 <div className="col-md-3">
                     <div className="card mb-3 shadow">
                         <div className="card-body ">
-                            <Link to={"/car-history"} state={{carId: carId}}>
+                            <Link to={"/car-history"} state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img
                                     src="https://img.uxwing.com/wp-content/themes/uxwing/download/transportation-automotive/car-inspection-icon.svg"
                                     className="card-img-top"
                                     alt="cos"
-                                    style={{width: '200px', height: 'auto'}}
+                                    style={{width: '220px', height: 'auto'}}
                                 />
                                 <h5>Show Car Repair History</h5>
                             </Link>

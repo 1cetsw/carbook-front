@@ -1,23 +1,26 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const NewCarTile = () => {
     return (
         <div className="container">
 
             <div className="col-md-2">
-                <div className="card shadow mb-2">
+
                     <div className="card-body">
-                        <a href="/new-car-form">
+                        <Link to="/new-car-form" style={{ textDecoration: 'none' }}>
                             <img
                                 src="https://thenounproject.com/api/private/icons/54657/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0"
-                                className="card-img-top" alt="cos"
+                                className="card-img-top"
+                                alt="cos"
+                                style={{width: '100px', height: 'auto'}}
                             />
                             <h5 className="card-title">Add New Car</h5>
                             <p className="card-text"></p>
-                        </a>
+                        </Link>
                     </div>
                 </div>
-            </div>
+
         </div>
 
     )

@@ -40,17 +40,14 @@ const NewCarForm = () => {
             <div className="card-body">
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-
-
                         <div>
-
                             <div className="card-img-top">
                                 {carData.brand && (
                                     <img
                                         src={"https://www.carlogos.org/car-logos/" + carData.brand.toLowerCase() + "-logo.png"}
                                         class="card-img-top"
                                         alt="Logo samochodu"
-                                        style={{width: '200px', height: 'auto'}}
+                                        style={{width: '150px', height: 'auto'}}
                                     />
                                 )}
                                 <div className="card-body ">
@@ -59,7 +56,6 @@ const NewCarForm = () => {
                             </div>
                         </div>
 
-
                         <label for="brand" htmlFor="brand">Brand: </label>
                         <select
                             id="brand"
@@ -67,29 +63,28 @@ const NewCarForm = () => {
                             value={carData.brand}
                             onChange={handleChange}
                         >
-                            <option value="">Select Brand</option>
+                            <option value="">Select Car Brand:</option>
                             {carList.map((car) => (
                                 <option key={car.brand} value={car.brand}>
                                     {car.brand}
                                 </option>
                             ))}
-
                         </select>
 
                     </div>
                     <div className="form-group">
-                        <label htmlFor="model">Model</label>
+                        <label htmlFor="model">Model:</label>
                         <input
                             type="text"
                             className="form-control"
                             name="model"
-                            placeholder="Enter model name"
+                            placeholder="Enter Car Model"
                             value={carData.model}
                             onChange={handleChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="vin">Vin number</label>
+                        <label htmlFor="vin">VIN:</label>
                         <input
                             type="text"
                             className="form-control"
@@ -100,13 +95,35 @@ const NewCarForm = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="engine">Engine</label>
+                        <label htmlFor="engine">Engine:</label>
                         <input
                             type="text"
                             className="form-control"
                             name="engine"
-                            placeholder="Enter your engine size and code "
+                            placeholder="Engine Size / Code"
                             value={carData.engine}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="plateNumber">Plate Number:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="plateNumber"
+                            placeholder="Plate Number"
+                            value={carData.plateNumber}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="course">Course:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="course"
+                            placeholder="Enter Plate Number 'KR 12345' "
+                            value={carData.course}
                             onChange={handleChange}
                         />
                     </div>

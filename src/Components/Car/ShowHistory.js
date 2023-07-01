@@ -1,89 +1,53 @@
-import React, {useEffect, useState} from "react";
-import {useLocation} from 'react-router-dom';
-import { Table} from 'react-bootstrap';
+import React from "react";
+import {Link, useLocation} from 'react-router-dom';
+
 
 const ShowHistory = () => {
+
     const location = useLocation();
     const carId = location.state.carId;
-    const [services, setServices] = useState([]);
-    const [sortColumn, setSortColumn] = useState('');
-    const [sortDirection, setSortDirection] = useState({key: "date", direction: "asc"});
 
-    //Pobieranie danych json z serwera
-    useEffect(() => {
-        fetch(global.config.HostFront + '/api/cars/car-exploitation-repair/' + carId)
-            .then(response => response.json())
-            .then(data => {
-                setServices(data);
-                console.log(data);
-            })
-            .catch(error => {
-                console.log('Error fetching data:', error);
-            });
-    }, [carId]);
-
-
-    const toggleSort = (column) => {
-        if (column === sortColumn) {
-            setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
-        } else {
-            setSortColumn(column);
-            setSortDirection('asc');
-        }
-    };
-
-
-
-    const getSortIndicator = (column) => {
-        if (column === sortColumn) {
-            return sortDirection === 'asc' ? '▲' : '▼';
-        } else {
-            return null;
-        }
-    };
-
-    //format daty na 00:00:0000
-    const formatDate = (dateString) => {
-        const options = {year: 'numeric', month: '2-digit', day: '2-digit'};
-        const date = new Date(dateString);
-        return date.toLocaleDateString(undefined, options);
-    };
     return (
         <div className="container">
+            <div className="row">
+                <div className="col-md-3">
+                    <div className="card mb-3 shadow">
+                        <div className="card-body ">
+                            <Link to={"/exploitation-history"} state={{carId: carId}} style={{ textDecoration: 'none' }}>
+                                <img
+                                    src="https://static.thenounproject.com/png/3189885-200.png"
+                                    className="card-img-top"
+                                    alt="Show Exploitation History"
+                                    style={{width: '190px', height: 'auto'}}
+                                />
+                                <h5>Show Exploitation History</h5>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
 
-            <Table striped bordered hover>
-                <thead>
-                <tr>
-                    <th onClick={() => toggleSort('course')}>
-                        Course {getSortIndicator('course')}
-                    </th>
-                    <th onClick={() => toggleSort('date')}>
-                        Date {getSortIndicator('date')}
-                    </th>
-                    <th>Oil Change</th>
-                    <th>Air Filter Change</th>
-                    <th>Cabin Filter Change</th>
-                    <th>Fuel Filter Change</th>
-                </tr>
-                </thead>
-                <tbody>
-                {services.map((data) => (
-                    <tr key={data.id}>
+                <div className="col-md-3">
+                    <div className="card mb-3 shadow">
+                        <div className="card-body ">
+                            <Link to={"/other-repair-history"} state={{carId: carId}} style={{ textDecoration: 'none' }}>
+                                <img
+                                    src="https://images.ctfassets.net/33n6gwydcv8y/4ZBRStKuuscef66fBTDQEz/45850edce967544f1bcb802a50ae5ed0/inspection-history-check.png"
+                                    className="card-img-top"
+                                    alt="Show Other History"
+                                    style={{width: '170px', height: 'auto'}}
+                                />
+                                <h5>Show Other Repair History</h5>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
 
-                        <td>{data.course}</td>
-                        <td>{formatDate(data.date)}</td>
-                        <td style={{color: data.oilChange ? 'green' : 'red'}}>{data.oilChange ? 'Yes' : 'No'}</td>
-                        <td style={{color: data.airFilterChange ? 'green' : 'red'}}>{data.airFilterChange ? 'Yes' : 'No'}</td>
-                        <td style={{color: data.cabinFilterChange ? 'green' : 'red'}}>{data.cabinFilterChange ? 'Yes' : 'No'}</td>
-                        <td style={{color: data.fuelFilterChange ? 'green' : 'red'}}>{data.fuelFilterChange ? 'Yes' : 'No'}</td>
 
-                    </tr>
-                ))}
-                </tbody>
-            </Table>
 
-        </div>
-    );
+        </div></div>
+
+)
+
 };
 
 export default ShowHistory;
