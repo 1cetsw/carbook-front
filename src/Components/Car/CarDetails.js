@@ -81,7 +81,8 @@ const CarDetails = () => {
     };
 
 
-    return (<div className="container" >
+    return (
+        <div className="container" >
             <div className="row">
                 <div className="col-md-4">
                     <div className=" card shadow">
@@ -94,8 +95,10 @@ const CarDetails = () => {
                         <h5 className="card-title"> Brand: {car.brand} </h5>
                         <h5 className="card-title"> Model: {car.model}</h5>
                         <h5 className="card-title"> VIN: {car.vin}</h5>
-                        <h5 className="card-title"> Course</h5>
-                        <h5 className="card-title"> Engine </h5>
+                        <h5 className="card-title"> Engine: {car.engine}</h5>
+                        <h5 className="card-title"> Course: {car.course} km</h5>
+                        <h5 className="card-title"> Plate: {car.plate}</h5>
+
                     </div>
                 </div>
 
