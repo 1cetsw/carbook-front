@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import axios from "axios";
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 import categoryList from "../../Common/RepairCategory";
 
 
 const NewOtherFix = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     const carId = location.state.carId;
     const [date, setDate] = useState('');
@@ -22,7 +23,7 @@ const NewOtherFix = () => {
             .then(response => {
                 // Handle success
                 console.log(response);
-                window.location.href = '/dashboard';
+                navigate(`/car-details`,{ state: {carId: carId}});
             })
             .catch(error => {
                 // Handle error
