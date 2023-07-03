@@ -43,14 +43,24 @@ function NavBar() {
     <div className="container-fluid px-0">
       <div className="App">
 
-        <nav className="navbar navbar-expand navbar-dark bg-dark px-4">
-          <Link to={"/"} className="navbar-brand">
-            <div style={{ width: 50, height: 50 }}>
-              <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
-            </div>
+        <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+          <div className="container">
+            <a className="navbar-brand" href="index.html">Car<span>Book</span></a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                    aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="oi oi-menu"></span> Menu
+            </button>
 
-          </Link>
-          <div className="navbar-nav mr-auto">
+            <div className="collapse navbar-collapse" id="ftco-nav">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item active"><a href="" className="nav-link">Home</a></li>
+                <li className="nav-item"><a href="" className="nav-link">About</a></li>
+                <li className="nav-item"><a href="" className="nav-link">Pricing</a></li>
+                <li className="nav-item"><a href="" className="nav-link">Our Car</a></li>
+                <li className="nav-item"><a href="" className="nav-link">Blog</a></li>
+                <li className="nav-item"><a href="" className="nav-link">Contact</a></li>
+              </ul>
+            </div>
 
             {showWorkshopBoard && (
               <li className="nav-item">
@@ -124,6 +134,6 @@ function NavBar() {
 
       </div></div>
   );
-};
+}
 
 export default NavBar;
