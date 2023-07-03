@@ -1,5 +1,5 @@
 import carbookLogo from '../../Assets/Images/carbook.png';
-import background from '../../Assets/Images/background_new.jpg'
+import background from '../../Assets/Images/background_new1.jpg'
 
 
 const StartPage = () => {
@@ -8,22 +8,22 @@ const StartPage = () => {
         return (
 
             <div
-                className="hero-wrap"
-                style={{ backgroundImage: 'url("images/bg_1.jpg")' }}
-                data-stellar-background-ratio="0.5"
-            >
+                className="py-5 bg-image-full"
+                style={{ backgroundImage: `url(${background})`,
+                         backgroundRepeat: "no-repeat",
+                         backgroundSize: "cover" }}>
                 <div className="overlay" />
                 <div className="container">
                     <div className="row no-gutters slider-text justify-content-start align-items-center">
                         <div className="col-lg-6 col-md-6 ftco-animate d-flex align-items-end">
                             <div className="text">
                                 <h1 className="mb-4">
-                                    Now <span>It's easy for you</span> <span>rent a car</span>
+                                    Now <span>It's easy for you</span> <span>with CarBook!</span>
                                 </h1>
                                 <p style={{ fontSize: 18 }}>
-                                    A small river named Duden flows by their place and supplies it with
-                                    the necessary regelialia. It is a paradisematic country, in which
-                                    roasted parts
+                                    A small river named Duden flows by their place and supplies it
+                                    with the necessary regelialia. It is a paradisematic country, in
+                                    which roasted parts
                                 </p>
                                 <a
                                     href="https://vimeo.com/45830194"
@@ -33,7 +33,7 @@ const StartPage = () => {
                                         <span className="ion-ios-play" />
                                     </div>
                                     <div className="heading-title ml-5">
-                                        <span>Easy steps for renting a car</span>
+                                        <span>Easy steps for servicing your car</span>
                                     </div>
                                 </a>
                             </div>
@@ -109,6 +109,7 @@ const StartPage = () => {
                     </div>
                 </div>
             </div>
+
         )
     }
 
