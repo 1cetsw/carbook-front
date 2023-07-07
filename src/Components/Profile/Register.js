@@ -173,7 +173,6 @@ const Register = () => {
                                 />
                             </div>
 
-
                             <div className="form-group">
                                 {!passwordMatch && <p style={{color: 'red'}}>Passwords not matched.</p>}
 
