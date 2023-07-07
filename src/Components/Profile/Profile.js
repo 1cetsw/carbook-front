@@ -1,29 +1,44 @@
-import React from "react";
 import AuthService from "../../Services/Auth.service";
+import React, {useState} from 'react';
+import { Card, ListGroup } from 'react-bootstrap';
 
 const Profile = () => {
-  const currentUser = AuthService.getCurrentUser();
+    const currentUser = AuthService.getCurrentUser();
 
-  return (
-    <div className="container">
-      <header className="jumbotron">
-        <h3>
-          <strong>{currentUser.username}</strong> Profile
-        </h3>
-      </header>
-      <p>
-        <strong>Id:</strong> {currentUser.id}
-      </p>
-      <p>
-        <strong>Email:</strong> {currentUser.email}
-      </p>
-      <strong>Authorities:</strong>
-      <ul>
-        {currentUser.roles &&
-          currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-      </ul>
-    </div>
-  );
+
+
+    const handleInputChange = (e) => {
+        const {name, value} = e.target;
+
+    };
+
+    const handleSaveChanges = () => {
+        // Zapisz zmienione dane użytkownika
+
+    };
+
+    return (
+        <div className="container">
+            <p>
+                <strong>Id:</strong> {currentUser.id}
+            </p>
+
+            <Card style={{ width: '50%' }}>
+                <Card.Body>
+                    <Card.Title>User Profile</Card.Title>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item><strong>Nick:</strong> {currentUser.username}</ListGroup.Item>
+                        <ListGroup.Item><strong>Name:</strong> {currentUser.name}</ListGroup.Item>
+                        <ListGroup.Item><strong>Surname:</strong> {currentUser.surname}</ListGroup.Item>
+                        <ListGroup.Item><strong>Email:</strong> {currentUser.email}</ListGroup.Item>
+                        <ListGroup.Item><strong>Phone:</strong> {currentUser.phone}</ListGroup.Item>
+                        <ListGroup.Item><strong>Location:</strong> {currentUser.location}</ListGroup.Item>
+                        <ListGroup.Item><strong>Authorities:</strong> {currentUser.roles}</ListGroup.Item>
+                    </ListGroup>
+                </Card.Body>
+            </Card></div>
+            );
+
+
 };
-
 export default Profile;
