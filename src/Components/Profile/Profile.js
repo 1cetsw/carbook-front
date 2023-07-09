@@ -1,6 +1,6 @@
 import AuthService from "../../Services/Auth.service";
 import React, {useEffect, useState} from 'react';
-import {Card, ListGroup, Table} from 'react-bootstrap';
+import {Card, ListGroup} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 
 const Profile = (props) => {
@@ -22,16 +22,8 @@ const Profile = (props) => {
 
     return (
         <div className="container">
-            <p>
-                <strong>Id:</strong> {currentUser.id}
-            </p>
 
-            <button variant="primary">
-                <Link to={"/edit-profile"} state={{currentUser}} style={{textDecoration: 'none'}}>
 
-                    <h5>Edit Profile Data</h5>
-                </Link>
-            </button>
 
             <Card style={{width: '50%'}}>
                 <Card.Body>
@@ -45,7 +37,12 @@ const Profile = (props) => {
                         <ListGroup.Item><strong>Phone:</strong> {user.phone}</ListGroup.Item>
                         <ListGroup.Item><strong>Location:</strong> {user.location}</ListGroup.Item>
                         <ListGroup.Item><strong>Authorities:</strong> {currentUser.roles}</ListGroup.Item>
+                        <button  className="btn btn-light btn-lg btn-block">
+                            <Link to={"/update-profile/"+currentUser.id}  style={{ textDecoration: 'none' }}>
 
+                                <h5>Edit Profile Data</h5>
+                            </Link>
+                        </button>
                     </ListGroup>
 
                 </Card.Body>

@@ -20,6 +20,7 @@ import NewOtherFixForm from "../Components/Car/NewOtherFixForm";
 import NewExploitationServiceForm from "../Components/Car/NewExploitationServiceForm";
 import ExploitationHistory from "../Components/Car/ExploitationRepairHistory";
 import OtherRepairHistory from "../Components/Car/OtherRepairHistory";
+
 import EditProfile from "../Components/Profile/EditProfile";
 
 
@@ -46,7 +47,9 @@ const RouterReact = () => (
         <Route path="/exploitation-history" element={<ExploitationHistory/>}/>
         <Route path="/add-other-fix" element={<NewOtherFixForm/>}/>
         <Route path="/add-exploitation-service" element={<NewExploitationServiceForm/>}/>
-        <Route path="/edit-profile" element={<EditProfile/>}/>
+
+        <Route exact path="/update-profile/:id" element={<EditProfile/>}/>
+
     </Routes>
 
 

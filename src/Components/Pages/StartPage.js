@@ -1,5 +1,5 @@
 import carbookLogo from '../../Assets/Images/carbook.png';
-import background from '../../Assets/Images/background_new.jpg'
+import background from '../../Assets/Images/background_new1.jpg'
 
 
 const StartPage = () => {
