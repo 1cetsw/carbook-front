@@ -23,13 +23,10 @@ const Profile = (props) => {
     return (
         <div className="container">
 
-
-
             <Card style={{width: '50%'}}>
                 <Card.Body>
                     <Card.Title>User Profile</Card.Title>
                     <ListGroup variant="flush">
-
                         <ListGroup.Item><strong>Nick:</strong> {user.username}</ListGroup.Item>
                         <ListGroup.Item><strong>Name:</strong> {user.name}</ListGroup.Item>
                         <ListGroup.Item><strong>Surname:</strong> {user.surname}</ListGroup.Item>
@@ -39,21 +36,14 @@ const Profile = (props) => {
                         <ListGroup.Item><strong>Authorities:</strong> {currentUser.roles}</ListGroup.Item>
                         <button  className="btn btn-light btn-lg btn-block">
                             <Link to={"/update-profile/"+currentUser.id}  style={{ textDecoration: 'none' }}>
-
                                 <h5>Edit Profile Data</h5>
                             </Link>
                         </button>
                     </ListGroup>
-
                 </Card.Body>
             </Card>
-
-
         </div>
-
-
     );
-
 
 };
 export default Profile;

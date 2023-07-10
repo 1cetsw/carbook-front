@@ -3,17 +3,17 @@ import {Card, Form, Button} from 'react-bootstrap';
 import AuthService from "../../Services/Auth.service";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
-import trim from "validator/es/lib/trim";
 
-const UserProfileEdit = ({name, surname, phone, email, location}) => {
+
+const UserProfileEdit = () => {
     const currentUser = AuthService.getCurrentUser();
     const navigate = useNavigate();
 
     const [editedData, setEditedData] = useState({
-        name: name,
-        surname: surname,
-        phone: phone,
-        location: location,
+        name: '',
+        surname: '',
+        phone: '',
+        location: '',
     });
 
     const [user, setUser] = useState([]);
@@ -27,7 +27,7 @@ const UserProfileEdit = ({name, surname, phone, email, location}) => {
             .catch(error => {
                 console.log('Error fetching data:', error);
             });
-    }, []);
+    }, [currentUser.id]);
     const handleChange = (e) => {
         setEditedData({
             ...editedData,
@@ -38,19 +38,23 @@ const UserProfileEdit = ({name, surname, phone, email, location}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // if (editedData.name.trim()=== '') {
+        // if(editedData.name===''){
         //     editedData.name = user.name;
         // }
-        // if (editedData.surname.trim() === '') {
-        //     editedData.surname = user.surname;
-        // }
-        // if (editedData.phone.trim() === '') {
-        //     editedData.phone = user.phone;
-        // }
-        //
-        // if (editedData.location.trim() === '') {
-        //     editedData.location = user.location;
-        // }
+        for (const key in editedData) {
+            if (editedData[key] === '') {
+                editedData.name = user.name;
+            }
+            if (editedData.surname === '') {
+                editedData.surname = user.surname;
+            }
+            if (editedData.phone === '') {
+                editedData.phone = user.phone;
+            }
+            if (editedData.location === '') {
+                editedData.location = user.location;
+            }
+        }
 
         axios.put(global.config.HostFront + '/api/users/' + currentUser.id, editedData)
             .then(response => {
@@ -65,13 +69,14 @@ const UserProfileEdit = ({name, surname, phone, email, location}) => {
             });
     };
 
+
     return (
         <Card style={{width: '50%'}}>
             <Card.Body>
                 <Card.Title>Edit Profile Data</Card.Title>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formName">
-                        <Form.Label>  Name:
+                        <Form.Label> Name:
                         </Form.Label>
 
                         <Form.Control
@@ -94,7 +99,7 @@ const UserProfileEdit = ({name, surname, phone, email, location}) => {
                         />
                     </Form.Group>
                     <Form.Group controlId="formPhone">
-                        <Form.Label>  Phone:
+                        <Form.Label> Phone:
                         </Form.Label>
                         <Form.Control
                             type="text"
@@ -119,9 +124,9 @@ const UserProfileEdit = ({name, surname, phone, email, location}) => {
                         Save
                     </Button>
                     <Link to="/profile">
-                        <Button variant="primary"  >
-                    Cancel
-                </Button> </Link>
+                        <Button variant="primary">
+                            Cancel
+                        </Button> </Link>
 
                 </Form>
             </Card.Body>
