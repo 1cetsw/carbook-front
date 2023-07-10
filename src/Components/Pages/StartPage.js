@@ -3,8 +3,6 @@ import background from '../../Assets/Images/background_new1.jpg'
 
 
 const StartPage = () => {
-
-    
         return (
             <div>
                 <header className="py-5 bg-image-full" style={{
@@ -20,7 +18,7 @@ const StartPage = () => {
                             <br />Soon you won't have to, we'll do it for you.</p>
                     </div>
                 </header>
-                <footer className="py-5 bg-dark">
+                <footer className="py-3 bg-dark">
                     <div className="container"><p className="m-0 text-center text-white">Copyright &copy; Carbook Website Team 2023</p></div>
                 </footer>
             </div>

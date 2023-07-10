@@ -7,7 +7,7 @@ import NavBar from "./Components/NavBar";
 function  App()  {
   return (
   
-    <div className="App">
+    <div className="App " style={{ backgroundColor: ' #666666'}}>
      <NavBar />
      <RouterReact />
 

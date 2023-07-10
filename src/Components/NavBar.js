@@ -31,20 +31,20 @@ function NavBar() {
   };
 
   return (
-      <div className="container-fluid px-0">
-        <div className="App">
+      <div className="container-fluid px-0 bg-dark">
+        <div className="App  bg-dark">
 
-          <nav className="navbar navbar-expand navbar-dark bg-dark px-4">
+          <nav className="navbar navbar-expand navbar-dark bg-dark px-4 " >
             <Link to={"/"} className="navbar-brand">
               <div style={{ width: 50, height: 50 }}>
                 <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
               </div>
 
             </Link>
-            <div className="navbar-nav mr-auto">
+            <div className="navbar-nav mr-auto ">
 
               {showWorkshopBoard && (
-                  <li className="nav-item">
+                  <li className="nav-item ">
                     <Link to={"/workshop"} className="nav-link">
                       Workshop Board
                     </Link>
@@ -65,8 +65,8 @@ function NavBar() {
               {/*    </li>*/}
               {/*)}*/}
               {currentUser && (
-                  <li className="nav-item">
-                    <Link to={"/dashboard"} className="nav-link">
+                  <li className="nav-item ">
+                    <Link to={"/dashboard"} className="nav-link ">
                       Your Cars
                     </Link>
                   </li>

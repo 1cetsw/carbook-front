@@ -21,12 +21,12 @@ const Profile = (props) => {
     }, []);
 
     return (
-        <div className="container">
+        <div  >
 
-            <Card style={{width: '50%'}}>
-                <Card.Body>
+            <Card style={{width: '50%', backgroundColor:'darkgray'}}>
+
                     <Card.Title>User Profile</Card.Title>
-                    <ListGroup variant="flush">
+                    <ListGroup variant="flush" >
                         <ListGroup.Item><strong>Nick:</strong> {user.username}</ListGroup.Item>
                         <ListGroup.Item><strong>Name:</strong> {user.name}</ListGroup.Item>
                         <ListGroup.Item><strong>Surname:</strong> {user.surname}</ListGroup.Item>
@@ -40,8 +40,9 @@ const Profile = (props) => {
                             </Link>
                         </button>
                     </ListGroup>
-                </Card.Body>
+
             </Card>
+
         </div>
     );
 
