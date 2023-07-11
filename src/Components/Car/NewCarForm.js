@@ -5,6 +5,11 @@ import AuthService from "../../Services/Auth.service";
 import carList from "../../Common/CarList";
 
 const NewCarForm = () => {
+    const buttonColor=global.config.ButtonColor;
+    const titleColor=global.config.FormTitleTextColor;
+    const formBg=global.config.FormBackgroundColor;
+
+
     const currentUser = AuthService.getCurrentUser();
     const [carData, setCarData] = useState({
         brand: '',
@@ -36,11 +41,9 @@ const NewCarForm = () => {
 
 
     return (
-        <div className="card shadow mb-4">
-            <div className="card-header py-3">
-                <h6 className="m-0 font-weight-bold text-primary">Add new car</h6>
-            </div>
-            <div className="card-body">
+        <div className="card shadow mb-4" style={{background: formBg}}>
+            <h4 style={{color: titleColor}}> Add New Car</h4>
+
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <div>
@@ -53,9 +56,7 @@ const NewCarForm = () => {
                                         style={{width: '150px', height: 'auto'}}
                                     />
                                 )}
-                                <div className="card-body ">
 
-                                </div>
                             </div>
                         </div>
 
@@ -131,9 +132,9 @@ const NewCarForm = () => {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className={`btn ${buttonColor}`}>Submit</button>
                 </form>
-            </div>
+
         </div>
     );
 };

@@ -9,6 +9,10 @@ function NavBar() {
   const [showWorkshopBoard, setShowWorkshopBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
+
+  const textColor=global.config.NavBarTextColor;
+  const navBarColor=global.config.NavBarBackgroundColor;
+
   useEffect(() => {
     const user = AuthService.getCurrentUser();
     if (user) {
@@ -31,10 +35,10 @@ function NavBar() {
   };
 
   return (
-      <div className="container-fluid px-0 bg-dark">
-        <div className="App  bg-dark">
+      <div className="container-fluid px-0 ">
+        <div className="App">
 
-          <nav className="navbar navbar-expand navbar-dark bg-dark px-4 " >
+          <nav style={{background: navBarColor}} className={`navbar navbar-expand navbar-dark px-4 `}>
             <Link to={"/"} className="navbar-brand">
               <div style={{ width: 50, height: 50 }}>
                 <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
@@ -46,28 +50,28 @@ function NavBar() {
               {showWorkshopBoard && (
                   <li className="nav-item ">
                     <Link to={"/workshop"} className="nav-link">
-                      Workshop Board
+                      <h7 style={{color: textColor}}> Workshop Board </h7>
                     </Link>
                   </li>
               )}
               {showAdminBoard && (
                   <li className="nav-item">
                     <Link to={"/adminboard"} className="nav-link">
-                      Admin Board
+                      <h7 style={{color: textColor}}>Admin Board</h7>
                     </Link>
                   </li>
               )}
               {/*{currentUser && (*/}
               {/*    <li className="nav-item">*/}
               {/*      <Link to={"/user"} className="nav-link">*/}
-              {/*        User*/}
+              {/*        <h7 style={{color: textColor}}>User</h7>*/}
               {/*      </Link>*/}
               {/*    </li>*/}
               {/*)}*/}
               {currentUser && (
                   <li className="nav-item ">
                     <Link to={"/dashboard"} className="nav-link ">
-                      Your Cars
+                      <h7 style={{color: textColor}}>Your Cars</h7>
                     </Link>
                   </li>
               )}
@@ -78,12 +82,12 @@ function NavBar() {
                 <div className="navbar-nav ml-auto">
                   <li className="nav-item">
                     <Link to={"/profile"} className="nav-link">
-                      {currentUser.username}
+                      <h7 style={{color: textColor}}>{currentUser.username}</h7>
                     </Link>
                   </li>
                   <li className="nav-item">
                     <a href="/login" className="nav-link" onClick={logOut}>
-                      LogOut
+                      <h7 style={{color: textColor}}>LogOut</h7>
                     </a>
                   </li>
                 </div>
@@ -91,12 +95,12 @@ function NavBar() {
                 <div className="navbar-nav ml-auto float-sm-start">
                   <li className="nav-item">
                     <Link to={"/login"} className="nav-link">
-                      Login
+                      <h5 style={{color: textColor}}> Login</h5>
                     </Link>
                   </li>
                   <li className="nav-item float-sm-start">
                     <Link to={"/register"} className="nav-link">
-                      Sign Up
+                      <h5 style={{color: textColor}}>Sign Up</h5>
                     </Link>
                   </li>
                 </div>

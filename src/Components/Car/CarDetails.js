@@ -8,6 +8,10 @@ const CarDetails = () => {
     const [car, setCar] = useState([]);
     const [lastService, setLastService] = useState(null);
 
+    const fontColor= global.config.TileFontColor;
+    const tileBgColor= global.config.TileBackgroundColor;
+
+
     useEffect(() => {
         fetch(global.config.HostFront + '/api/cars/car/' + carId)
             .then(response => response.json())
@@ -85,7 +89,7 @@ const CarDetails = () => {
         <div className="container " >
             <div className="row ">
                 <div className="col-md-4">
-                    <div className=" card shadow">
+                    <div className=" card shadow" style={{background: tileBgColor}}>
                         {car.brand && (<img
                             src={"https://www.carlogos.org/car-logos/" + car.brand.toLowerCase() + "-logo.png"}
                             className="card-img-top"
@@ -106,8 +110,8 @@ const CarDetails = () => {
 
                 <div className="col-md-4">
 
-                    <div className="card shadow">
-                        <h5>LAST SERVICE:</h5>
+                    <div className="card shadow" style={{background: tileBgColor}}>
+                        <h5 style={{color: fontColor}}>LAST SERVICE:</h5>
                         {lastService && (
                             <div>
                                 <h6 className="card-title"> Course: {lastService.course} km</h6>
@@ -138,8 +142,8 @@ const CarDetails = () => {
                 {/*Exploitation state*/}
 
                 <div className="col-md-4">
-                    <div className="card shadow">
-                        <h5>EXPLOITATION STATE:</h5>
+                    <div className="card shadow" style={{background: tileBgColor}}>
+                        <h5 style={{color: fontColor}}>EXPLOITATION STATE:</h5>
                         {car.exploitationState && (
                             <div>
                                 <h6 className="card-title"> Oil Change: {car.exploitationState.lastOilChangeCourse} km/
@@ -165,7 +169,7 @@ const CarDetails = () => {
             </div>
             <div className="row">
                 <div className="col-md-3">
-                    <div className="card mb-3 shadow text-center">
+                    <div className="card mb-3 shadow text-center" style={{background: tileBgColor}}>
 
                             <Link to={"/add-exploitation-service"} state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img
@@ -174,14 +178,14 @@ const CarDetails = () => {
                                     alt="Add Exploitation Service"
                                     style={{width: '163px', height: 'auto'}}
                                 />
-                                <h5>Add Exploitation Service</h5>
+                                <h5 style={{color: fontColor}}>Add Exploitation Service</h5>
                             </Link>
 
                     </div>
                 </div>
 
                 <div className="col-md-3">
-                    <div className="card mb-3 shadow text-center">
+                    <div className="card mb-3 shadow text-center" style={{background: tileBgColor}}>
 
                             <Link to="/add-other-fix" state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img src="https://cdn-icons-png.flaticon.com/512/226/226537.png"
@@ -189,13 +193,13 @@ const CarDetails = () => {
                                      alt="Add Other Fix"
                                      style={{width: '160px', height: 'auto'}}
                                 />
-                                <h5>Add Other Fix</h5></Link>
+                                <h5 style={{color: fontColor}}>Add Other Fix</h5></Link>
                         </div>
 
                 </div>
 
                 <div className="col-md-3">
-                    <div className="card mb-3 shadow text-center">
+                    <div className="card mb-3 shadow text-center" style={{background: tileBgColor}}>
 
                             <Link to={"/car-history"} state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img
@@ -204,7 +208,7 @@ const CarDetails = () => {
                                     alt="Show Car Repair History"
                                     style={{width: '160px', height: 'auto'}}
                                 />
-                                <h5>Show Car Repair History</h5>
+                                <h5 style={{color: fontColor}}>Show Car Repair History</h5>
                             </Link>
 
                     </div>

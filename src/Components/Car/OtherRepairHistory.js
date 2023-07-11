@@ -9,7 +9,7 @@ const ShowHistory = () => {
     const [otherServices, setOtherServices] = useState([]);
     const [sortColumn, setSortColumn] = useState('');
     const [sortDirection, setSortDirection] = useState({key: "date", direction: "asc"});
-
+    const fontColor= global.config.TileFontColor;
 
     //Pobieranie danych json z serwera dla other service
     useEffect(() => {
@@ -59,7 +59,7 @@ const ShowHistory = () => {
     return (
         <div className="container">
 
-            <h3> Other Repair </h3>
+            <h2 style={{color: fontColor}}> Other Repair </h2>
             <Table striped bordered hover>
                 <thead>
                 <tr>

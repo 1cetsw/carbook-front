@@ -3,15 +3,17 @@ import {Link, useLocation} from 'react-router-dom';
 
 
 const ShowHistory = () => {
+    const fontColor= global.config.TileFontColor;
+    const tileBgColor= global.config.TileBackgroundColor;
 
     const location = useLocation();
     const carId = location.state.carId;
 
     return (
-        <div className="container">
-            <div className="row">
+        <div className="container" >
+            <div className="row" >
                     <div>
-                    <div className="card mb-3 shadow text-center">
+                    <div className="card mb-3 shadow text-center" style={{background: tileBgColor}}>
 
                         <Link to={"/exploitation-history"} state={{carId: carId}} style={{textDecoration: 'none'}}>
                             <img
@@ -20,14 +22,14 @@ const ShowHistory = () => {
                                 alt="Show Exploitation History"
                                 style={{width: '190px', height: 'auto'}}
                             />
-                            <h5>Show Exploitation History</h5>
+                            <h5 style={{color: fontColor}}>Show Exploitation History</h5>
                         </Link>
                     </div>
 
 
 
                 <div>
-                    <div className="card mb-3 shadow text-center">
+                    <div className="card mb-3 shadow text-center" style={{background: tileBgColor}}>
 
                         <Link to={"/other-repair-history"} state={{carId: carId}} style={{textDecoration: 'none'}}>
                             <img
@@ -36,7 +38,7 @@ const ShowHistory = () => {
                                 alt="Show Other History"
                                 style={{width: '170px', height: 'auto'}}
                             />
-                            <h5>Show Other Repair History</h5>
+                            <h5 style={{color: fontColor}}>Show Other Repair History</h5>
                         </Link>
 
                     </div>

@@ -3,6 +3,7 @@ import axios from "axios";
 import {useLocation, useNavigate} from "react-router-dom";
 
 import categoryList from "../../Common/RepairCategory";
+import {Card} from "react-bootstrap";
 
 
 const NewOtherFix = () => {
@@ -13,6 +14,9 @@ const NewOtherFix = () => {
     const [course, setCourse] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
+    const titleColor = global.config.FormTitleTextColor;
+    const buttonColor = global.config.ButtonColor;
+    const formBg=global.config.FormBackgroundColor;
 
     const formData = {
         carId, date, course, category, description
@@ -23,7 +27,7 @@ const NewOtherFix = () => {
             .then(response => {
                 // Handle success
                 console.log(response);
-                navigate(`/car-details`,{ state: {carId: carId}});
+                navigate(`/car-details`, {state: {carId: carId}});
             })
             .catch(error => {
                 // Handle error
@@ -31,48 +35,38 @@ const NewOtherFix = () => {
             });
     };
 
-    return (<div className="card shadow mb-4">
-            <div className="card-header py-3">
-                <h6 className="m-0 font-weight-bold text-primary">New Other Fix</h6>
-            </div>
+    return (
+        <Card style={{background: formBg}}>
+            <h4 style={{color: titleColor}}>New Other Fix</h4>
 
-            <div className="card-body">
-                <form onSubmit={handleSubmit}>
-
-                    <div className="form-group">
-                        <label> Date:</label>
-                        <input type="date" value={date} onChange={(e) => setDate(e.target.value)}/>
-                    </div>
-
-                    <div className="form-group">
-                        <label> Course: </label>
-                        <input type="text" value={course} onChange={(e) => setCourse(e.target.value)}/>
-                        km
-                    </div>
-                    <div className="form-group">
-                        <label> Category: </label>
-                        <select
-                            value={category} onChange={(e) => setCategory(e.target.value)}
-                        >
-                            <option value="">Select Category</option>
-                            {categoryList.map((category) => (<option key={category.category} value={category.category}>
-                                    {category.category}
-                                </option>))}
-
-                        </select>
-
-                    </div>
-                    <div className="form-group">
-                        <label> Desciption: </label></div>
-                    <textarea rows={7} cols={50} value={description} onChange={(e) => setDescription(e.target.value)}/>
-
-                    <div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    </div>
-
-                </form>
-            </div>
-        </div>);
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label> Date:</label>
+                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)}/>
+                </div>
+                <div className="form-group">
+                    <label> Course: </label>
+                    <input type="text" value={course} onChange={(e) => setCourse(e.target.value)}/>
+                    km
+                </div>
+                <div className="form-group">
+                    <label> Category: </label>
+                    <select
+                        value={category} onChange={(e) => setCategory(e.target.value)}>
+                        <option value="">Select Category</option>
+                        {categoryList.map((category) => (<option key={category.category} value={category.category}>
+                            {category.category}
+                        </option>))}
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label> Desciption: </label></div>
+                <textarea rows={7} cols={50} value={description} onChange={(e) => setDescription(e.target.value)}/>
+                <div>
+                    <button type="submit" className={`btn ${buttonColor}`}>Submit</button>
+                </div>
+            </form>
+        </Card>);
 };
 
 export default NewOtherFix;

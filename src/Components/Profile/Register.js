@@ -57,7 +57,8 @@ const Register = () => {
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState("");
 
-
+    const buttonColor=global.config.ButtonColor;
+    const formBg=global.config.FormBackgroundColor;
     const onChangeUsername = (e) => {
         const username = e.target.value;
         setUsername(username);
@@ -115,7 +116,7 @@ const Register = () => {
 
     return (
         <div className="col-md-12">
-            <div className="card card-container">
+            <div className="card card-container" style={{background: formBg}}>
                 <img
                     src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                     alt="profile-img"
@@ -176,7 +177,7 @@ const Register = () => {
                             <div className="form-group">
                                 {!passwordMatch && <p style={{color: 'red'}}>Passwords not matched.</p>}
 
-                                <button className="btn btn-primary btn-block">Sign Up</button>
+                                <button type="submit" className={`btn ${buttonColor}`}>Sign Up</button>
                             </div>
                         </div>
                     )}

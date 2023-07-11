@@ -7,17 +7,23 @@ module.exports = global.config = {
 
 
     //COLORS
-    //kolor tła pod głownym kontenerem
+    //kolor tła pod głownym kontenerem tu zmienic jeszcze na ten sam w app.css <html>
     BackgroundColor: "#666666",
     //kolor <model><marka>
-    TileFontColor: "text-warning",
+    TileFontColor: "#C20B0BFF",
     //kolor tła kafelka
-    TileBackgroundColor: "bg-secondary",
+    TileBackgroundColor: "rgba(255,255,255,0.62)",
     //kolor VIN
-    DescriptionFontColor: "text-dark",
-    //kolor tekstu dodaj nowe auto
-    AddNewTileColor: "text-warning",
-    //kolor głownego tła pod cala strona
-    HtmlBackgroundColor: "#166666"
+    DescriptionFontColor: "#000000",
 
+    //kolor przycisku
+    ButtonColor:"btn-warning",
+    //NavBar tekst kolor
+    NavBarTextColor:"rgb(215,195,15)",
+    //kolor navbara
+    NavBarBackgroundColor:"rgba(33,33,32,0.84)",
+    // tło dla formularzy
+    FormBackgroundColor:"rgba(57,58,57,0.48)",
+    //kolor nagłowkow kart jak new order fix register itp
+    FormTitleTextColor: "#C20B0BFF",
 };

@@ -6,7 +6,6 @@ import NavBar from "./Components/NavBar";
 
 function  App()  {
     const backgroundColor=(global.config.BackgroundColor);
-    const htmlBgColor=(global.config.HtmlBackgroundColor);
 
 
 

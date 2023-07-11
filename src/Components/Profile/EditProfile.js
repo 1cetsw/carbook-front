@@ -8,6 +8,9 @@ import {Link, useNavigate} from "react-router-dom";
 const UserProfileEdit = () => {
     const currentUser = AuthService.getCurrentUser();
     const navigate = useNavigate();
+    const buttonColor=global.config.ButtonColor;
+    const titleColor=global.config.FormTitleTextColor;
+    const formBg=global.config.FormBackgroundColor;
 
     const [editedData, setEditedData] = useState({
         name: '',
@@ -71,8 +74,8 @@ const UserProfileEdit = () => {
 
 
     return (
-        <Card style={{width:'50%'}}>
-                <Card.Title>Edit Profile Data</Card.Title>
+        <Card style={{background: formBg}}>
+                <Card.Title style={{color: titleColor}}>Edit Profile Data</Card.Title>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formName">
                         <Form.Label> Name:
@@ -119,11 +122,11 @@ const UserProfileEdit = () => {
                             onChange={handleChange}
                         />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" className={`btn ${buttonColor}`}>
                         Save
                     </Button>
                     <Link to="/profile">
-                        <Button variant="primary">
+                        <Button variant="primary" className={`btn ${buttonColor}`}>
                             Cancel
                         </Button> </Link>
 

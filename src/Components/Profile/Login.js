@@ -19,13 +19,14 @@ const required = (value) => {
 const Login = () => {
   const form = useRef();
   const checkBtn = useRef();
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-
   const navigate = useNavigate();
+
+  const buttonColor=global.config.ButtonColor;
+  const formBg=global.config.FormBackgroundColor;
 
   const onChangeUsername = (e) => {
     const username = e.target.value;
@@ -71,7 +72,7 @@ const Login = () => {
 
   return (
     <div className="col-md-12">
-      <div className="card card-container">
+      <div className="card card-container" style={{background: formBg}}>
         <img
           src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
           alt="profile-img"
@@ -104,7 +105,7 @@ const Login = () => {
           </div>
 
           <div className="form-group">
-            <button className="btn btn-primary btn-block" disabled={loading}>
+            <button type="submit" className={`btn ${buttonColor}`} disabled={loading}>
               {loading && (
                 <span className="spinner-border spinner-border-sm"></span>
               )}
