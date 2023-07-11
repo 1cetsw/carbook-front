@@ -165,8 +165,8 @@ const CarDetails = () => {
             </div>
             <div className="row">
                 <div className="col-md-3">
-                    <div className="card mb-3 shadow">
-                        <div className="card-body ">
+                    <div className="card mb-3 shadow text-center">
+
                             <Link to={"/add-exploitation-service"} state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img
                                     src="https://faithfulltire.com/wp-content/uploads/2023/04/oil-changes-02-300x300.png"
@@ -176,13 +176,13 @@ const CarDetails = () => {
                                 />
                                 <h5>Add Exploitation Service</h5>
                             </Link>
-                        </div>
+
                     </div>
                 </div>
 
                 <div className="col-md-3">
-                    <div className="card mb-3 shadow">
-                        <div className="card-body ">
+                    <div className="card mb-3 shadow text-center">
+
                             <Link to="/add-other-fix" state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img src="https://cdn-icons-png.flaticon.com/512/226/226537.png"
                                      className="card-img-top"
@@ -191,12 +191,12 @@ const CarDetails = () => {
                                 />
                                 <h5>Add Other Fix</h5></Link>
                         </div>
-                    </div>
+
                 </div>
 
                 <div className="col-md-3">
-                    <div className="card mb-3 shadow">
-                        <div className="card-body ">
+                    <div className="card mb-3 shadow text-center">
+
                             <Link to={"/car-history"} state={{carId: carId}} style={{ textDecoration: 'none' }}>
                                 <img
                                     src="https://cdn0.iconfinder.com/data/icons/car-service-35/64/Service-history-report-gear-car-512.png"
@@ -206,7 +206,7 @@ const CarDetails = () => {
                                 />
                                 <h5>Show Car Repair History</h5>
                             </Link>
-                        </div>
+
                     </div>
                 </div>
             </div>

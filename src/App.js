@@ -5,12 +5,16 @@ import RouterReact from "./Services/RouterReact";
 import NavBar from "./Components/NavBar";
 
 function  App()  {
+    const backgroundColor=(global.config.BackgroundColor);
+    const htmlBgColor=(global.config.HtmlBackgroundColor);
+
+
+
+
   return (
-  
-    <div className="App " style={{ backgroundColor: ' #666666'}}>
+    <div className="App " style={{ backgroundColor: backgroundColor}}>
      <NavBar />
      <RouterReact />
-
     </div>
   );
 }

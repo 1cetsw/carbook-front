@@ -71,8 +71,7 @@ const UserProfileEdit = () => {
 
 
     return (
-        <Card style={{width: '50%'}}>
-            <Card.Body>
+        <Card style={{width:'50%'}}>
                 <Card.Title>Edit Profile Data</Card.Title>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formName">
@@ -129,7 +128,6 @@ const UserProfileEdit = () => {
                         </Button> </Link>
 
                 </Form>
-            </Card.Body>
         </Card>
     );
 };
