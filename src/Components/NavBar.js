@@ -41,7 +41,7 @@ function NavBar() {
           <nav style={{background: navBarColor}} className={`navbar navbar-expand navbar-dark px-4 `}>
             <Link to={"/"} className="navbar-brand">
               <div style={{ width: 50, height: 50 }}>
-                <img className="img-fluid rounded-circle mb-4" src={carbookLogo} alt="carbook logo" />
+                <img className="img-fluid rounded-circle " src={carbookLogo} alt="carbook logo" />
               </div>
 
             </Link>
@@ -86,21 +86,21 @@ function NavBar() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <a href="/login" className="nav-link" onClick={logOut}>
-                      <h7 style={{color: textColor}}>LogOut</h7>
+                    <a href="/login" className="nav-link float-right" onClick={logOut}>
+                      <h7 style={{color: textColor}}>Logout</h7>
                     </a>
                   </li>
                 </div>
             ) : (
-                <div className="navbar-nav ml-auto float-sm-start">
+                <div className="navbar-nav ml-auto ">
                   <li className="nav-item">
                     <Link to={"/login"} className="nav-link">
-                      <h5 style={{color: textColor}}> Login</h5>
+                      <h7 style={{color: textColor}}> Login</h7>
                     </Link>
                   </li>
                   <li className="nav-item float-sm-start">
                     <Link to={"/register"} className="nav-link">
-                      <h5 style={{color: textColor}}>Sign Up</h5>
+                      <h7 style={{color: textColor}}>Sign Up</h7>
                     </Link>
                   </li>
                 </div>

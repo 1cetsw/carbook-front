@@ -91,7 +91,7 @@ const CarDetails = () => {
                 <div className="col-md-4">
                     <div className=" card shadow" style={{background: tileBgColor}}>
                         {car.brand && (<img
-                            src={"https://www.carlogos.org/car-logos/" + car.brand.toLowerCase() + "-logo.png"}
+                            src={"https://www.carlogos.org/car-logos/" + car.brand.toLowerCase().replace(/\s+/g, '-') + "-logo.png"}
                             className="card-img-top"
                             alt="Logo samochodu"
                             style={{width: '200px', height: 'auto'}}

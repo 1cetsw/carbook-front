@@ -7,11 +7,11 @@ const CarTile = (props) => {
     const tileBgColor= global.config.TileBackgroundColor;
 
     return (
-        <div className="col-md-4 " key={props.car.id}>
-            <div className={`card shadow mb-4 `} style={{background: tileBgColor}}>
+        <div className="col" key={props.car.id}>
+            <div className={`card shadow mb-md-0 `} style={{background: tileBgColor}}>
                 <div className=" text-center ">
                     <Link to="/car-details" state={{carId: props.car.id}} style={{ textDecoration: 'none' }}>
-                        <img src={"https://www.carlogos.org/car-logos/"+props.car.brand.toLowerCase()+"-logo.png"}
+                        <img src={"https://www.carlogos.org/car-logos/"+props.car.brand.toLowerCase().replace(/\s+/g, '-')+"-logo.png"}
                              className="card-img-top"
                              alt="Add New Car"
                              style={{ width: '200px', height: 'auto'}}

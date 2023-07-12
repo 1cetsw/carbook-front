@@ -6,7 +6,7 @@ import carList from "../../Common/CarList";
 
 const NewCarForm = () => {
     const buttonColor=global.config.ButtonColor;
-    const titleColor=global.config.FormTitleTextColor;
+    const titleColor=global.config.TileFontColor;
     const formBg=global.config.FormBackgroundColor;
 
 
@@ -22,7 +22,7 @@ const NewCarForm = () => {
     });
 
     const handleChange = (e) => {
-        setCarData({...carData, [e.target.name]: e.target.value});
+        setCarData({...carData, [e.target.name]: e.target.value},);
     };
 
     const handleSubmit = (e) => {
@@ -44,13 +44,13 @@ const NewCarForm = () => {
         <div className="card shadow mb-4" style={{background: formBg}}>
             <h4 style={{color: titleColor}}> Add New Car</h4>
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} style={{ color: titleColor}}>
                     <div className="form-group">
                         <div>
                             <div className="card-img-top">
                                 {carData.brand && (
                                     <img
-                                        src={"https://www.carlogos.org/car-logos/" + carData.brand.toLowerCase() + "-logo.png"}
+                                        src={"https://www.carlogos.org/car-logos/" + carData.brand.toLowerCase().replace(/\s+/g, '-') + "-logo.png"}
                                         class="card-img-top"
                                         alt="Logo samochodu"
                                         style={{width: '150px', height: 'auto'}}
@@ -94,7 +94,7 @@ const NewCarForm = () => {
                             className="form-control"
                             name="vin"
                             placeholder="Enter VIN number"
-                            value={carData.vin}
+                            value={carData.vin.toUpperCase()}
                             onChange={handleChange}
                         />
                     </div>
@@ -116,7 +116,7 @@ const NewCarForm = () => {
                             className="form-control"
                             name="plate"
                             placeholder="Plate Number"
-                            value={carData.plate}
+                            value={carData.plate.toUpperCase()}
                             onChange={handleChange}
                         />
                     </div>

@@ -21,15 +21,16 @@ const CarTiles = () => {
             });
     }, []);
     return (
+        <div>
+        <NewCarTile/>
         <div className="container">
-            <NewCarTile/>
+
             <div className="row">
 
                 {cars.map((car) => <CarTile car={car} key={car.id}/>)}
 
-
             </div>
-        </div>
+        </div></div>
     );
 };
 

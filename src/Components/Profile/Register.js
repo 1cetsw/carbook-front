@@ -57,8 +57,10 @@ const Register = () => {
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState("");
 
+    const fontColor = global.config.TileFontColor;
     const buttonColor=global.config.ButtonColor;
     const formBg=global.config.FormBackgroundColor;
+    const buttonTextColor = global.config.ButtonTextColor;
     const onChangeUsername = (e) => {
         const username = e.target.value;
         setUsername(username);
@@ -127,7 +129,7 @@ const Register = () => {
                     {!successful && (
                         <div>
                             <div className="form-group">
-                                <label htmlFor="username">Username</label>
+                                <label htmlFor="username" style={{color: fontColor}}>Username</label>
                                 <Input
                                     type="text"
                                     className="form-control"
@@ -140,7 +142,7 @@ const Register = () => {
 
 
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email" style={{color: fontColor}}>Email</label>
                                 <Input
                                     type="text"
                                     className="form-control"
@@ -152,7 +154,7 @@ const Register = () => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password" style={{color: fontColor}}>Password</label>
                                 <Input
                                     type="password"
                                     className="form-control"
@@ -163,7 +165,7 @@ const Register = () => {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password" style={{color: fontColor}}>Password</label>
                                 <Input
                                     type="password"
                                     className="form-control"
@@ -177,7 +179,7 @@ const Register = () => {
                             <div className="form-group">
                                 {!passwordMatch && <p style={{color: 'red'}}>Passwords not matched.</p>}
 
-                                <button type="submit" className={`btn ${buttonColor}`}>Sign Up</button>
+                                <button  style={{color: buttonTextColor}} type="submit" className={`btn ${buttonColor}`}>Sign Up</button>
                             </div>
                         </div>
                     )}

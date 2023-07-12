@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
 import AuthService from "../../Services/Auth.service";
+import {Button} from "react-bootstrap";
 
 const required = (value) => {
   if (!value) {
@@ -24,10 +25,10 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-
+  const buttonTextColor = global.config.ButtonTextColor;
   const buttonColor=global.config.ButtonColor;
   const formBg=global.config.FormBackgroundColor;
-
+  const fontColor = global.config.TileFontColor;
   const onChangeUsername = (e) => {
     const username = e.target.value;
     setUsername(username);
@@ -81,7 +82,7 @@ const Login = () => {
 
         <Form onSubmit={handleLogin} ref={form}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username" style={{color: fontColor}}>Username</label>
             <Input
               type="text"
               className="form-control"
@@ -93,7 +94,7 @@ const Login = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" style={{color: fontColor}}>Password</label>
             <Input
               type="password"
               className="form-control"
@@ -109,7 +110,7 @@ const Login = () => {
               {loading && (
                 <span className="spinner-border spinner-border-sm"></span>
               )}
-              <span>Login</span>
+              <span style={{color: buttonTextColor}}>Login</span>
             </button>
           </div>
 
@@ -121,6 +122,13 @@ const Login = () => {
             </div>
           )}
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
+
+
+        <Link to="/">
+          <Button  variant="primary" className={`btn   ${buttonColor}`}>
+            <h7 style={{color: buttonTextColor}}>Back to Home Page</h7>
+          </Button>
+        </Link>
         </Form>
       </div>
     </div>

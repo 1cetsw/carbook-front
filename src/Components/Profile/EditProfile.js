@@ -8,9 +8,10 @@ import {Link, useNavigate} from "react-router-dom";
 const UserProfileEdit = () => {
     const currentUser = AuthService.getCurrentUser();
     const navigate = useNavigate();
-    const buttonColor=global.config.ButtonColor;
-    const titleColor=global.config.FormTitleTextColor;
-    const formBg=global.config.FormBackgroundColor;
+    const buttonColor = global.config.ButtonColor;
+    const buttonTextColor = global.config.ButtonTextColor;
+    const fontColor = global.config.TileFontColor;
+    const formBg = global.config.FormBackgroundColor;
 
     const [editedData, setEditedData] = useState({
         name: '',
@@ -41,9 +42,6 @@ const UserProfileEdit = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // if(editedData.name===''){
-        //     editedData.name = user.name;
-        // }
         for (const key in editedData) {
             if (editedData[key] === '') {
                 editedData.name = user.name;
@@ -75,62 +73,65 @@ const UserProfileEdit = () => {
 
     return (
         <Card style={{background: formBg}}>
-                <Card.Title style={{color: titleColor}}>Edit Profile Data</Card.Title>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group controlId="formName">
-                        <Form.Label> Name:
-                        </Form.Label>
+            <h2 style={{color: fontColor}}>Edit Profile Data</h2>
+            <Form onSubmit={handleSubmit} style={{color: fontColor}}>
+                <Form.Group controlId="formName" >
+                    <Form.Label> Name:
+                    </Form.Label>
 
-                        <Form.Control
-                            type="text"
-                            name="name"
-                            placeholder={user.name}
-                            value={editedData.name}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
-                    <Form.Group controlId="formSurname">
-                        <Form.Label> Surname:
-                        </Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="surname"
-                            placeholder={user.surname}
-                            value={editedData.surname}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
-                    <Form.Group controlId="formPhone">
-                        <Form.Label> Phone:
-                        </Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="phone"
-                            placeholder={user.phone}
-                            value={editedData.phone}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
-                    <Form.Group controlId="formLocation">
-                        <Form.Label> Location:
-                        </Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="location"
-                            placeholder={user.location}
-                            value={editedData.location}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
-                    <Button variant="primary" type="submit" className={`btn ${buttonColor}`}>
-                        Save
+                    <Form.Control
+                        type="text"
+                        name="name"
+                        placeholder={user.name}
+                        value={editedData.name}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="formSurname">
+                    <Form.Label> Surname:
+                    </Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="surname"
+                        placeholder={user.surname}
+                        value={editedData.surname}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="formPhone">
+                    <Form.Label> Phone:
+                    </Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="phone"
+                        placeholder={user.phone}
+                        value={editedData.phone}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="formLocation">
+                    <Form.Label> Location:
+                    </Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="location"
+                        placeholder={user.location}
+                        value={editedData.location}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <br/>
+
+                <Button  variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>
+                    <h7 style={{color: buttonTextColor}}>Save</h7>
+                </Button>
+
+                <Link to="/profile">
+                    <Button  variant="primary" className={`btn   ${buttonColor}`}>
+                        <h7 style={{color: buttonTextColor}}>Cancel</h7>
                     </Button>
-                    <Link to="/profile">
-                        <Button variant="primary" className={`btn ${buttonColor}`}>
-                            Cancel
-                        </Button> </Link>
-
-                </Form>
+                </Link>
+            </Form>
         </Card>
     );
 };
