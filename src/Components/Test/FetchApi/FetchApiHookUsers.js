@@ -5,7 +5,7 @@ const FetchApiHookUsers = () => {
 
   useEffect(() => {
     // Fetch data from the server
-    fetch(global.config.HostFront + '/api/users')
+    fetch(global.config.HostFront + '/api/users/all')
       .then(response => response.json())
       .then(data => {
         setUsers(data);
