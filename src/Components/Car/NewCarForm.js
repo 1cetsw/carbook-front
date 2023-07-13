@@ -18,6 +18,7 @@ const NewCarForm = () => {
         engine:'',
         plate:'',
         course:'',
+        nickname:'',
         userId: currentUser.id
     });
 
@@ -128,6 +129,17 @@ const NewCarForm = () => {
                             name="course"
                             placeholder="Course your car '12000'"
                             value={carData.course}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="nickname">Nickname :</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="nickname"
+                            placeholder="Nickname of your car"
+                            value={carData.nickname}
                             onChange={handleChange}
                         />
                     </div>

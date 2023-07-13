@@ -3,7 +3,7 @@ import {Card, Form, Button} from 'react-bootstrap';
 import axios from "axios";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 
-const UserProfileEdit = () => {
+const CarProfileEdit = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const carId = location.state.carId;
@@ -18,6 +18,7 @@ const UserProfileEdit = () => {
         engine: '',
         plate: '',
         course: '',
+        nickname: ''
     });
 
     const [car, setCar] = useState([]);
@@ -55,6 +56,9 @@ const UserProfileEdit = () => {
             }
             if (editedData.course === '') {
                 editedData.course = car.course;
+            }
+            if (editedData.nickname === '') {
+                editedData.nickname = car.nickname;
             }
 
         }
@@ -123,6 +127,17 @@ const UserProfileEdit = () => {
                         onChange={handleChange}
                     />
                 </Form.Group>
+                <Form.Group controlId="formNickname">
+                    <Form.Label> Nickname:
+                    </Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="nickname"
+                        placeholder={car.nickname}
+                        value={editedData.nickname}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
                 <br/>
 
                 <Button variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>
@@ -139,4 +154,4 @@ const UserProfileEdit = () => {
     );
 };
 
-export default UserProfileEdit;
+export default CarProfileEdit;

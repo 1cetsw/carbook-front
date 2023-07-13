@@ -22,7 +22,7 @@ const FetchApiHookCars = () => {
             <div className="card mb-4">
               <div className="card-body">
                 <h5 className="card-title">{`${car.brand} ${car.model}`}</h5>
-                <p className="card-text">{car.vin}</p>
+                <p className="card-text">{car.plate}</p>
               </div>
             </div>
           </div>

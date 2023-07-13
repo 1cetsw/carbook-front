@@ -6,6 +6,13 @@ const CarTile = (props) => {
     const downFontColor= global.config.DescriptionFontColor;
     const tileBgColor= global.config.TileBackgroundColor;
 
+    function setDescription() {
+        const nickname = props.car.nickname;
+        const plate = props.car.plate;
+        return nickname === null || nickname.trim() === "" ? plate === null || plate.trim() === "" ? `` :
+            `Plate number: ${plate}` : `Nickname: ${nickname}`;
+    }
+
     return (
         <div className="col" key={props.car.id}>
 
@@ -18,7 +25,7 @@ const CarTile = (props) => {
                              style={{ width: '200px', height: 'auto'}}
                         />
                         <h5 style={{color: upFontColor}}  className={`card-title `} >{props.car.brand} {props.car.model} </h5>
-                        <h6  style={{color: downFontColor}} className={`card-title `}>VIN: {props.car.vin}</h6>
+                        <h6 style={{color: downFontColor}} className={`card-title `}>{setDescription()}</h6>
                     </Link>
                 </div>
             </div>
