@@ -1,37 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import {Card, Form, Button} from 'react-bootstrap';
-import AuthService from "../../Services/Auth.service";
 import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
-
+import {Link, useLocation, useNavigate} from "react-router-dom";
 
 const UserProfileEdit = () => {
-    const currentUser = AuthService.getCurrentUser();
     const navigate = useNavigate();
+    const location = useLocation();
+    const carId = location.state.carId;
+
     const buttonColor = global.config.ButtonColor;
     const buttonTextColor = global.config.ButtonTextColor;
     const fontColor = global.config.TileFontColor;
     const formBg = global.config.FormBackgroundColor;
 
     const [editedData, setEditedData] = useState({
-        name: '',
-        surname: '',
-        phone: '',
-        location: '',
+        model: '',
+        engine: '',
+        plate: '',
+        course: '',
     });
 
-    const [user, setUser] = useState([]);
+    const [car, setCar] = useState([]);
 //pobieranie aktualnych danych
     useEffect(() => {
-        fetch(global.config.HostFront + '/api/users/' + currentUser.id)
+        fetch(global.config.HostFront + '/api/cars/car/' + carId)
             .then(response => response.json())
             .then(data => {
-                setUser(data);
+                setCar(data);
             })
             .catch(error => {
                 console.log('Error fetching data:', error);
             });
-    }, [currentUser.id]);
+    }, [carId]);
     const handleChange = (e) => {
         setEditedData({
             ...editedData,
@@ -43,26 +43,28 @@ const UserProfileEdit = () => {
         e.preventDefault();
 
         for (const key in editedData) {
+
             if (editedData[key] === '') {
-                editedData.name = user.name;
+                editedData.model = car.model;
             }
-            if (editedData.surname === '') {
-                editedData.surname = user.surname;
+            if (editedData.engine === '') {
+                editedData.engine = car.engine;
             }
-            if (editedData.phone === '') {
-                editedData.phone = user.phone;
+            if (editedData.plate === '') {
+                editedData.plate = car.plate;
             }
-            if (editedData.location === '') {
-                editedData.location = user.location;
+            if (editedData.course === '') {
+                editedData.course = car.course;
             }
+
         }
 
-        axios.put(global.config.HostFront + '/api/users/' + currentUser.id, editedData)
+        axios.put(global.config.HostFront + '/api/cars/edit-car-info/' + carId, editedData)
             .then(response => {
                 // Handle success
-                console.log('success');
+                console.log("success");
                 console.log(response);
-                navigate(`/profile`, {state: {currentUser: currentUser.id}});
+                navigate(`/car-details`, {state: {carId: carId}});
             })
             .catch(error => {
                 // Handle error
@@ -75,59 +77,60 @@ const UserProfileEdit = () => {
         <Card style={{background: formBg}}>
             <h2 style={{color: fontColor}}>Edit Profile Data</h2>
             <Form onSubmit={handleSubmit} style={{color: fontColor}}>
-                <Form.Group controlId="formName" >
-                    <Form.Label> Name:
-                    </Form.Label>
 
-                    <Form.Control
-                        type="text"
-                        name="name"
-                        placeholder={user.name}
-                        value={editedData.name}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group controlId="formSurname">
-                    <Form.Label> Surname:
+                <Form.Group controlId="formModel">
+                    <Form.Label> Model:
                     </Form.Label>
                     <Form.Control
                         type="text"
-                        name="surname"
-                        placeholder={user.surname}
-                        value={editedData.surname}
+                        name="model"
+                        placeholder={car.model}
+                        value={editedData.model}
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="formPhone">
-                    <Form.Label> Phone:
+
+                <Form.Group controlId="formEngine">
+                    <Form.Label> Engine:
                     </Form.Label>
                     <Form.Control
                         type="text"
-                        name="phone"
-                        placeholder={user.phone}
-                        value={editedData.phone}
+                        name="engine"
+                        placeholder={car.engine}
+                        value={editedData.engine}
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="formLocation">
-                    <Form.Label> Location:
+                <Form.Group controlId="formPlate">
+                    <Form.Label> Plate:
                     </Form.Label>
                     <Form.Control
                         type="text"
-                        name="location"
-                        placeholder={user.location}
-                        value={editedData.location}
+                        name="plate"
+                        placeholder={car.plate}
+                        value={editedData.plate}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="formCourse">
+                    <Form.Label> Course:
+                    </Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="course"
+                        placeholder={car.course}
+                        value={editedData.course}
                         onChange={handleChange}
                     />
                 </Form.Group>
                 <br/>
 
-                <Button  variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>
+                <Button variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>
                     <h6 style={{color: buttonTextColor}}>Save</h6>
                 </Button>
 
-                <Link to="/profile">
-                    <Button  variant="primary" className={`btn   ${buttonColor}`}>
+                <Link to="/car-details" state={{carId: carId}}>
+                    <Button variant="primary" className="btn btn-info">
                         <h6 style={{color: buttonTextColor}}>Cancel</h6>
                     </Button>
                 </Link>

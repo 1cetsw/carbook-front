@@ -46,9 +46,7 @@ const Profile = (props) => {
                     <h6 style={{color: buttonTextColor}}>Edit Profile Data</h6>
                 </Link>
             </Button>
-<h2>
 
-</h2>
         </Card>
 
     );

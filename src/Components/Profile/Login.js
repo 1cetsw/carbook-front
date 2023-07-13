@@ -126,7 +126,7 @@ const Login = () => {
 
         <Link to="/">
           <Button  variant="primary" className={`btn   ${buttonColor}`}>
-            <h7 style={{color: buttonTextColor}}>Back to Home Page</h7>
+            <h6 style={{color: buttonTextColor}}>Back to Home Page</h6>
           </Button>
         </Link>
         </Form>

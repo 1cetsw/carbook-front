@@ -14,7 +14,7 @@ const NewOtherFix = () => {
     const [course, setCourse] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
-    const titleColor = global.config.FormTitleTextColor;
+    const titleColor = global.config.TileFontColor;
     const buttonColor = global.config.ButtonColor;
     const formBg=global.config.FormBackgroundColor;
 

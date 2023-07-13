@@ -8,6 +8,7 @@ const CarTile = (props) => {
 
     return (
         <div className="col" key={props.car.id}>
+
             <div className={`card shadow mb-md-0 `} style={{background: tileBgColor}}>
                 <div className=" text-center ">
                     <Link to="/car-details" state={{carId: props.car.id}} style={{ textDecoration: 'none' }}>
@@ -17,7 +18,7 @@ const CarTile = (props) => {
                              style={{ width: '200px', height: 'auto'}}
                         />
                         <h5 style={{color: upFontColor}}  className={`card-title `} >{props.car.brand} {props.car.model} </h5>
-                        <h8  style={{color: downFontColor}} className={`card-title `}>VIN: {props.car.vin}</h8>
+                        <h6  style={{color: downFontColor}} className={`card-title `}>VIN: {props.car.vin}</h6>
                     </Link>
                 </div>
             </div>

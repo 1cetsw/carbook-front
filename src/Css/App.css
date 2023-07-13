@@ -1,5 +1,4 @@
 
-
 label {
   display: block;
   margin-top: 10px;
@@ -47,6 +46,6 @@ blink {
 
 
 html{
-  background-color: #666666;
+  background-color: rgba(65,62,62,0.62);
 }
 
