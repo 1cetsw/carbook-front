@@ -2,15 +2,18 @@ import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import "../Css/App.css";
 import carbookLogo from '../Assets/Images/carbook.png';
+import deFlagLogo from '../Assets/Images//Icons/de.png';
+import plFlagLogo from '../Assets/Images/Icons/pl.png';
+import enFlagLogo from '../Assets/Images/Icons/en.png';
 import AuthService from "../Services/Auth.service";
 // import AuthVerify from "../Common/AuthVerify";
 import EventBus from "../Common/EventBus";
+import {Container} from "react-bootstrap";
 
 function NavBar() {
     const [showWorkshopBoard, setShowWorkshopBoard] = useState(false);
     const [showAdminBoard, setShowAdminBoard] = useState(false);
     const [currentUser, setCurrentUser] = useState(undefined);
-    const [lang, setLang] = useState('en');
     const textColor = global.config.NavBarTextColor;
     const navBarColor = global.config.NavBarBackgroundColor;
 
@@ -35,27 +38,19 @@ function NavBar() {
         setCurrentUser(undefined);
     };
 
-    const languages = [
-        {value: '', text: "Options"},
-        {value: 'en', text: "English"},
-        {value: 'pl', text: "Polish"},
-        {value: 'de', text: "German"}
-    ]
-    const handleChange = e => {
-        setLang(e.target.value);
 
-    }
     return (
-        <div className="container-fluid px-0 ">
-            <div className="App">
-
-                <nav style={{background: navBarColor}} className={`navbar navbar-expand navbar-dark px-4 `}>
+        <Container fluid className=" px-0">
+            <div className="App ">
+                <nav style={{background: navBarColor}} className="navbar navbar-expand-xxl px-4 ">
                     <Link to={"/"} className="navbar-brand">
-                        <div style={{width: 50, height: 50}}>
+                        <div className="logo">
                             <img className="img-fluid rounded-circle " src={carbookLogo} alt="carbook logo"/>
                         </div>
 
                     </Link>
+
+
                     <div className="navbar-nav mr-auto ">
 
                         {showWorkshopBoard && (
@@ -115,20 +110,21 @@ function NavBar() {
                                 </Link>
                             </li>
                         </div>
-                    )}
 
-                    <select value={lang} onChange={handleChange}>
-                        {languages.map(item => {
-                            return (<option key={item.value}
-                                            value={item.value}>{item.text}</option>);
-                        })}
-                    </select>
+                    )}
+                    <div  className="flags-to-right  ">
+                        <img className="img-fluid rounded-circle logo-flag" src={enFlagLogo} alt="English" />
+                        <img className="img-fluid rounded-circle logo-flag" src={plFlagLogo} alt="Polish" />
+                        <img className="img-fluid rounded-circle logo-flag" src={deFlagLogo} alt="German" />
+                    </div>
                 </nav>
                 {/* <AuthVerify logOut={logOut}/>
      */}
 
             </div>
-        </div>
+
+
+        </Container>
     );
 };
 

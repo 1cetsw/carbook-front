@@ -1,10 +1,10 @@
 import carbookLogo from '../../Assets/Images/carbook.png';
 import background from '../../Assets/Images/background_new1.jpg';
-
+import { Container } from 'react-bootstrap';
 
 const StartPage = () => {
         return (
-            <div>
+            <Container fluid className=" px-0">
                 <header className="py-5 bg-image-full" style={{
                     backgroundImage: `url(${background})`,
                     backgroundRepeat: "no-repeat",
@@ -21,7 +21,7 @@ const StartPage = () => {
                 <footer className="py-3 bg-dark">
                     <div className="container"><p className="m-0 text-center text-white">Copyright &copy; Carbook Website Team 2023</p></div>
                 </footer>
-            </div>
+            </Container>
         )
     }
 
