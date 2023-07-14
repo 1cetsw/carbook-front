@@ -115,15 +115,15 @@ const CarDetails = () => {
                         <h6 className="card-title"> Engine: {car.engine}</h6>
                         <h6 className="card-title"> Course: {car.course} km</h6>
                         <h6 className="card-title"> Plate: {car.plate}</h6>
-                        <h6 className="card-title"> Nickname: {car.nickname}</h6>
+                        <h6 className="card-title"> Nickname: "{car.nickname}"</h6>
                         <div>
                             {!showConfirmation ? (
-                                <button className="btn btn-danger me-2 " onClick={handleConfirm}>Delete</button>
+                                <Button className="btn btn-danger me-2 " onClick={handleConfirm}>Delete</Button>
                             ) : (
                                 <div>
                                     <p>Are you sure you want to delete?</p>
-                                    <button className="btn btn-danger" onClick={handleDelete}>Yes</button>
-                                    <button className="btn btn-success" onClick={handleCancel}>No</button>
+                                    <Button className="btn btn-danger" onClick={handleDelete}>Yes</Button>
+                                    <Button className="btn btn-success" onClick={handleCancel}>No</Button>
                                 </div>
                             )}
                             {!showConfirmation ? (
