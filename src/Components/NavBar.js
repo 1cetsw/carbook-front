@@ -92,7 +92,7 @@ function NavBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <a href="/login" className="nav-link float-right" onClick={logOut}>
+                                <a href="/" className="nav-link float-right" onClick={logOut}>
                                     <h6 style={{color: textColor}}>Logout</h6>
                                 </a>
                             </li>
