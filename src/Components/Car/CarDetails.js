@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {Alert, Button} from 'react-bootstrap';
 import axios from "axios";
+import {useTranslation} from "react-i18next";
 
 
 const CarDetails = () => {
@@ -13,6 +14,7 @@ const CarDetails = () => {
     const [showConfirmation, setShowConfirmation] = useState(false);
     const fontColor = global.config.TileFontColor;
     const tileBgColor = global.config.TileBackgroundColor;
+    const {t} = useTranslation();
 
     useEffect(() => {
         fetch(global.config.HostFront + '/api/cars/car/' + carId)
@@ -106,30 +108,30 @@ const CarDetails = () => {
                         {car.brand && (<img
                             src={"https://www.carlogos.org/car-logos/" + car.brand.toLowerCase().replace(/\s+/g, '-') + "-logo.png"}
                             className="card-img-top"
-                            alt="Logo samochodu"
+                            alt="Car Logo"
                             style={{width: '200px', height: 'auto'}}
                         />)}
-                        <h6 className="card-title"> Brand: {car.brand} </h6>
-                        <h6 className="card-title"> Model: {car.model}</h6>
+                        <h6 className="card-title"> {t('brand')}: {car.brand} </h6>
+                        <h6 className="card-title"> {t('model')}: {car.model}</h6>
                         <h6 className="card-title"> VIN: {car.vin}</h6>
-                        <h6 className="card-title"> Engine: {car.engine}</h6>
-                        <h6 className="card-title"> Course: {car.course} km</h6>
-                        <h6 className="card-title"> Plate: {car.plate}</h6>
-                        <h6 className="card-title"> Nickname: "{car.nickname}"</h6>
+                        <h6 className="card-title"> {t('engine')}: {car.engine}</h6>
+                        <h6 className="card-title"> {t('course')}: {car.course} km</h6>
+                        <h6 className="card-title"> {t('plate')}: {car.plate}</h6>
+                        <h6 className="card-title"> {t('nick')}: "{car.nickname}"</h6>
                         <div>
                             {!showConfirmation ? (
-                                <Button className="btn btn-danger me-2 " onClick={handleConfirm}>Delete</Button>
+                                <Button className="btn btn-danger me-2 " onClick={handleConfirm}>{t('delete')}</Button>
                             ) : (
                                 <div>
-                                    <p>Are you sure you want to delete?</p>
-                                    <Button className="btn btn-danger" onClick={handleDelete}>Yes</Button>
-                                    <Button className="btn btn-success" onClick={handleCancel}>No</Button>
+                                    <p>{t('deleteQuestion')}</p>
+                                    <Button className="btn btn-danger me-5" onClick={handleDelete}>{t('yes')}</Button>
+                                    <Button className="btn btn-success " onClick={handleCancel}>{t('no')}</Button>
                                 </div>
                             )}
                             {!showConfirmation ? (
                             <Link to={"/edit-car-info/" + carId} state={{carId: carId}}>
                                 <Button className="btn btn-info">
-                                    Edit Car Info
+                                    {t('editInfo')}
                                 </Button>
                             </Link>):( '')}
                         </div>
@@ -139,22 +141,22 @@ const CarDetails = () => {
                 {/*Last Service Div*/}
                 <div className="col-md-4">
                     <div className="card shadow" style={{background: tileBgColor}}>
-                        <h5 style={{color: fontColor}}>LAST SERVICE:</h5>
+                        <h5 style={{color: fontColor}}>{t('lastService')}:</h5>
                         {lastService && (
                             <div>
-                                <h6 className="card-title"> Course: {lastService.course} km</h6>
-                                <h6 className="card-title"> Data: {formatDate(lastService.date)}</h6>
-                                <h6 className="card-title"> Oil Change:
+                                <h6 className="card-title"> {t('course')}: {lastService.course} km</h6>
+                                <h6 className="card-title"> {t('date')}: {formatDate(lastService.date)}</h6>
+                                <h6 className="card-title"> {t('oilChange')}:
                                     <h6 style={{color: lastService.oilChange ? 'green' : 'red'}}>{lastService.oilChange ? 'Yes' : 'No'}</h6>
                                 </h6>
-                                <h6 className="card-title"> Air FilterChange:
+                                <h6 className="card-title"> {t('airFilterChange')}:
                                     <h6
                                         style={{color: lastService.airFilterChange ? 'green' : 'red'}}>{lastService.airFilterChange ? 'Yes' : 'No'}</h6>
                                 </h6>
-                                <h6 className="card-title"> Cabin Filter Change:
+                                <h6 className="card-title"> {t('cabinFilterChange')}:
                                     <h6 style={{color: lastService.cabinFilterChange ? 'green' : 'red'}}> {lastService.cabinFilterChange ? 'Yes' : 'No'}</h6>
                                 </h6>
-                                <h6 className="card-title"> Filter Change:
+                                <h6 className="card-title"> {t('fuelFilterChange')}:
                                     <h6
                                         style={{color: lastService.fuelFilterChange ? 'green' : 'red'}}> {lastService.fuelFilterChange ? 'Yes' : 'No'}</h6>
                                 </h6>
@@ -162,7 +164,7 @@ const CarDetails = () => {
 
                         )}
                         <Alert variant={getAlertVariant()}>
-                            Service Status: {getAlertMessage()}
+                            {t('serviceStatus')}: {getAlertMessage()}
                         </Alert>
                     </div>
                 </div>
@@ -170,20 +172,16 @@ const CarDetails = () => {
                 {/*Exploitation state*/}
                 <div className="col-md-4">
                     <div className="card shadow" style={{background: tileBgColor}}>
-                        <h5 style={{color: fontColor}}>EXPLOITATION STATE:</h5>
+                        <h5 style={{color: fontColor}}>{t('exploitationService')}:</h5>
                         {car.exploitationState && (
                             <div>
-                                <h6 className="card-title"> Oil
-                                    Change: {car.exploitationState.lastOilChangeCourse} km/
+                                <h6 className="card-title"> {t('oilChange')}: {car.exploitationState.lastOilChangeCourse} km/
                                     {formatDate(car.exploitationState.lastOilChangeDate)}</h6>
-                                <h6 className="card-title"> Air Filter
-                                    Change: {car.exploitationState.lastAirFilterChangeCourse} km/
+                                <h6 className="card-title"> {t('airFilterChange')}: {car.exploitationState.lastAirFilterChangeCourse} km/
                                     {formatDate(car.exploitationState.lastAirFilterChangeDate)}</h6>
-                                <h6 className="card-title"> Fuel Filter
-                                    Change: {car.exploitationState.lastFuelFilterChangeCourse} km/
+                                <h6 className="card-title"> {t('fuelFilterChange')}: {car.exploitationState.lastFuelFilterChangeCourse} km/
                                     {formatDate(car.exploitationState.lastFuelFilterChangeDate)}</h6>
-                                <h6 className="card-title"> Cabin Filter
-                                    Change: {car.exploitationState.lastCabinFilterChangeCourse} km/
+                                <h6 className="card-title"> {t('cabinFilterChange')}: {car.exploitationState.lastCabinFilterChangeCourse} km/
                                     {formatDate(car.exploitationState.lastCabinFilterChangeDate)}</h6>
                             </div>
                         )}
@@ -202,7 +200,7 @@ const CarDetails = () => {
                                 alt="Add Exploitation Service"
                                 style={{width: '163px', height: 'auto'}}
                             />
-                            <h5 style={{color: fontColor}}>Add Exploitation Service</h5>
+                            <h5 style={{color: fontColor}}>{t('addExploitationState')}</h5>
                         </Link>
                     </div>
                 </div>
@@ -215,7 +213,7 @@ const CarDetails = () => {
                                  alt="Add Other Fix"
                                  style={{width: '160px', height: 'auto'}}
                             />
-                            <h5 style={{color: fontColor}}>Add Other Fix</h5></Link>
+                            <h5 style={{color: fontColor}}>{t('addOtherFix')}</h5></Link>
                     </div>
                 </div>
                 <div className="col-md-3">
@@ -227,7 +225,7 @@ const CarDetails = () => {
                                 alt="Show Car Repair History"
                                 style={{width: '160px', height: 'auto'}}
                             />
-                            <h5 style={{color: fontColor}}>Show Car Repair History</h5>
+                            <h5 style={{color: fontColor}}>{t('showHistory')}</h5>
                         </Link>
                     </div>
                 </div>

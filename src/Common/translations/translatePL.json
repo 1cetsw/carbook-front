@@ -1,0 +1,81 @@
+{
+
+  "adminBoard": "Admin Panel",
+  "workshopBoard": "Warsztat",
+  "yourCars": "Twoje Samochody",
+  "logout": "Wyloguj",
+  "login": "Zaloguj",
+  "signup": "Zarejestruj się",
+
+  "startPage1": "Wszystkie Twoje samochody w jednym miejscu",
+  "startPage2": "Czy Ty też nie pamiętasz kiedy wymieniałeś ostanio olej,",
+  "startPage3": "rozrząd lub filtr powietrza w samochodzie?",
+  "startPage4": "Wkrótce nie będziesz musiał, zrobimy to za Ciebie!",
+
+
+  "date": "Data",
+  "brand": "Marka",
+  "selectBrand": " Wybierz Markę",
+  "model": "Model",
+  "enterModel": "Wprowadź model samochodu",
+  "enterVin": "Wprowadź VIN",
+  "enterEngine": "Wprowadź pojemność / kod silnika",
+  "enterPlate": "Wprowadź numer rejestracyjny",
+  "enterCourse": "Wprowadź przebieg pojazdu np: '22000'",
+  "enterNick": "Wprowadź ksywkę swojego auta",
+  "engine": "Silnik",
+  "course": "Przebieg",
+  "plate": "Numer Rejestracyjny",
+  "nick": "Ksywka",
+  "delete": "Usuń",
+  "deleteQuestion": "Czy napewno chcesz usunąć ten samochód?",
+  "yes": "Tak",
+  "no": "Nie",
+
+  "editInfo": "Edytuj informacje o samochodzie",
+  "lastService": "OSTATNI SERWIS",
+  "lastBasicService": "OSTATNI SERWIS OKRESOWY",
+  "oilChange": "Wymiana Oleju",
+  "airFilterChange": "Wymiana Filtra Powietrza",
+  "cabinFilterChange": "Wymiana Filtra Kabinowego",
+  "fuelFilterChange": "Wymiana Filtra Paliwa",
+  "serviceStatus": "Status Serwisu",
+
+  "exploitationService": "STAN EKSPLOATACYJNY",
+  "addExploitationState": "Dodaj Serwis Eksploatacyjny",
+  "addNewCar": "Dodaj Nowy Samochód",
+  "newExploitationService": "Nowy Serwis Eksploatacyjny",
+
+  "showExploitationHistory": "Pokaż Historię Serwisów Eksploatacyjnych",
+  "showOtherHistory": "Pokaż Historię Innych Napraw",
+  "addOtherFix": "Dodaj Naprawe",
+  "showHistory": "Pokaż Historię Pojazdu",
+  "otherRepair": "Inna Naprawa",
+  "category": "Kategoria",
+  "selectCategory": "Wybierz Kategorię",
+  "description": "Opis Naprawy",
+  "newOtherFix": "Dodaj Naprawę",
+
+
+  "editProfileData": "Edytuj Profil Użytkownika",
+  "editCarData": "Edytuj Informacje o Samochodzie",
+  "backToHome": "Wróć do Strony Głównej",
+  "userProfile": "Profil Użytownika",
+  "username": "Nazwa Użytkownika",
+  "password": "Hasło",
+  "passwordMatched": "Hasła są niezgodne",
+  "name": "Imię",
+  "surname": "Nazwisko",
+  "phone": "Telefon",
+  "location": "Lokalizacja",
+  "save": "Zapisz",
+  "cancel": "Anuluj",
+  "submit": "Wyślij",
+
+  "pageNoFound": "Nie ma steony której szukasz."
+
+
+
+
+
+}

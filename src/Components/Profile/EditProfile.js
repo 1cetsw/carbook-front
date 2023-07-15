@@ -3,6 +3,7 @@ import {Card, Form, Button} from 'react-bootstrap';
 import AuthService from "../../Services/Auth.service";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 
 const UserProfileEdit = () => {
@@ -12,7 +13,7 @@ const UserProfileEdit = () => {
     const buttonTextColor = global.config.ButtonTextColor;
     const fontColor = global.config.TileFontColor;
     const formBg = global.config.FormBackgroundColor;
-
+    const {t} = useTranslation();
     const [editedData, setEditedData] = useState({
         name: '',
         surname: '',
@@ -73,10 +74,10 @@ const UserProfileEdit = () => {
 
     return (
         <Card style={{background: formBg}}>
-            <h2 style={{color: fontColor}}>Edit Profile Data</h2>
+            <h2 style={{color: fontColor}}>{t('editProfileData')}</h2>
             <Form onSubmit={handleSubmit} style={{color: fontColor}}>
                 <Form.Group controlId="formName" >
-                    <Form.Label> Name:
+                    <Form.Label> {t('name')}:
                     </Form.Label>
 
                     <Form.Control
@@ -88,7 +89,7 @@ const UserProfileEdit = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="formSurname">
-                    <Form.Label> Surname:
+                    <Form.Label> {t('surname')}:
                     </Form.Label>
                     <Form.Control
                         type="text"
@@ -99,7 +100,7 @@ const UserProfileEdit = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="formPhone">
-                    <Form.Label> Phone:
+                    <Form.Label> {t('phone')}:
                     </Form.Label>
                     <Form.Control
                         type="text"
@@ -110,7 +111,7 @@ const UserProfileEdit = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="formLocation">
-                    <Form.Label> Location:
+                    <Form.Label> {t('location')}:
                     </Form.Label>
                     <Form.Control
                         type="text"
@@ -123,12 +124,12 @@ const UserProfileEdit = () => {
                 <br/>
 
                 <Button  variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>
-                    <h6 style={{color: buttonTextColor}}>Save</h6>
+                    <h6 style={{color: buttonTextColor}}>{t('save')}</h6>
                 </Button>
 
                 <Link to="/profile">
                     <Button  variant="primary" className={`btn   ${buttonColor}`}>
-                        <h6 style={{color: buttonTextColor}}>Cancel</h6>
+                        <h6 style={{color: buttonTextColor}}>{t('cancel')}</h6>
                     </Button>
                 </Link>
             </Form>

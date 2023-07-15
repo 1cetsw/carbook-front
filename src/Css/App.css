@@ -62,5 +62,7 @@ html{
   float: right;
   margin-top: 0;
   margin-left: auto;
+  background-color: transparent;
+  border: none;
 
 }

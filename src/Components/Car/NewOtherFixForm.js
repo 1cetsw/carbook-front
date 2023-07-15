@@ -4,6 +4,7 @@ import {useLocation, useNavigate} from "react-router-dom";
 
 import categoryList from "../../Common/RepairCategory";
 import {Card} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
 
 
 const NewOtherFix = () => {
@@ -17,7 +18,7 @@ const NewOtherFix = () => {
     const titleColor = global.config.TileFontColor;
     const buttonColor = global.config.ButtonColor;
     const formBg=global.config.FormBackgroundColor;
-
+    const {t} = useTranslation();
     const formData = {
         carId, date, course, category, description
     };
@@ -37,33 +38,33 @@ const NewOtherFix = () => {
 
     return (
         <Card style={{background: formBg}}>
-            <h4 style={{color: titleColor}}>New Other Fix</h4>
+            <h4 style={{color: titleColor}}>{t('newOtherFix')}</h4>
 
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label> Date:</label>
+                    <label> {t('date')}:</label>
                     <input type="date" value={date} onChange={(e) => setDate(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                    <label> Course: </label>
+                    <label> {t('course')}: </label>
                     <input type="text" value={course} onChange={(e) => setCourse(e.target.value)}/>
                     km
                 </div>
                 <div className="form-group">
-                    <label> Category: </label>
+                    <label> {t('category')}: </label>
                     <select
                         value={category} onChange={(e) => setCategory(e.target.value)}>
-                        <option value="">Select Category</option>
+                        <option value="">{t('selectCategory')}</option>
                         {categoryList.map((category) => (<option key={category.category} value={category.category}>
                             {category.category}
                         </option>))}
                     </select>
                 </div>
                 <div className="form-group">
-                    <label> Desciption: </label></div>
+                    <label> {t('description')}: </label></div>
                 <textarea rows={7} cols={50} value={description} onChange={(e) => setDescription(e.target.value)}/>
                 <div>
-                    <button type="submit" className={`btn ${buttonColor}`}>Submit</button>
+                    <button type="submit" className={`btn ${buttonColor}`}>{t('submit')}</button>
                 </div>
             </form>
         </Card>);

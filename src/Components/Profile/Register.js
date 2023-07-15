@@ -5,6 +5,7 @@ import CheckButton from "react-validation/build/button";
 import {isEmail} from "validator";
 
 import AuthService from "../../Services/Auth.service";
+import {useTranslation} from "react-i18next";
 
 const required = (value) => {
     if (!value) {
@@ -56,7 +57,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState("");
-
+    const {t} = useTranslation();
     const fontColor = global.config.TileFontColor;
     const buttonColor=global.config.ButtonColor;
     const formBg=global.config.FormBackgroundColor;
@@ -129,7 +130,7 @@ const Register = () => {
                     {!successful && (
                         <div>
                             <div className="form-group">
-                                <label htmlFor="username" style={{color: fontColor}}>Username</label>
+                                <label htmlFor="username" style={{color: fontColor}}>{t('username')}</label>
                                 <Input
                                     type="text"
                                     className="form-control"
@@ -154,7 +155,7 @@ const Register = () => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="password" style={{color: fontColor}}>Password</label>
+                                <label htmlFor="password" style={{color: fontColor}}>{t('password')}</label>
                                 <Input
                                     type="password"
                                     className="form-control"
@@ -165,7 +166,7 @@ const Register = () => {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="password" style={{color: fontColor}}>Password</label>
+                                <label htmlFor="password" style={{color: fontColor}}>{t('password')}</label>
                                 <Input
                                     type="password"
                                     className="form-control"
@@ -177,9 +178,9 @@ const Register = () => {
                             </div>
 
                             <div className="form-group">
-                                {!passwordMatch && <p style={{color: 'red'}}>Passwords not matched.</p>}
+                                {!passwordMatch && <p style={{color: 'red'}}>{t('passwordMatched')}</p>}
 
-                                <button  style={{color: buttonTextColor}} type="submit" className={`btn ${buttonColor}`}>Sign Up</button>
+                                <button  style={{color: buttonTextColor}} type="submit" className={`btn ${buttonColor}`}>{t('signup')}</button>
                             </div>
                         </div>
                     )}

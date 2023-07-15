@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useLocation} from 'react-router-dom';
 import {Table, Accordion, Card} from 'react-bootstrap';
+import {useTranslation} from "react-i18next";
 
 const ShowHistory = () => {
     const [expandedRow, setExpandedRow] = useState(null);
@@ -10,7 +11,7 @@ const ShowHistory = () => {
     const [sortColumn, setSortColumn] = useState('');
     const [sortDirection, setSortDirection] = useState({key: "date", direction: "asc"});
     const fontColor= global.config.TileFontColor;
-
+    const {t} = useTranslation();
     //Pobieranie danych json z serwera dla other service
     useEffect(() => {
         fetch(global.config.HostFront + '/api/cars/car-other-repair/' + carId)
@@ -59,17 +60,17 @@ const ShowHistory = () => {
     return (
         <div className="container">
 
-            <h2 style={{color: fontColor}}> Other Repair </h2>
+            <h2 style={{color: fontColor}}> {t('otherRepair')} </h2>
             <Table striped bordered hover>
                 <thead>
                 <tr>
                     <th onClick={() => toggleSort('course')}>
-                        Course [ km ] {getSortIndicator('course')}
+                        {t('course')} [ km ] {getSortIndicator('course')}
                     </th>
                     <th onClick={() => toggleSort('date')}>
-                        Date {getSortIndicator('date')}
+                        {t('date')} {getSortIndicator('date')}
                     </th>
-                    <th>Category</th>
+                    <th>{t('category')}</th>
 
                 </tr>
                 </thead>
@@ -88,7 +89,7 @@ const ShowHistory = () => {
                                 <td colSpan="5">
                                     <Accordion>
                                         <Card>
-                                            <h4>Description: </h4>
+                                            <h4>{t('description')}: </h4>
                                             {data.description}
                                         </Card>
                                     </Accordion>

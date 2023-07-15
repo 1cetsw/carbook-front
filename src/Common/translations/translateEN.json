@@ -1,0 +1,80 @@
+{
+
+    "adminBoard": "Admin Board",
+    "workshopBoard": "Workshop Board",
+    "yourCars": "Your Cars",
+    "logout": "Logout",
+    "login": "Login",
+    "signup": "Sign Up",
+
+    "startPage1": "All your vehicles in one place",
+    "startPage2": "Do you also not remember when you changed the oil?",
+    "startPage3": "timing belt or air filter in your car?",
+    "startPage4": "Soon you won't have to, we'll do it for you.",
+
+
+    "date": "Date",
+    "brand": "Brand",
+    "selectBrand": " Select Brand",
+    "model": "Model",
+    "enterModel": "Enter Car Model",
+    "enterVin": "Enter Car VIN",
+    "enterEngine": "Enter Car Engine/Code",
+    "enterPlate": "Enter Plate Number",
+    "enterCourse": "Enter Your Car Course '22000",
+    "enterNick": "Enter Your Car Nickname",
+    "engine": "Engine",
+    "course": "Course",
+    "plate": "Plate",
+    "nick": "Nickname",
+    "delete": "Delete",
+    "deleteQuestion": "Are you sure you want to delete?",
+    "yes": "Yes",
+    "no": "No",
+
+    "editInfo": "Edit Car Info",
+    "lastService": "LAST SERVICE",
+    "lastBasicService": "LAST BASIC SERVICE",
+    "oilChange": "Oil Change",
+    "airFilterChange": "Air Filter Change",
+    "cabinFilterChange": "Cabin Filter Change",
+    "fuelFilterChange": "Fuel Filter Change",
+    "serviceStatus": "Service Status",
+
+    "exploitationService": "EXPLOITATION STATE",
+    "addExploitationState": "Add Exploitation Service",
+    "addNewCar": "Add New Car",
+    "newExploitationService": "New Exploitation Service",
+    "showExploitationHistory": "Show Exploitation History",
+    "showOtherHistory": "Show Other Repair History",
+    "addOtherFix": "Add Other Fix",
+    "showHistory": "Show Car Repair History",
+    "otherRepair": "Other Repair",
+    "category": "Category",
+    "selectCategory": "Select Category",
+    "description": "Description",
+    "newOtherFix": "Add New Other Fix",
+
+
+    "editProfileData": "Edit Profile Data",
+    "editCarData": "Edit Car Data",
+    "backToHome": "Back to Home Page",
+    "userProfile": "User Profile",
+    "username": "Username",
+    "password": "Password",
+    "passwordMatched": "Passwords not matched.",
+    "name": "Name",
+    "surname": "Surname",
+    "phone": "Phone",
+    "location": "Location",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+
+    "pageNoFound": "The page you are looking for was not found."
+
+
+
+
+
+}

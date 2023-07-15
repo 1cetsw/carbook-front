@@ -1,10 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const NewCarTile = () => {
     const fontColor= global.config.TileFontColor;
     const tileBgColor= global.config.TileBackgroundColor;
-
+    const {t} = useTranslation();
 
     return (
         <div className="container text-center " >
@@ -20,7 +21,7 @@ const NewCarTile = () => {
                                 alt="Add New Car"
                                 style={{width: '100px', height: 'auto'}}
                             />
-                            <h5 style={{color: fontColor}} className={`card-title `} >Add New Car</h5>
+                            <h5 style={{color: fontColor}} className={`card-title `} >{t('addNewCar')}</h5>
                             <p className="card-text"></p>
                         </Link>
                     </div>

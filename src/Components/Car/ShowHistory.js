@@ -1,11 +1,12 @@
 import React from "react";
 import {Link, useLocation} from 'react-router-dom';
+import {useTranslation} from "react-i18next";
 
 
 const ShowHistory = () => {
     const fontColor= global.config.TileFontColor;
     const tileBgColor= global.config.TileBackgroundColor;
-
+    const {t} = useTranslation();
     const location = useLocation();
     const carId = location.state.carId;
 
@@ -22,7 +23,7 @@ const ShowHistory = () => {
                                 alt="Show Exploitation History"
                                 style={{width: '190px', height: 'auto'}}
                             />
-                            <h5 style={{color: fontColor}}>Show Exploitation History</h5>
+                            <h5 style={{color: fontColor}}>{t('showExploitationHistory')}</h5>
                         </Link>
                     </div>
 
@@ -38,7 +39,7 @@ const ShowHistory = () => {
                                 alt="Show Other History"
                                 style={{width: '170px', height: 'auto'}}
                             />
-                            <h5 style={{color: fontColor}}>Show Other Repair History</h5>
+                            <h5 style={{color: fontColor}}>{t('showOtherHistory')}</h5>
                         </Link>
 
                     </div>

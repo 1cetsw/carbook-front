@@ -6,6 +6,7 @@ import CheckButton from "react-validation/build/button";
 
 import AuthService from "../../Services/Auth.service";
 import {Button} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
 
 const required = (value) => {
   if (!value) {
@@ -29,6 +30,7 @@ const Login = () => {
   const buttonColor=global.config.ButtonColor;
   const formBg=global.config.FormBackgroundColor;
   const fontColor = global.config.TileFontColor;
+  const {t} = useTranslation();
   const onChangeUsername = (e) => {
     const username = e.target.value;
     setUsername(username);
@@ -82,7 +84,7 @@ const Login = () => {
 
         <Form onSubmit={handleLogin} ref={form}>
           <div className="form-group">
-            <label htmlFor="username" style={{color: fontColor}}>Username</label>
+            <label htmlFor="username" style={{color: fontColor}}>{t('username')}</label>
             <Input
               type="text"
               className="form-control"
@@ -94,7 +96,7 @@ const Login = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password" style={{color: fontColor}}>Password</label>
+            <label htmlFor="password" style={{color: fontColor}}>{t('password')}</label>
             <Input
               type="password"
               className="form-control"
@@ -110,7 +112,7 @@ const Login = () => {
               {loading && (
                 <span className="spinner-border spinner-border-sm"></span>
               )}
-              <span style={{color: buttonTextColor}}>Login</span>
+              <span style={{color: buttonTextColor}}>{t('login')}</span>
             </button>
           </div>
 
@@ -126,7 +128,7 @@ const Login = () => {
 
         <Link to="/">
           <Button  variant="primary" className={`btn   ${buttonColor}`}>
-            <h6 style={{color: buttonTextColor}}>Back to Home Page</h6>
+            <h6 style={{color: buttonTextColor}}>{t('backToHome')}e</h6>
           </Button>
         </Link>
         </Form>

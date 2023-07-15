@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {Card, Form, Button} from 'react-bootstrap';
 import axios from "axios";
 import {Link, useLocation, useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const CarProfileEdit = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const carId = location.state.carId;
-
+    const {t} = useTranslation();
     const buttonColor = global.config.ButtonColor;
     const buttonTextColor = global.config.ButtonTextColor;
     const fontColor = global.config.TileFontColor;
@@ -79,11 +80,11 @@ const CarProfileEdit = () => {
 
     return (
         <Card style={{background: formBg}}>
-            <h2 style={{color: fontColor}}>Edit Profile Data</h2>
+            <h2 style={{color: fontColor}}>{t('editCarData')}</h2>
             <Form onSubmit={handleSubmit} style={{color: fontColor}}>
 
                 <Form.Group controlId="formModel">
-                    <Form.Label> Model:
+                    <Form.Label> {t('model')}:
                     </Form.Label>
                     <Form.Control
                         type="text"
@@ -95,7 +96,7 @@ const CarProfileEdit = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formEngine">
-                    <Form.Label> Engine:
+                    <Form.Label> {t('engine')}:
                     </Form.Label>
                     <Form.Control
                         type="text"
@@ -106,7 +107,7 @@ const CarProfileEdit = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="formPlate">
-                    <Form.Label> Plate:
+                    <Form.Label> {t('plate')}:
                     </Form.Label>
                     <Form.Control
                         type="text"
@@ -117,7 +118,7 @@ const CarProfileEdit = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="formCourse">
-                    <Form.Label> Course:
+                    <Form.Label> {t('course')}:
                     </Form.Label>
                     <Form.Control
                         type="text"
@@ -128,7 +129,7 @@ const CarProfileEdit = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="formNickname">
-                    <Form.Label> Nickname:
+                    <Form.Label> {t('nick')}:
                     </Form.Label>
                     <Form.Control
                         type="text"
@@ -141,12 +142,12 @@ const CarProfileEdit = () => {
                 <br/>
 
                 <Button variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>
-                    <h6 style={{color: buttonTextColor}}>Save</h6>
+                    <h6 style={{color: buttonTextColor}}>{t('save')}</h6>
                 </Button>
 
                 <Link to="/car-details" state={{carId: carId}}>
                     <Button variant="primary" className="btn btn-info">
-                        <h6 style={{color: buttonTextColor}}>Cancel</h6>
+                        <h6 style={{color: buttonTextColor}}>{t('cancel')}</h6>
                     </Button>
                 </Link>
             </Form>

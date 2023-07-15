@@ -2,9 +2,8 @@ import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import "../Css/App.css";
 import carbookLogo from '../Assets/Images/carbook.png';
-import deFlagLogo from '../Assets/Images//Icons/de.png';
-import plFlagLogo from '../Assets/Images/Icons/pl.png';
-import enFlagLogo from '../Assets/Images/Icons/en.png';
+import {useTranslation} from 'react-i18next';
+import LanguageSelector from "../Common/LanguageSelector";
 import AuthService from "../Services/Auth.service";
 // import AuthVerify from "../Common/AuthVerify";
 import EventBus from "../Common/EventBus";
@@ -16,6 +15,7 @@ function NavBar() {
     const [currentUser, setCurrentUser] = useState(undefined);
     const textColor = global.config.NavBarTextColor;
     const navBarColor = global.config.NavBarBackgroundColor;
+    const {t} = useTranslation();
 
     useEffect(() => {
         const user = AuthService.getCurrentUser();
@@ -56,14 +56,14 @@ function NavBar() {
                         {showWorkshopBoard && (
                             <li className="nav-item ">
                                 <Link to={"/workshop"} className="nav-link">
-                                    <h6 style={{color: textColor}}> Workshop Board</h6>
+                                    <h6 style={{color: textColor}}> {t('workshopBoard')}</h6>
                                 </Link>
                             </li>
                         )}
                         {showAdminBoard && (
                             <li className="nav-item">
                                 <Link to={"/adminboard"} className="nav-link">
-                                    <h6 style={{color: textColor}}>Admin Board</h6>
+                                    <h6 style={{color: textColor}}>{t('adminBoard')}</h6>
                                 </Link>
                             </li>
                         )}
@@ -77,7 +77,7 @@ function NavBar() {
                         {currentUser && (
                             <li className="nav-item ">
                                 <Link to={"/dashboard"} className="nav-link ">
-                                    <h6 style={{color: textColor}}>Your Cars</h6>
+                                    <h6 style={{color: textColor}}>{t('yourCars')}</h6>
                                 </Link>
                             </li>
                         )}
@@ -93,7 +93,7 @@ function NavBar() {
                             </li>
                             <li className="nav-item">
                                 <a href="/" className="nav-link float-right" onClick={logOut}>
-                                    <h6 style={{color: textColor}}>Logout</h6>
+                                    <h6 style={{color: textColor}}>{t('logout')}</h6>
                                 </a>
                             </li>
                         </div>
@@ -101,28 +101,24 @@ function NavBar() {
                         <div className="navbar-nav ml-auto ">
                             <li className="nav-item">
                                 <Link to={"/login"} className="nav-link">
-                                    <h6 style={{color: textColor}}> Login</h6>
+                                    <h6 style={{color: textColor}}> {t('login')}</h6>
                                 </Link>
                             </li>
                             <li className="nav-item float-sm-start">
                                 <Link to={"/register"} className="nav-link">
-                                    <h6 style={{color: textColor}}>Sign Up</h6>
+                                    <h6 style={{color: textColor}}>{t('signup')}</h6>
                                 </Link>
                             </li>
                         </div>
 
                     )}
-                    <div  className="flags-to-right  ">
-                        <img className="img-fluid rounded-circle logo-flag" src={enFlagLogo} alt="English" />
-                        <img className="img-fluid rounded-circle logo-flag" src={plFlagLogo} alt="Polish" />
-                        <img className="img-fluid rounded-circle logo-flag" src={deFlagLogo} alt="German" />
-                    </div>
+                    <LanguageSelector/>
+
                 </nav>
                 {/* <AuthVerify logOut={logOut}/>
      */}
 
             </div>
-
 
         </Container>
     );
