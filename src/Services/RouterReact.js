@@ -23,6 +23,7 @@ import OtherRepairHistory from "../Components/Car/OtherRepairHistory";
 
 import EditProfile from "../Components/Profile/EditProfile";
 import EditCarInfo from "../Components/Car/EditCarInfo";
+import EditExploitationServiceForm from "../Components/Car/EditExploitationServiceForm";
 
 
 const RouterReact = () => (
@@ -48,6 +49,7 @@ const RouterReact = () => (
         <Route path="/exploitation-history" element={<ExploitationHistory/>}/>
         <Route path="/add-other-fix" element={<NewOtherFixForm/>}/>
         <Route path="/add-exploitation-service" element={<NewExploitationServiceForm/>}/>
+        <Route path="/edit-exploitation-service" element={<EditExploitationServiceForm/>}/>
 
         <Route exact path="/update-profile/:id" element={<EditProfile/>}/>
         <Route exact path="/edit-car-info/:id" element={<EditCarInfo/>}/>

@@ -19,7 +19,10 @@ const CarProfileEdit = () => {
         engine: '',
         plate: '',
         course: '',
-        nickname: ''
+        nickname: '',
+        oc: '',
+        ac: '',
+        technicalExamination: ''
     });
 
     const [car, setCar] = useState([]);
@@ -60,6 +63,15 @@ const CarProfileEdit = () => {
             }
             if (editedData.nickname === '') {
                 editedData.nickname = car.nickname;
+            }
+            if (editedData.oc === '') {
+                editedData.oc = car.oc;
+            }
+            if (editedData.ac === '') {
+                editedData.ac = car.ac;
+            }
+            if (editedData.technicalExamination === '') {
+                editedData.technicalExamination = car.technicalExamination;
             }
 
         }
@@ -139,6 +151,40 @@ const CarProfileEdit = () => {
                         onChange={handleChange}
                     />
                 </Form.Group>
+                <Form.Group controlId="formOC">
+                    <Form.Label> OC:
+                    </Form.Label>
+                    <Form.Control
+                        type="date"
+                        name="oc"
+                        placeholder={car.oc}
+                        value={editedData.oc}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="formAC">
+                    <Form.Label> AC:
+                    </Form.Label>
+                    <Form.Control
+                        type="date"
+                        name="ac"
+                        placeholder={car.ac}
+                        value={editedData.ac}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="formTechnicalExamination">
+                    <Form.Label> {t('technicalExamination')}:
+                    </Form.Label>
+                    <Form.Control
+                        type="date"
+                        name="technicalExamination"
+                        placeholder={car.technicalExamination}
+                        value={editedData.technicalExamination}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+
                 <br/>
 
                 <Button variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>

@@ -27,7 +27,7 @@
     "course": "Course",
     "plate": "Plate",
     "nick": "Nickname",
-    "delete": "Delete",
+    "deleteCar": "Delete Car",
     "deleteQuestion": "Are you sure you want to delete?",
     "yes": "Yes",
     "no": "No",
@@ -40,11 +40,17 @@
     "cabinFilterChange": "Cabin Filter Change",
     "fuelFilterChange": "Fuel Filter Change",
     "serviceStatus": "Service Status",
+    "timingBeltChange": "Timing Belt Change",
+    "coolantChange": "Coolant Change",
+    "gearBoxOilChange": "GearBox Oil Change",
+    "powerSteeringFluidChange": "Power Steering Fluid Change",
+    "differentialOilChange": "Differential Oil Change",
 
     "exploitationService": "EXPLOITATION STATE",
     "addExploitationState": "Add Exploitation Service",
     "addNewCar": "Add New Car",
     "newExploitationService": "New Exploitation Service",
+    "editExploitationService": "Edit Exploitation Service",
     "showExploitationHistory": "Show Exploitation History",
     "showOtherHistory": "Show Other Repair History",
     "addOtherFix": "Add Other Fix",
@@ -71,10 +77,12 @@
     "cancel": "Cancel",
     "submit": "Submit",
 
-    "pageNoFound": "The page you are looking for was not found."
-
-
-
+    "pageNoFound": "The page you are looking for was not found.",
+    "techExam": "Technical Examination",
+    "OCACTitle": " OC AC and Technical Examination",
+    "OCACStatus": "Status OC AC",
+    "technicalExamination": "Technical Examination",
+    "editCarExploitation": "Update Service"
 
 
 }

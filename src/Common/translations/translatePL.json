@@ -27,7 +27,7 @@
   "course": "Przebieg",
   "plate": "Numer Rejestracyjny",
   "nick": "Ksywka",
-  "delete": "Usuń",
+  "deleteCar": "Usuń Samochód",
   "deleteQuestion": "Czy napewno chcesz usunąć ten samochód?",
   "yes": "Tak",
   "no": "Nie",
@@ -39,12 +39,18 @@
   "airFilterChange": "Wymiana Filtra Powietrza",
   "cabinFilterChange": "Wymiana Filtra Kabinowego",
   "fuelFilterChange": "Wymiana Filtra Paliwa",
+  "timingBeltChange": "Wymiana Paska Rozrządu",
+  "coolantChange": "Wymiana Płynu Chłodzącego",
+  "gearBoxOilChange": "Wymiana Oleju w Skrzyni",
+  "powerSteeringFluidChange": "Wymiana Płynu Wspomagania Kierownicy",
+  "differentialOilChange": "Wymiana Oleju w Dyferencjale",
   "serviceStatus": "Status Serwisu",
 
   "exploitationService": "STAN EKSPLOATACYJNY",
   "addExploitationState": "Dodaj Serwis Eksploatacyjny",
   "addNewCar": "Dodaj Nowy Samochód",
   "newExploitationService": "Nowy Serwis Eksploatacyjny",
+  "editExploitationService": "Edytuj Serwis Eksploatacyjny",
 
   "showExploitationHistory": "Pokaż Historię Serwisów Eksploatacyjnych",
   "showOtherHistory": "Pokaż Historię Innych Napraw",
@@ -72,10 +78,11 @@
   "cancel": "Anuluj",
   "submit": "Wyślij",
 
-  "pageNoFound": "Nie ma steony której szukasz."
+  "pageNoFound": "Nie ma steony której szukasz.",
 
-
-
-
-
+  "techExam": "Badanie Techniczne",
+  "OCACTitle": " OC AC oraz Przegląd Techniczny",
+  "OCACStatus": "Status OC AC",
+  "technicalExamination": "Badanie Techniczne",
+  "editCarExploitation": "Uaktualnij Serwis"
 }
