@@ -72,6 +72,7 @@ const CarProfileEdit = () => {
             if (editedData.technicalExamination === '') {
                 editedData.technicalExamination = car.technicalExamination;
             }
+
         }
 
         axios.put(global.config.HostFront + '/api/cars/edit-car-info/' + carId, editedData)
@@ -90,62 +91,39 @@ const CarProfileEdit = () => {
 
     return (
         <Card style={{background: formBg}}>
-            <h2 style={{color: fontColor}}>{t('editCarData')}</h2>
+            <h2 style={{color: fontColor}}>{t('editOCACData')}</h2>
             <Form onSubmit={handleSubmit} style={{color: fontColor}}>
 
-                <Form.Group controlId="formModel">
-                    <Form.Label> {t('model')}:
+                <Form.Group controlId="formOC">
+                    <Form.Label> OC:
                     </Form.Label>
                     <Form.Control
-                        type="text"
-                        name="model"
-                        placeholder={car.model}
-                        value={editedData.model}
+                        type="date"
+                        name="oc"
+                        placeholder={car.oc}
+                        value={editedData.oc}
                         onChange={handleChange}
                     />
                 </Form.Group>
-
-                <Form.Group controlId="formEngine">
-                    <Form.Label> {t('engine')}:
+                <Form.Group controlId="formAC">
+                    <Form.Label> AC:
                     </Form.Label>
                     <Form.Control
-                        type="text"
-                        name="engine"
-                        placeholder={car.engine}
-                        value={editedData.engine}
+                        type="date"
+                        name="ac"
+                        placeholder={car.ac}
+                        value={editedData.ac}
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="formPlate">
-                    <Form.Label> {t('plate')}:
+                <Form.Group controlId="formTechnicalExamination">
+                    <Form.Label> {t('technicalExamination')}:
                     </Form.Label>
                     <Form.Control
-                        type="text"
-                        name="plate"
-                        placeholder={car.plate}
-                        value={editedData.plate}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group controlId="formCourse">
-                    <Form.Label> {t('course')}:
-                    </Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="course"
-                        placeholder={car.course}
-                        value={editedData.course}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group controlId="formNickname">
-                    <Form.Label> {t('nick')}:
-                    </Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="nickname"
-                        placeholder={car.nickname}
-                        value={editedData.nickname}
+                        type="date"
+                        name="technicalExamination"
+                        placeholder={car.technicalExamination}
+                        value={editedData.technicalExamination}
                         onChange={handleChange}
                     />
                 </Form.Group>

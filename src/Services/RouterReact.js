@@ -24,6 +24,7 @@ import OtherRepairHistory from "../Components/Car/OtherRepairHistory";
 import EditProfile from "../Components/Profile/EditProfile";
 import EditCarInfo from "../Components/Car/EditCarInfo";
 import EditExploitationServiceForm from "../Components/Car/EditExploitationServiceForm";
+import EditOCAC from "../Components/Car/EditOCAC";
 
 
 const RouterReact = () => (
@@ -50,7 +51,7 @@ const RouterReact = () => (
         <Route path="/add-other-fix" element={<NewOtherFixForm/>}/>
         <Route path="/add-exploitation-service" element={<NewExploitationServiceForm/>}/>
         <Route path="/edit-exploitation-service" element={<EditExploitationServiceForm/>}/>
-
+        <Route path="/edit-oc-ac" element={<EditOCAC/>}/>
         <Route exact path="/update-profile/:id" element={<EditProfile/>}/>
         <Route exact path="/edit-car-info/:id" element={<EditCarInfo/>}/>
 

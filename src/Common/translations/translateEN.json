@@ -33,6 +33,7 @@
     "no": "No",
 
     "editInfo": "Edit Car Info",
+    "editOCAC": "Edit OC, AC and Technical Review ",
     "lastService": "LAST SERVICE",
     "lastBasicService": "LAST BASIC SERVICE",
     "oilChange": "Oil Change",
@@ -64,6 +65,7 @@
 
     "editProfileData": "Edit Profile Data",
     "editCarData": "Edit Car Data",
+    "editOCACData": "Edit OC, AC date and Technical Review",
     "backToHome": "Back to Home Page",
     "userProfile": "User Profile",
     "username": "Username",

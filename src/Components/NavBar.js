@@ -40,7 +40,7 @@ function NavBar() {
 
 
     return (
-        <Container fluid className=" px-0">
+        <Container fluid className="navbar-expand-md  px-0">
             <div className="App ">
                 <nav style={{background: navBarColor}} className="navbar navbar-expand-xxl px-4 ">
                     <Link to={"/"} className="navbar-brand">

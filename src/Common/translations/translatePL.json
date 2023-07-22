@@ -33,6 +33,7 @@
   "no": "Nie",
 
   "editInfo": "Edytuj informacje o samochodzie",
+  "editOCAC": "Edytuj daty OC, AC oraz Przeglądu Technicznego",
   "lastService": "OSTATNI SERWIS",
   "lastBasicService": "OSTATNI SERWIS OKRESOWY",
   "oilChange": "Wymiana Oleju",
@@ -65,6 +66,7 @@
 
   "editProfileData": "Edytuj Profil Użytkownika",
   "editCarData": "Edytuj Informacje o Samochodzie",
+  "editOCACData": "Edytuj daty OC, AC oraz Przeglądu Technicznego",
   "backToHome": "Wróć do Strony Głównej",
   "userProfile": "Profil Użytownika",
   "username": "Nazwa Użytkownika",
