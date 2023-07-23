@@ -44,6 +44,22 @@ const ShowHistory = () => {
 
                     </div>
                 </div>
+
+                        <div>
+                            <div className="card mb-3 shadow text-center" style={{background: tileBgColor}}>
+
+                                <Link to={"/tuning-mod-history"} state={{carId: carId}} style={{textDecoration: 'none'}}>
+                                    <img
+                                        src="https://images.ctfassets.net/33n6gwydcv8y/4ZBRStKuuscef66fBTDQEz/45850edce967544f1bcb802a50ae5ed0/inspection-history-check.png"
+                                        className="card-img-top"
+                                        alt="Show Tuning History"
+                                        style={{width: '170px', height: 'auto'}}
+                                    />
+                                    <h5 style={{color: fontColor}}>{t('showTuningHistory')}</h5>
+                                </Link>
+
+                            </div>
+                        </div>
             </div>
         </div>
         </div>

@@ -7,6 +7,7 @@ import ShowCarHistoryWindow from "./CarDetailsComponents/ShowCarHistoryWindows";
 import ExploitationStateWindow from "./CarDetailsComponents/ExploitationStateWindow";
 import OCAC from "./CarDetailsComponents/OCACWindow";
 import CarInfoWindow from "./CarDetailsComponents/CarInfoWindow";
+import AddTuningModWindow from "./CarDetailsComponents/AddTuningModWindow";
 
 const CarDetails = () => {
 
@@ -26,8 +27,10 @@ const CarDetails = () => {
             <Row>
                 <AddExploitationServiceWindow/>
                 <AddOtherFixWindow/>
-                <ShowCarHistoryWindow/>
+                <AddTuningModWindow/>
             </Row>
+
+            <ShowCarHistoryWindow/>
         </Container>
     )
 }

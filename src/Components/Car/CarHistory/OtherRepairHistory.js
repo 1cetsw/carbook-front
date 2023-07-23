@@ -3,7 +3,7 @@ import {useLocation} from 'react-router-dom';
 import {Table, Accordion, Card} from 'react-bootstrap';
 import {useTranslation} from "react-i18next";
 
-const ShowHistory = () => {
+const OtherRepairHistory = () => {
     const [expandedRow, setExpandedRow] = useState(null);
     const location = useLocation();
     const carId = location.state.carId;
@@ -104,4 +104,4 @@ const ShowHistory = () => {
         </div>
     );
 };
-export default ShowHistory;
+export default OtherRepairHistory;

@@ -55,13 +55,18 @@
 
   "showExploitationHistory": "Pokaż Historię Serwisów Eksploatacyjnych",
   "showOtherHistory": "Pokaż Historię Innych Napraw",
+  "showTuningHistory": "Pokaż Historię Modyfikacji",
   "addOtherFix": "Dodaj Naprawe",
+  "addTuningMod": "Dodaj Modyfikacje",
   "showHistory": "Pokaż Historię Pojazdu",
-  "otherRepair": "Inna Naprawa",
+  "otherRepair": "Wykonane Naprawy",
+  "tuningMod": "Tuning",
   "category": "Kategoria",
   "selectCategory": "Wybierz Kategorię",
   "description": "Opis Naprawy",
+  "modificationDescription": "Opis Modyfikacji",
   "newOtherFix": "Dodaj Naprawę",
+  "newTuningMod": "Dodaj Nową Modyfikację",
 
 
   "editProfileData": "Edytuj Profil Użytkownika",

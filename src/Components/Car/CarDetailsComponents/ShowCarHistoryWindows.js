@@ -20,7 +20,7 @@ const ShowCarHistoryWindows = () => {
                     <img
                         src="https://cdn0.iconfinder.com/data/icons/car-service-35/64/Service-history-report-gear-car-512.png"
                         className="card-img-top"
-                        alt="Show Car Repair History"
+                        alt="Show Car History"
                         style={{width: '160px', height: 'auto'}}
                     />
                     <h5 style={{color: fontColor}}>{t('showHistory')}</h5>

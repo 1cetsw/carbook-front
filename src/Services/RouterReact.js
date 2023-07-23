@@ -18,13 +18,15 @@ import CarDetails from "../Components/Car/CarDetails";
 import ShowHistory from "../Components/Car/ShowHistory";
 import NewOtherFixForm from "../Components/Car/NewOtherFixForm";
 import NewExploitationServiceForm from "../Components/Car/NewExploitationServiceForm";
-import ExploitationHistory from "../Components/Car/ExploitationRepairHistory";
-import OtherRepairHistory from "../Components/Car/OtherRepairHistory";
+import ExploitationHistory from "../Components/Car/CarHistory/ExploitationRepairHistory";
+import OtherRepairHistory from "../Components/Car/CarHistory/OtherRepairHistory";
 
 import EditProfile from "../Components/Profile/EditProfile";
 import EditCarInfo from "../Components/Car/EditCarInfo";
 import EditExploitationServiceForm from "../Components/Car/EditExploitationServiceForm";
 import EditOCAC from "../Components/Car/EditOCAC";
+import NewTunningModForm from "../Components/Car/NewTunningModForm";
+import TuningModHistory from "../Components/Car/CarHistory/TuningModHistory";
 
 
 const RouterReact = () => (
@@ -48,7 +50,9 @@ const RouterReact = () => (
         <Route path="/car-history" element={<ShowHistory/>}/>
         <Route path="/other-repair-history" element={<OtherRepairHistory/>}/>
         <Route path="/exploitation-history" element={<ExploitationHistory/>}/>
+        <Route path="/tuning-mod-history" element={<TuningModHistory/>}/>
         <Route path="/add-other-fix" element={<NewOtherFixForm/>}/>
+        <Route path="/add-tunning-mod" element={<NewTunningModForm/>}/>
         <Route path="/add-exploitation-service" element={<NewExploitationServiceForm/>}/>
         <Route path="/edit-exploitation-service" element={<EditExploitationServiceForm/>}/>
         <Route path="/edit-oc-ac" element={<EditOCAC/>}/>
