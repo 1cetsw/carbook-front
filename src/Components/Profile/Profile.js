@@ -10,7 +10,7 @@ const Profile = (props) => {
     const [user, setUser] = useState([]);
     const fontColor = global.config.TileFontColor;
     const formBg = global.config.FormBackgroundColor;
-    const buttonColor = global.config.ButtonColor;
+    const buttonColorAccept = global.config.ButtonColorAccept;
     const buttonTextColor = global.config.ButtonTextColor;
     const {t} = useTranslation();
 
@@ -45,7 +45,7 @@ const Profile = (props) => {
 
             </ListGroup>
             <br/>
-            <Button  variant="primary"  className={`btn ${buttonColor}`}>
+            <Button  variant="primary"  className={` ${buttonColorAccept}`}>
                 <Link to={"/update-profile/" + currentUser.id} style={{textDecoration: 'none'}}>
                     <h6 style={{color: buttonTextColor}}>{t('editProfileData')}</h6>
                 </Link>

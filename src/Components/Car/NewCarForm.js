@@ -6,7 +6,7 @@ import carList from "../../Common/CarList";
 import {useTranslation} from "react-i18next";
 
 const NewCarForm = () => {
-    const buttonColor=global.config.ButtonColor;
+    const buttonColorAccept=global.config.ButtonColorAccept;
     const titleColor=global.config.TileFontColor;
     const formBg=global.config.FormBackgroundColor;
     const {t} = useTranslation();
@@ -145,7 +145,7 @@ const NewCarForm = () => {
                         />
                     </div>
 
-                    <button type="submit" className={`btn ${buttonColor}`}>{t('submit')}</button>
+                    <button type="submit" className={`btn ${buttonColorAccept}`}>{t('submit')}</button>
                 </form>
 
         </div>

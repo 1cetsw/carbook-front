@@ -1,10 +1,6 @@
-import React, {useEffect, useState} from "react";
-import {Link, useLocation, useNavigate} from 'react-router-dom';
-import {Button, Container, Row} from 'react-bootstrap';
-import axios from "axios";
-import {useTranslation} from "react-i18next";
+import React from "react";
+import { Container, Row} from 'react-bootstrap';
 import LastServiceWindow from "./CarDetailsComponents/LastServiceWindow";
-
 import AddExploitationServiceWindow from "./CarDetailsComponents/AddExploitationServiceWindow";
 import AddOtherFixWindow from "./CarDetailsComponents/AddOtherFixWindow";
 import ShowCarHistoryWindow from "./CarDetailsComponents/ShowCarHistoryWindows";

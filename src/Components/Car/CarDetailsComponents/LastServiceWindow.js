@@ -1,4 +1,3 @@
-
 import {Alert} from 'react-bootstrap';
 import {useTranslation} from "react-i18next";
 import React, {useEffect, useState} from "react";
@@ -68,38 +67,41 @@ const LastServiceWindow = () => {
     };
 
 
-
     return (
 
-    <div className="col-md-4">
-        <div className="card shadow" style={{background: tileBgColor}}>
-            <h5 style={{color: fontColor}}>{t('lastService')}:</h5>
-            {lastService && (
-                <div>
-                    <h6 className="card-title"> {t('course')}: {lastService.course} km</h6>
-                    <h6 className="card-title"> {t('date')}: {formatDate(lastService.date)}</h6>
-                    <h6 className="card-title"> {t('oilChange')}:
-                        <h6 style={{color: lastService.oilChange ? 'green' : 'red'}}>{lastService.oilChange ? 'Yes' : 'No'}</h6>
-                    </h6>
-                    <h6 className="card-title"> {t('airFilterChange')}:
-                        <h6
-                            style={{color: lastService.airFilterChange ? 'green' : 'red'}}>{lastService.airFilterChange ? 'Yes' : 'No'}</h6>
-                    </h6>
-                    <h6 className="card-title"> {t('cabinFilterChange')}:
-                        <h6 style={{color: lastService.cabinFilterChange ? 'green' : 'red'}}> {lastService.cabinFilterChange ? 'Yes' : 'No'}</h6>
-                    </h6>
-                    <h6 className="card-title"> {t('fuelFilterChange')}:
-                        <h6
-                            style={{color: lastService.fuelFilterChange ? 'green' : 'red'}}> {lastService.fuelFilterChange ? 'Yes' : 'No'}</h6>
-                    </h6>
-                </div>
+        <div className="col-md-4">
+            <div className="card shadow" style={{background: tileBgColor}}>
+                <h5 style={{color: fontColor}}>{t('lastService')}:</h5>
+                {lastService && (
+                    <div>
+                        <h6 style={{color: fontColor}} className="card-title"> {t('course')}:</h6>
+                        <h6 className="card-subtitle"> {lastService.course} km</h6>
+                        <h6 style={{color: fontColor}} className="card-title"> {t('date')}:</h6>
+                        <h6 className="card-subtitle"> {formatDate(lastService.date)}</h6>
+                        <h6 style={{color: fontColor}} className="card-title"> {t('oilChange')}:</h6>
+                        <h6 className="card-subtitle"
+                            style={{color: lastService.oilChange ? 'green' : 'red'}}>{lastService.oilChange ? '✔' : '✘'}</h6>
 
-            )}
-            <Alert variant={getAlertVariant()}>
-                {t('serviceStatus')}: {getAlertMessage()}
-            </Alert>
+                        <h6 style={{color: fontColor}} className="card-title"> {t('airFilterChange')}:</h6>
+                        <h6 className="card-subtitle"
+                            style={{color: lastService.airFilterChange ? 'green' : 'red'}}>{lastService.airFilterChange ? '✔' : '✘'}</h6>
+
+                        <h6 style={{color: fontColor}} className="card-title"> {t('cabinFilterChange')}:</h6>
+                        <h6 className="card-subtitle"
+                            style={{color: lastService.cabinFilterChange ? 'green' : 'red'}}> {lastService.cabinFilterChange ? '✔' : '✘'}</h6>
+
+                        <h6 style={{color: fontColor}} className="card-title"> {t('fuelFilterChange')}:</h6>
+                        <h6 className="card-subtitle"
+                            style={{color: lastService.fuelFilterChange ? 'green' : 'red'}}> {lastService.fuelFilterChange ? '✔' : '✘'}</h6>
+
+                    </div>
+
+                )}
+                <Alert variant={getAlertVariant()}>
+                    {t('serviceStatus')}: {getAlertMessage()}
+                </Alert>
+            </div>
         </div>
-    </div>
     )
 }
 

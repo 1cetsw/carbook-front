@@ -17,7 +17,9 @@ module.exports = global.config = {
     DescriptionFontColor: "#e8e8e8",
 
     //kolor przycisku
-    ButtonColor:"btn-warning",
+    ButtonColorAccept:"btn btn-success",
+    ButtonColorCancel:"btn btn-danger",
+    ButtonColorDelete:"btn btn-danger",
     //kolor tekstu przycisku
     ButtonTextColor:"#000000",
     //NavBar tekst kolor

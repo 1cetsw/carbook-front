@@ -16,7 +16,7 @@ const NewOtherFix = () => {
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const titleColor = global.config.TileFontColor;
-    const buttonColor = global.config.ButtonColor;
+    const buttonColorAccept = global.config.ButtonColorAccept;
     const formBg=global.config.FormBackgroundColor;
     const {t} = useTranslation();
     const formData = {
@@ -64,7 +64,7 @@ const NewOtherFix = () => {
                     <label> {t('description')}: </label></div>
                 <textarea rows={7} cols={50} value={description} onChange={(e) => setDescription(e.target.value)}/>
                 <div>
-                    <button type="submit" className={`btn ${buttonColor}`}>{t('submit')}</button>
+                    <button type="submit" className={`btn ${buttonColorAccept}`}>{t('submit')}</button>
                 </div>
             </form>
         </Card>);

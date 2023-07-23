@@ -12,6 +12,8 @@ const OCACWindow = () => {
     const tileBgColor = global.config.TileBackgroundColor;
     const {t} = useTranslation();
     const fontColor = global.config.TileFontColor;
+    const buttonColorAccept = global.config.ButtonColorAccept;
+
 
     useEffect(() => {
         fetch(global.config.HostFront + '/api/cars/car/' + carId)
@@ -39,7 +41,7 @@ const OCACWindow = () => {
                     <h6 className="card-title" style={{color: fontColor}}> {t('techExam')}:</h6>
                     <h6 className="card-subtitle"> {car.technicalExamination}</h6>
                     <Link to={"/edit-oc-ac"} state={{carId: carId}}>
-                        <Button className="btn btn-info">
+                        <Button className={`${buttonColorAccept}`}>
                             {t('editOCAC')}
                         </Button>
                     </Link>

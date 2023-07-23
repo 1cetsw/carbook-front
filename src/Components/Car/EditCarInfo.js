@@ -9,7 +9,8 @@ const CarProfileEdit = () => {
     const location = useLocation();
     const carId = location.state.carId;
     const {t} = useTranslation();
-    const buttonColor = global.config.ButtonColor;
+    const buttonColorCancel = global.config.ButtonColorCancel;
+    const buttonColorAccept = global.config.ButtonColorAccept;
     const buttonTextColor = global.config.ButtonTextColor;
     const fontColor = global.config.TileFontColor;
     const formBg = global.config.FormBackgroundColor;
@@ -152,12 +153,12 @@ const CarProfileEdit = () => {
 
                 <br/>
 
-                <Button variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>
+                <Button variant="primary" type="submit" className={`${buttonColorAccept} me-4 `}>
                     <h6 style={{color: buttonTextColor}}>{t('save')}</h6>
                 </Button>
 
                 <Link to="/car-details" state={{carId: carId}}>
-                    <Button variant="primary" className="btn btn-info">
+                    <Button variant="primary" className={`me-4  ${buttonColorCancel}`}>
                         <h6 style={{color: buttonTextColor}}>{t('cancel')}</h6>
                     </Button>
                 </Link>

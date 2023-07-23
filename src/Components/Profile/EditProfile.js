@@ -9,7 +9,8 @@ import {useTranslation} from "react-i18next";
 const UserProfileEdit = () => {
     const currentUser = AuthService.getCurrentUser();
     const navigate = useNavigate();
-    const buttonColor = global.config.ButtonColor;
+    const buttonColorAccept = global.config.ButtonColorAccept;
+    const buttonColorCancel = global.config.ButtonColorCancel;
     const buttonTextColor = global.config.ButtonTextColor;
     const fontColor = global.config.TileFontColor;
     const formBg = global.config.FormBackgroundColor;
@@ -123,12 +124,12 @@ const UserProfileEdit = () => {
                 </Form.Group>
                 <br/>
 
-                <Button  variant="primary" type="submit" className={`btn me-4  ${buttonColor}`}>
+                <Button  variant="primary" type="submit" className={`btn me-4  ${buttonColorAccept}`}>
                     <h6 style={{color: buttonTextColor}}>{t('save')}</h6>
                 </Button>
 
                 <Link to="/profile">
-                    <Button  variant="primary" className={`btn   ${buttonColor}`}>
+                    <Button  variant="primary" className={`btn   ${buttonColorCancel}`}>
                         <h6 style={{color: buttonTextColor}}>{t('cancel')}</h6>
                     </Button>
                 </Link>

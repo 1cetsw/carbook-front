@@ -15,7 +15,9 @@ const OCACWindow = () => {
     const tileBgColor = global.config.TileBackgroundColor;
     const {t} = useTranslation();
     const fontColor = global.config.TileFontColor;
-
+    const buttonColorCancel = global.config.ButtonColorCancel;
+    const buttonColorAccept = global.config.ButtonColorAccept;
+    const buttonColorDelete = global.config.ButtonColorDelete;
     useEffect(() => {
         fetch(global.config.HostFront + '/api/cars/car/' + carId)
             .then(response => response.json())
@@ -77,18 +79,18 @@ const OCACWindow = () => {
 
 
                     {!showConfirmation ? (
-                        <Button className="btn btn-danger me-2 "
+                        <Button className={`btn me-2  ${buttonColorDelete}`}
                                 onClick={handleConfirm}>{t('deleteCar')}</Button>
                     ) : (
                         <div>
-                            <p>{t('deleteQuestion')}</p>
-                            <Button className="btn btn-danger me-5" onClick={handleDelete}>{t('yes')}</Button>
-                            <Button className="btn btn-success " onClick={handleCancel}>{t('no')}</Button>
+                            <h5 className="card-title" style={{color: 'darkred'}}>{t('deleteQuestion')}</h5>
+                            <Button className={`btn me-5  ${buttonColorCancel}`} onClick={handleDelete}>{t('✔')}</Button>
+                            <Button className={`btn me-2  ${buttonColorAccept}`}  onClick={handleCancel}>{t('✘')}</Button>
                         </div>
                     )}
                     {!showConfirmation ? (
                         <Link to={"/edit-car-info/" + carId} state={{carId: carId}}>
-                            <Button className="btn btn-info">
+                            <Button className={`${buttonColorAccept}`}>
                                 {t('editInfo')}
                             </Button>
                         </Link>) : ('')}
