@@ -1,4 +1,4 @@
-
+import otherFixLogo from '../../../Assets/Images/Icons/otherfix.png'
 import {useTranslation} from "react-i18next";
 import React from "react";
 import {Link, useLocation} from "react-router-dom";
@@ -19,10 +19,10 @@ const AddExploitationServiceWindow = () => {
             <div className="card mb-3 shadow text-center" style={{background: tileBgColor}}>
 
                 <Link to="/add-other-fix" state={{carId: carId}} style={{textDecoration: 'none'}}>
-                    <img src="https://cdn-icons-png.flaticon.com/512/226/226537.png"
+                    <img src={otherFixLogo}
                          className="card-img-top"
                          alt="Add Other Fix"
-                         style={{width: '160px', height: 'auto'}}
+                         style={{width: '200px', height: 'auto'}}
                     />
                     <h5 style={{color: fontColor}}>{t('addOtherFix')}</h5></Link>
             </div>

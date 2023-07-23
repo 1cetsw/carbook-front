@@ -1,7 +1,9 @@
 import React from "react";
 import {Link, useLocation} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
-
+import tuningHisoryLogo from '../../Assets/Images/Icons/tuninghistory.png'
+import exploitationHistoryLogo from '../../Assets/Images/Icons/exploitationhistory.png'
+import otherHisoryLogo from '../../Assets/Images/Icons/otherhistory.png'
 
 const ShowHistory = () => {
     const fontColor= global.config.TileFontColor;
@@ -18,10 +20,10 @@ const ShowHistory = () => {
 
                         <Link to={"/exploitation-history"} state={{carId: carId}} style={{textDecoration: 'none'}}>
                             <img
-                                src="https://static.thenounproject.com/png/3189885-200.png"
+                                src={exploitationHistoryLogo}
                                 className="card-img-top"
                                 alt="Show Exploitation History"
-                                style={{width: '190px', height: 'auto'}}
+                                style={{width: '200px', height: 'auto'}}
                             />
                             <h5 style={{color: fontColor}}>{t('showExploitationHistory')}</h5>
                         </Link>
@@ -34,10 +36,10 @@ const ShowHistory = () => {
 
                         <Link to={"/other-repair-history"} state={{carId: carId}} style={{textDecoration: 'none'}}>
                             <img
-                                src="https://images.ctfassets.net/33n6gwydcv8y/4ZBRStKuuscef66fBTDQEz/45850edce967544f1bcb802a50ae5ed0/inspection-history-check.png"
+                                src={otherHisoryLogo}
                                 className="card-img-top"
                                 alt="Show Other History"
-                                style={{width: '170px', height: 'auto'}}
+                                style={{width: '200px', height: 'auto'}}
                             />
                             <h5 style={{color: fontColor}}>{t('showOtherHistory')}</h5>
                         </Link>
@@ -50,10 +52,10 @@ const ShowHistory = () => {
 
                                 <Link to={"/tuning-mod-history"} state={{carId: carId}} style={{textDecoration: 'none'}}>
                                     <img
-                                        src="https://images.ctfassets.net/33n6gwydcv8y/4ZBRStKuuscef66fBTDQEz/45850edce967544f1bcb802a50ae5ed0/inspection-history-check.png"
+                                        src={tuningHisoryLogo}
                                         className="card-img-top"
                                         alt="Show Tuning History"
-                                        style={{width: '170px', height: 'auto'}}
+                                        style={{width: '200px', height: 'auto'}}
                                     />
                                     <h5 style={{color: fontColor}}>{t('showTuningHistory')}</h5>
                                 </Link>
