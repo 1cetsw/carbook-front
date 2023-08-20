@@ -25,12 +25,13 @@ const CarDetails = () => {
             </Row>
 
             <Row>
-                <AddExploitationServiceWindow/>
+                {/*<AddExploitationServiceWindow/>*/}
                 <AddOtherFixWindow/>
                 <AddTuningModWindow/>
+                <ShowCarHistoryWindow/>
             </Row>
 
-            <ShowCarHistoryWindow/>
+
         </Container>
     )
 }

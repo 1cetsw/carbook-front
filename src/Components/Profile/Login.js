@@ -27,7 +27,8 @@ const Login = () => {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
   const buttonTextColor = global.config.ButtonTextColor;
-  const buttonColor=global.config.ButtonColor;
+  const buttonColorAccept = global.config.ButtonColorAccept;
+  const buttonColorBack = global.config.ButtonColorDelete;
   const formBg=global.config.FormBackgroundColor;
   const fontColor = global.config.TileFontColor;
   const {t} = useTranslation();
@@ -108,7 +109,7 @@ const Login = () => {
           </div>
 
           <div className="form-group">
-            <button type="submit" className={`btn ${buttonColor}`} disabled={loading}>
+            <button type="submit" className={`btn ${buttonColorAccept}`} disabled={loading}>
               {loading && (
                 <span className="spinner-border spinner-border-sm"></span>
               )}
@@ -127,7 +128,7 @@ const Login = () => {
 
 
         <Link to="/">
-          <Button  variant="primary" className={`btn   ${buttonColor}`}>
+          <Button  variant="primary" className={`btn   ${buttonColorBack}`}>
             <h6 style={{color: buttonTextColor}}>{t('backToHome')}e</h6>
           </Button>
         </Link>

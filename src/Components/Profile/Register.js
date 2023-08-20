@@ -59,7 +59,8 @@ const Register = () => {
     const [message, setMessage] = useState("");
     const {t} = useTranslation();
     const fontColor = global.config.TileFontColor;
-    const buttonColor=global.config.ButtonColor;
+    const buttonColorAccept = global.config.ButtonColorAccept;
+
     const formBg=global.config.FormBackgroundColor;
     const buttonTextColor = global.config.ButtonTextColor;
     const onChangeUsername = (e) => {
@@ -180,7 +181,7 @@ const Register = () => {
                             <div className="form-group">
                                 {!passwordMatch && <p style={{color: 'red'}}>{t('passwordMatched')}</p>}
 
-                                <button  style={{color: buttonTextColor}} type="submit" className={`btn ${buttonColor}`}>{t('signup')}</button>
+                                <button  style={{color: buttonTextColor}} type="submit" className={`btn ${buttonColorAccept}`}>{t('signup')}</button>
                             </div>
                         </div>
                     )}

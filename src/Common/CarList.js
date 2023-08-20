@@ -16,7 +16,7 @@ const carList = [
     { brand: 'Cadillac' },
     { brand: 'Chevrolet' },
     { brand: 'Chrysler' },
-    { brand: 'Citroën' },
+    { brand: 'Citroen' },
     { brand: 'Dacia' },
     { brand: 'Daewoo' },
     { brand: 'Daihatsu' },
