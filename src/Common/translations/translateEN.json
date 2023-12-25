@@ -89,7 +89,8 @@
     "OCACTitle": " OC AC and Technical Examination",
     "OCACStatus": "Status OC AC",
     "technicalExamination": "Technical Examination",
-    "editCarExploitation": "Update Service"
+    "editCarExploitation": "Update Service",
+    "noInfo": "Lack of Information"
 
 
 }

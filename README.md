@@ -21,8 +21,7 @@ Carbook is designed to simplify the process of car maintenance and repairs.
 
 1. Clone the repository: `git clone https://github.com/1cetsw/carbook-front.git`
 2. Install the necessary dependencies: `npm install`
-3. Configure the database connection in the `config.js` file.
-4. Start the application: `npm start`
+3. Start the application: `npm start`
 
 ## Installation Back-End Java Spring Hibernate Project
 

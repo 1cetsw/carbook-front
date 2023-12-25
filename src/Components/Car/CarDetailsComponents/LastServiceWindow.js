@@ -5,7 +5,7 @@ import {useLocation} from "react-router-dom";
 
 
 const LastServiceWindow = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const [lastService, setLastService] = useState(null);
     const fontColor = global.config.TileFontColor;
     const tileBgColor = global.config.TileBackgroundColor;
@@ -28,6 +28,7 @@ const LastServiceWindow = () => {
         };
         fetchData();
     }, [carId]);
+
     const getAlertVariant = () => {
         if (lastService) {
             const currentDate = new Date();
@@ -44,6 +45,7 @@ const LastServiceWindow = () => {
         }
         return 'secondary';
     };
+
     const getAlertMessage = () => {
         if (lastService) {
             const currentDate = new Date();
@@ -60,50 +62,44 @@ const LastServiceWindow = () => {
         }
         return 'No data';
     };
+
     const formatDate = (dateString) => {
-        const options = {year: 'numeric', month: '2-digit', day: '2-digit'};
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
         const date = new Date(dateString);
         return date.toLocaleDateString(undefined, options);
     };
 
-
     return (
-
         <div className="col-md-4">
-            <div className="card shadow" style={{background: tileBgColor}}>
-                <h5 style={{color: fontColor}}>{t('lastService')}:</h5>
+            <div className="card shadow" style={{ background: tileBgColor }}>
+                <h5 style={{ color: fontColor }}>{t('lastService')}:</h5>
+
                 {lastService && (
                     <div>
-                        <h6 style={{color: fontColor}} className="card-title"> {t('course')}:</h6>
-                        <h6 className="card-subtitle"> {lastService.course} km</h6>
-                        <h6 style={{color: fontColor}} className="card-title"> {t('date')}:</h6>
-                        <h6 className="card-subtitle"> {formatDate(lastService.date)}</h6>
-                        <h6 style={{color: fontColor}} className="card-title"> {t('oilChange')}:</h6>
-                        <h6 className="card-subtitle"
-                            style={{color: lastService.oilChange ? 'green' : 'red'}}>{lastService.oilChange ? '✔' : '✘'}</h6>
-
-                        <h6 style={{color: fontColor}} className="card-title"> {t('airFilterChange')}:</h6>
-                        <h6 className="card-subtitle"
-                            style={{color: lastService.airFilterChange ? 'green' : 'red'}}>{lastService.airFilterChange ? '✔' : '✘'}</h6>
-
-                        <h6 style={{color: fontColor}} className="card-title"> {t('cabinFilterChange')}:</h6>
-                        <h6 className="card-subtitle"
-                            style={{color: lastService.cabinFilterChange ? 'green' : 'red'}}> {lastService.cabinFilterChange ? '✔' : '✘'}</h6>
-
-                        <h6 style={{color: fontColor}} className="card-title"> {t('fuelFilterChange')}:</h6>
-                        <h6 className="card-subtitle"
-                            style={{color: lastService.fuelFilterChange ? 'green' : 'red'}}> {lastService.fuelFilterChange ? '✔' : '✘'}</h6>
-
+                        {renderServiceItem(t, 'course', lastService.course, 'km')}
+                        {renderServiceItem(t, 'date', formatDate(lastService.date))}
+                        {renderServiceItem(t, 'oilChange', lastService.oilChange, 'green', 'red')}
+                        {renderServiceItem(t, 'airFilterChange', lastService.airFilterChange, 'green', 'red')}
+                        {renderServiceItem(t, 'cabinFilterChange', lastService.cabinFilterChange, 'green', 'red')}
+                        {renderServiceItem(t, 'fuelFilterChange', lastService.fuelFilterChange, 'green', 'red')}
                     </div>
-
                 )}
+
                 <Alert variant={getAlertVariant()}>
                     {t('serviceStatus')}: {getAlertMessage()}
                 </Alert>
             </div>
         </div>
-    )
-}
+    );
+};
+
+const renderServiceItem = (t, itemName, value, colorIfTrue = '', colorIfFalse = '') => (
+    <>
+        <h6 style={{ color: global.config.TileFontColor }} className="card-title"> {t(itemName)}:</h6>
+        <h6 className="card-subtitle" style={{ color: value !== null && value !== undefined && value !== "" ? colorIfTrue : colorIfFalse }}>
+            {value !== null && value !== undefined && value !== "" ? '✔' : '✘'}
+        </h6>
+    </>
+);
 
 export default LastServiceWindow;
-
