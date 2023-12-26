@@ -90,7 +90,8 @@
     "OCACStatus": "Status OC AC",
     "technicalExamination": "Technical Examination",
     "editCarExploitation": "Update Service",
-    "noInfo": "Lack of Information"
-
+    "noInfo": "Lack of Information",
+    "daysleft": "Days Left",
+    "daysPastDue": "Days after the deadline"
 
 }

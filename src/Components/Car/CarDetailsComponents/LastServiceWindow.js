@@ -5,7 +5,7 @@ import {useLocation} from "react-router-dom";
 
 
 const LastServiceWindow = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const [lastService, setLastService] = useState(null);
     const fontColor = global.config.TileFontColor;
     const tileBgColor = global.config.TileBackgroundColor;
@@ -64,20 +64,20 @@ const LastServiceWindow = () => {
     };
 
     const formatDate = (dateString) => {
-        const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        const options = {year: 'numeric', month: '2-digit', day: '2-digit'};
         const date = new Date(dateString);
         return date.toLocaleDateString(undefined, options);
     };
 
     return (
         <div className="col-md-4">
-            <div className="card shadow" style={{ background: tileBgColor }}>
-                <h5 style={{ color: fontColor }}>{t('lastService')}:</h5>
+            <div className="card shadow" style={{background: tileBgColor}}>
+                <h5 style={{color: fontColor}}>{t('lastService')}:</h5>
 
                 {lastService && (
                     <div>
-                        {renderServiceItem(t, 'course', lastService.course, 'km')}
-                        {renderServiceItem(t, 'date', formatDate(lastService.date))}
+                        {renderServiceItem(t, 'course', `${lastService.course} km`)}{lastService.course} km
+                        {renderServiceItem(t, 'date', formatDate(lastService.date))}{formatDate(lastService.date)}
                         {renderServiceItem(t, 'oilChange', lastService.oilChange, 'green', 'red')}
                         {renderServiceItem(t, 'airFilterChange', lastService.airFilterChange, 'green', 'red')}
                         {renderServiceItem(t, 'cabinFilterChange', lastService.cabinFilterChange, 'green', 'red')}
@@ -95,8 +95,9 @@ const LastServiceWindow = () => {
 
 const renderServiceItem = (t, itemName, value, colorIfTrue = '', colorIfFalse = '') => (
     <>
-        <h6 style={{ color: global.config.TileFontColor }} className="card-title"> {t(itemName)}:</h6>
-        <h6 className="card-subtitle" style={{ color: value !== null && value !== undefined && value !== "" ? colorIfTrue : colorIfFalse }}>
+        <h6 style={{color: global.config.TileFontColor}} className="card-title"> {t(itemName)}:</h6>
+        <h6 className="card-subtitle"
+            style={{color: value !== null && value !== undefined && value !== "" ? colorIfTrue : colorIfFalse}}>
             {value !== null && value !== undefined && value !== "" ? '✔' : '✘'}
         </h6>
     </>

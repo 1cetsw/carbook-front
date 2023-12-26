@@ -92,5 +92,7 @@
   "OCACStatus": "Status OC AC",
   "technicalExamination": "Badanie Techniczne",
   "editCarExploitation": "Uaktualnij Serwis",
-  "noInfo": "Brak Informacji"
+  "noInfo": "Brak Informacji",
+  "daysleft": "Dni do końca",
+  "daysPastDue": "Dni po terminie"
 }
